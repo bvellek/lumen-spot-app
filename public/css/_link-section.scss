@@ -1,0 +1,11 @@
+.link-section {
+  text-align: center;
+  margin-top: 1.5em;
+  margin-bottom: 5em;
+
+  a {
+    @include font-heading(900);
+    font-size: 2.25em;
+    padding: 0.5em 0.2em;
+  }
+}

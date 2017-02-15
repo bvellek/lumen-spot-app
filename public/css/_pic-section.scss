@@ -1,0 +1,26 @@
+.pic-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  .pic-fig {
+    margin: 1em 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    a img {
+      width: 95%;
+      max-width: 27.5em;
+    }
+
+    figcaption {
+      @include font-heading;
+
+      .fig-num {
+        @include font-mono;
+      }
+    }
+  }
+}
