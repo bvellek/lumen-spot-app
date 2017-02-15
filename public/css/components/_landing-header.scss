@@ -4,6 +4,7 @@
   background: grey;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
 }
 
 .landing-nav {
@@ -14,9 +15,15 @@
   a {
     color: $white;
     padding: 0.5em;
+    margin: 1em 0.625em;
+
 
     &:hover {
       color: $blue;
+    }
+
+    &:focus {
+      outline: 1px solid $focus-color;
     }
   }
 }
@@ -24,4 +31,9 @@
 .logo-container {
   text-align: center;
 
+  .svg-logo {
+    max-width: 40em;
+    width: 95%;
+    padding: 0.5em;
+  }
 }
