@@ -8,8 +8,7 @@ module.exports = function(grunt) {
       js: './js/'
     },
     webpack: {
-      options: webpackConfig,
-      dist: {}
+      options: webpackConfig
     },
     sass: {
       dev: {
@@ -31,19 +30,16 @@ module.exports = function(grunt) {
         ]
       },
       dist: {
-         src: './public/css/main.css',
-         dest: './assets/css/main.min.css'
+        src: './public/css/main.css',
+        dest: './assets/css/main.min.css'
       }
 
-    },
+    }
   });
-
-
-
 
   grunt.loadNpmTasks('grunt-webpack');
   grunt.loadNpmTasks('grunt-sass');
   grunt.loadNpmTasks('grunt-postcss');
 
-  grunt.registerTask('build',['webpack','sass','postcss']);
+  grunt.registerTask('build', ['webpack', 'sass', 'postcss']);
 }
