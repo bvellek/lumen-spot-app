@@ -615,9 +615,14 @@ footer {
     flex-direction: column;
     justify-content: center;
     align-items: center; }
-    .pic-section .pic-fig a img {
-      width: 95%;
+    .pic-section .pic-fig a {
       max-width: 27.5em; }
+      .pic-section .pic-fig a img {
+        width: 100%;
+        transition: 0.3s cubic-bezier(0.445, 0.05, 0.55, 0.95); }
+        .pic-section .pic-fig a img:hover, .pic-section .pic-fig a img:focus {
+          outline: 3px solid #FFF;
+          outline-offset: -1em; }
     .pic-section .pic-fig figcaption {
       font-family: "Montserrat", Frutiger, "Frutiger Linotype", Univers, Calibri, "Gill Sans", "Gill Sans MT", "Myriad Pro", Myriad, "DejaVu Sans Condensed", "Liberation Sans", "Nimbus Sans L", Tahoma, Geneva, "Helvetica Neue", Helvetica, Arial, sans-serif;
       font-weight: 700; }
