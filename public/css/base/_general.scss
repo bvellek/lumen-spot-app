@@ -3,6 +3,7 @@
 body {
   box-sizing: border-box;
   @include font-mono;
+  color: $text-color;
 }
 
 h1,h2,h3,h4,h5,h6 {
@@ -95,7 +96,7 @@ button {
     border: 1px solid #dcdcdc;
     display: inline-block;
     cursor: pointer;
-    color: #303030;
+    color: $text-color;
     font-weight: bold;
     padding: 0.3em 0.8em;
     text-decoration: none;

@@ -405,7 +405,8 @@ template {
 body {
   box-sizing: border-box;
   font-family: "Cutive Mono", Consolas, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", Monaco, "Courier New", Courier, monospace;
-  font-weight: 400; }
+  font-weight: 400;
+  color: #242021; }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: "Montserrat", Frutiger, "Frutiger Linotype", Univers, Calibri, "Gill Sans", "Gill Sans MT", "Myriad Pro", Myriad, "DejaVu Sans Condensed", "Liberation Sans", "Nimbus Sans L", Tahoma, Geneva, "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -485,7 +486,7 @@ button {
   border: 1px solid #dcdcdc;
   display: inline-block;
   cursor: pointer;
-  color: #303030;
+  color: #242021;
   font-weight: bold;
   padding: 0.3em 0.8em;
   text-decoration: none;
@@ -511,7 +512,7 @@ button:active {
 .landing-header {
   width: 100%;
   height: 20em;
-  background: grey;
+  background: #694387;
   display: flex;
   flex-direction: column;
   justify-content: space-between; }
@@ -552,6 +553,10 @@ button:active {
     width: 95%;
     align-self: center; }
 
+.light-section {
+  background-color: #e9e7f7;
+  padding: 1.5em 0; }
+
 .link-section {
   text-align: center;
   margin-top: 1.5em;
@@ -571,7 +576,7 @@ footer {
 
 .search-header {
   width: 100%;
-  background: grey; }
+  background: #694387; }
 
 .search-form {
   margin: 0 auto;
