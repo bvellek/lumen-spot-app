@@ -1,11 +1,15 @@
 .sun-info-section {
+  cursor: default;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
   summary {
     @include font-heading;
+    cursor: pointer;
 
     h2 {
       display: inline-block;
     }
   }
-
 }

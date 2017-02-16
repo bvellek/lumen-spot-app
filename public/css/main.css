@@ -599,11 +599,17 @@ footer {
       border-color: #25B238;
       box-shadow: 0 0 2px 0 rgba(73, 143, 225, 0.7); }
 
-.sun-info-section summary {
-  font-family: "Montserrat", Frutiger, "Frutiger Linotype", Univers, Calibri, "Gill Sans", "Gill Sans MT", "Myriad Pro", Myriad, "DejaVu Sans Condensed", "Liberation Sans", "Nimbus Sans L", Tahoma, Geneva, "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-weight: 700; }
-  .sun-info-section summary h2 {
-    display: inline-block; }
+.sun-info-section {
+  cursor: default;
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+  .sun-info-section summary {
+    font-family: "Montserrat", Frutiger, "Frutiger Linotype", Univers, Calibri, "Gill Sans", "Gill Sans MT", "Myriad Pro", Myriad, "DejaVu Sans Condensed", "Liberation Sans", "Nimbus Sans L", Tahoma, Geneva, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 700;
+    cursor: pointer; }
+    .sun-info-section summary h2 {
+      display: inline-block; }
 
 .pic-section {
   display: flex;
