@@ -2,27 +2,24 @@
   "name": "lumen-spot-app",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "author": "Ben Vellek",
+  "license": "MIT",
+  "main": "public/js/index.js",
   "directories": {
     "test": "test"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/bvellek/lumen-spot-app.git"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/bvellek/lumen-spot-app/issues"
-  },
-  "homepage": "https://github.com/bvellek/lumen-spot-app#readme",
   "dependencies": {
     "react": "^15.4.2",
-    "react-dom": "^15.4.2"
+    "react-dom": "^15.4.2",
+    "react-router": "^3.0.2"
   },
   "devDependencies": {
     "babel-core": "^6.23.1",
