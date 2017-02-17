@@ -1,17 +1,23 @@
-module.exports = {
-  entry: './public/js/index.js',
+var path = require('path');
 
+module.exports = {
+  context: path.join(__dirname, 'public/js')
+  entry: [
+    './index.js',
+  ],
   output: {
     path: 'assets',
     filename: 'bundle.js'
   },
 
   module: {
-    loaders: [
+    rules: [
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        loader: 'babel-loader'
+        use: [
+          'babel-loader',
+        ],
       }
     ]
   }
