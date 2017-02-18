@@ -9,6 +9,11 @@
   label {
     @include font-heading(400);
     margin-bottom: 0.5em;
+    font-size: 1em;
+
+    span {
+      font-size: 0.625em;
+    }
   }
 
   input {

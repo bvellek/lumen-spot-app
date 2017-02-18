@@ -606,7 +606,10 @@ footer {
   .search-form label {
     font-family: "Montserrat", Frutiger, "Frutiger Linotype", Univers, Calibri, "Gill Sans", "Gill Sans MT", "Myriad Pro", Myriad, "DejaVu Sans Condensed", "Liberation Sans", "Nimbus Sans L", Tahoma, Geneva, "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-weight: 400;
-    margin-bottom: 0.5em; }
+    margin-bottom: 0.5em;
+    font-size: 1em; }
+    .search-form label span {
+      font-size: 0.625em; }
   .search-form input {
     width: 95%;
     height: 2em;
