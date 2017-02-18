@@ -648,8 +648,13 @@ footer {
     cursor: pointer; }
     .weather-info-section summary h2 {
       display: inline-block; }
+  .weather-info-section .weather-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; }
   .weather-info-section .wu-logo {
-    width: 90px; }
+    width: 90px;
+    display: block; }
 
 .pic-section {
   display: flex;
