@@ -5,7 +5,8 @@ module.exports = function(grunt) {
     dirs: {
       theme: './public/',
       css: './css/',
-      js: './js/'
+      js: './js/',
+      assets: 'assets/'
     },
     webpack: {
       options: webpackConfig
@@ -22,8 +23,8 @@ module.exports = function(grunt) {
       }
     },
     postcss: {
-
       options: {
+        map: true, //inline sourcemaps
         processors: [
           require('autoprefixer')({browsers: 'last 2 versions'}),
           require('cssnano')()
@@ -34,12 +35,22 @@ module.exports = function(grunt) {
         dest: './assets/css/main.min.css'
       }
 
-    }
+    },
+    uglify: {
+      js: {
+        options:{report:"gzip"},
+        files: {
+          '<%= dirs.assets %><%= dirs.js %>bundle.min.js': '<%= dirs.assets %><%= dirs.js %>bundle.js'
+        }
+      }
+    },
   });
 
+
   grunt.loadNpmTasks('grunt-webpack');
+  grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-sass');
   grunt.loadNpmTasks('grunt-postcss');
 
-  grunt.registerTask('build', ['webpack', 'sass', 'postcss']);
+  grunt.registerTask('build', ['webpack', 'uglify', 'sass', 'postcss']);
 }

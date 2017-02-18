@@ -6,7 +6,7 @@ module.exports = {
     './index.js',
   ],
   output: {
-    path: 'assets',
+    path: 'assets/js',
     filename: 'bundle.js'
   },
 
