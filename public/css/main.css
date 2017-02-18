@@ -648,7 +648,7 @@ footer {
       max-width: 27.5em; }
       .pic-section .pic-fig a img {
         width: 100%;
-        transition: 0.3s cubic-bezier(0.445, 0.05, 0.55, 0.95); }
+        transition: 0.5s ease; }
         .pic-section .pic-fig a img:hover, .pic-section .pic-fig a img:focus {
           outline: 3px solid #FFF;
           outline-offset: -1em; }
