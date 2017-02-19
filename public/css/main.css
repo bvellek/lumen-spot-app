@@ -422,7 +422,7 @@ h1 {
   font-family: 'Archivo Black'; }
 
 h2 {
-  font-size: 2.625em;
+  font-size: 2.5em;
   font-weight: 900;
   margin-top: 0.4em;
   margin-bottom: 0.4em; }
@@ -672,11 +672,11 @@ footer {
     justify-content: center;
     align-items: center; }
     .pic-section .pic-fig a {
-      max-width: 27.5em; }
+      max-width: 26em; }
       .pic-section .pic-fig a img {
         width: 100%;
         transition: 0.5s ease; }
-        .pic-section .pic-fig a img:hover, .pic-section .pic-fig a img:focus {
+        .pic-section .pic-fig a img:focus, .pic-section .pic-fig a img:hover {
           outline: 3px solid #FFF;
           outline-offset: -1em; }
     .pic-section .pic-fig figcaption {
