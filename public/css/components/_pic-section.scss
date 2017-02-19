@@ -17,13 +17,13 @@
         width: 100%;
         transition: 0.5s ease;
 
-        &:hover, &:focus {
+        &:focus,
+        &:hover {
           outline: 3px solid $white;
           outline-offset: -1em;
         }
       }
     }
-
 
     figcaption {
       @include font-heading;
@@ -31,6 +31,15 @@
       .fig-num {
         @include font-mono;
       }
+    }
+  }
+  
+  @media only screen and (min-width: 58em) {
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    .pic-fig {
+      margin: 1em;
     }
   }
 }

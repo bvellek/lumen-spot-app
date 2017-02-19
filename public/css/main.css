@@ -685,5 +685,11 @@ footer {
       .pic-section .pic-fig figcaption .fig-num {
         font-family: "Cutive Mono", Consolas, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", Monaco, "Courier New", Courier, monospace;
         font-weight: 400; }
+  @media only screen and (min-width: 58em) {
+    .pic-section {
+      flex-direction: row;
+      flex-wrap: wrap; }
+      .pic-section .pic-fig {
+        margin: 1em; } }
 
 /*# sourceMappingURL=main.css.map */
