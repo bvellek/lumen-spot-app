@@ -529,8 +529,12 @@ button:active {
 
 .landing-header {
   width: 100%;
-  height: 20em;
-  background: #694387;
+  height: 40vh;
+  min-height: 20em;
+  max-height: 40em;
+  background-image: url("../img/mountain-banner.jpg");
+  background-size: cover;
+  background-color: #694387;
   display: flex;
   flex-direction: column;
   justify-content: space-between; }
@@ -544,8 +548,6 @@ button:active {
     color: #FFF;
     padding: 0.5em;
     margin: 1em 0.625em; }
-    .landing-nav a:hover {
-      color: #251EC6; }
     .landing-nav a:focus {
       outline: 1px solid #555; }
 
