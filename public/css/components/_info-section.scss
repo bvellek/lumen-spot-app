@@ -3,6 +3,11 @@
   width: 100%;
   display: flex;
   flex-direction: column;
+  align-items: center;
+
+  &> * {
+    width: 90%;
+  }
 
   h2 {
     text-align: center;
