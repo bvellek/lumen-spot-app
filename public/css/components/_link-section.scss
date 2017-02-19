@@ -2,15 +2,18 @@
   text-align: center;
   margin-top: 1.5em;
   margin-bottom: 5em;
+  background-color: $light-grey;
+  padding: 2em 0;
 
   a {
     @include font-heading(900);
     font-size: 2.25em;
     padding: 0.5em 0.2em;
+    color: $purple10;
 
-    &:hover {
-      color: $blue;
-    }
+    // &:hover {
+    //   color: $white;
+    // }
 
     &:focus {
       outline: 1px solid $focus-color;

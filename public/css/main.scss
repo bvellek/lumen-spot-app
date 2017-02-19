@@ -2,13 +2,14 @@
 
 @import "base/_type";
 @import "base/_colors";
+@import "base/_media-sizes";
 @import "base/_general";
 @import "base/_sliding-underline";
 
 
 @import "components/_landing-header";
 @import "components/_info-section";
-@import "components/_light-section";
+@import "components/_photo-slide-section";
 @import "components/_link-section";
 @import "components/_footer";
 @import "components/_search-header";

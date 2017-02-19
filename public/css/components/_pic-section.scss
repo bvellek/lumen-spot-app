@@ -34,7 +34,7 @@
     }
   }
 
-  @media only screen and (min-width: 58em) {
+  @media only screen and (min-width: $medium-break) {
     flex-direction: row;
     flex-wrap: wrap;
 

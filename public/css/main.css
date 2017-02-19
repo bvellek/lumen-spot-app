@@ -576,21 +576,22 @@ button:active {
     width: 95%;
     align-self: center; }
 
-.light-section {
+.photo-slide-section {
   background-color: #e9e7f7;
   padding: 1.5em 0; }
 
 .link-section {
   text-align: center;
   margin-top: 1.5em;
-  margin-bottom: 5em; }
+  margin-bottom: 5em;
+  background-color: #e9e7f7;
+  padding: 2em 0; }
   .link-section a {
     font-family: "Montserrat", Frutiger, "Frutiger Linotype", Univers, Calibri, "Gill Sans", "Gill Sans MT", "Myriad Pro", Myriad, "DejaVu Sans Condensed", "Liberation Sans", "Nimbus Sans L", Tahoma, Geneva, "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-weight: 900;
     font-size: 2.25em;
-    padding: 0.5em 0.2em; }
-    .link-section a:hover {
-      color: #251EC6; }
+    padding: 0.5em 0.2em;
+    color: #694387; }
     .link-section a:focus {
       outline: 1px solid #555; }
 
