@@ -560,6 +560,7 @@ button:active {
 
 .info-section {
   margin-top: 3em;
+  margin-bottom: 1em;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -582,8 +583,8 @@ button:active {
 
 .link-section {
   text-align: center;
-  margin-top: 1.5em;
-  margin-bottom: 5em;
+  margin-top: 3em;
+  margin-bottom: 1em;
   background-color: #e9e7f7;
   padding: 2em 0; }
   .link-section a {
@@ -603,7 +604,7 @@ footer {
   background: #694387; }
 
 .search-form {
-  margin: 0 auto;
+  margin: 0 auto 1em;
   display: flex;
   flex-direction: column;
   max-width: 40em;
@@ -632,7 +633,9 @@ footer {
       box-shadow: 0 0 2px 0 rgba(73, 143, 225, 0.7); }
 
 .info-container {
-  background-color: #e9e7f7; }
+  background-color: #e9e7f7;
+  margin-top: 3em;
+  margin-bottom: 1em; }
 
 .sun-info-section {
   cursor: default;
