@@ -566,14 +566,6 @@ button:active {
   display: flex;
   flex-direction: column;
   align-items: center; }
-  .info-section > * {
-    width: 90%; }
-  .info-section h2 {
-    text-align: center;
-    margin-bottom: 0; }
-  .info-section p {
-    font-size: 1.25em;
-    padding: 0 0.5em; }
   .info-section img {
     width: 95%;
     align-self: center; }
@@ -605,6 +597,21 @@ button:active {
     max-width: 60em;
     width: 95%; }
 
+.light-section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 60em; }
+  .light-section > * {
+    width: 90%; }
+  .light-section h2 {
+    text-align: center;
+    margin-bottom: 0; }
+  .light-section p {
+    font-size: 1.25em;
+    padding: 0 0.5em; }
+
 .link-section {
   text-align: center;
   margin-top: 3em;
@@ -619,6 +626,21 @@ button:active {
     color: #694387; }
     .link-section a:focus {
       outline: 1px solid #555; }
+
+.about-section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 60em; }
+  .about-section > * {
+    width: 90%; }
+  .about-section h2 {
+    text-align: center;
+    margin-bottom: 0; }
+  .about-section p {
+    font-size: 1em;
+    padding: 0 0.5em; }
 
 footer {
   text-align: center; }
@@ -666,7 +688,7 @@ footer {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 1em; }
+  margin-bottom: 1.5em; }
   .sun-info-section summary {
     font-family: "Montserrat", Frutiger, "Frutiger Linotype", Univers, Calibri, "Gill Sans", "Gill Sans MT", "Myriad Pro", Myriad, "DejaVu Sans Condensed", "Liberation Sans", "Nimbus Sans L", Tahoma, Geneva, "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-weight: 700;
