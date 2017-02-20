@@ -4,11 +4,12 @@
   justify-content: center;
 
   .pic-fig {
-    margin: 1em 0;
+    margin: 1em 0 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    text-align: center;
 
     a {
       max-width: 26em;
@@ -26,20 +27,26 @@
     }
 
     figcaption {
-      @include font-heading;
+      p {
+        @include font-mono;
+        margin: 0.25em;
+
+        &:nth-child(2) {
+          font-size: 0.8em;
+        }
+      }
 
       .fig-num {
-        @include font-mono;
+        @include font-heading;
       }
     }
   }
-
   @media only screen and (min-width: $medium-break) {
     flex-direction: row;
     flex-wrap: wrap;
 
     .pic-fig {
-      margin: 1em;
+      margin: 1em 1em 0;
     }
   }
 }

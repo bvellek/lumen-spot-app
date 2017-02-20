@@ -32,11 +32,9 @@
   }
 
   table {
-    // border: 1px solid $light-grey;
-    // border-top: none;
-    // // border-radius: 3px;
     padding: 1em;
     background-color: $white;
+    text-align: left;
 
     tr {
       @include font-heading(400);

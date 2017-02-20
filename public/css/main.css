@@ -469,6 +469,9 @@ a {
   text-decoration: none;
   color: #774b98; }
 
+details[open] {
+  text-align: center; }
+
 button {
   -moz-box-shadow: inset 0px 1px 0px 0px #ffffff;
   -webkit-box-shadow: inset 0px 1px 0px 0px #ffffff;
@@ -716,7 +719,8 @@ footer {
   .sun-info-section table {
     border-radius: 3px;
     padding: 1em;
-    background-color: #FFF; }
+    background-color: #FFF;
+    text-align: left; }
     .sun-info-section table tr {
       font-family: "Montserrat", Frutiger, "Frutiger Linotype", Univers, Calibri, "Gill Sans", "Gill Sans MT", "Myriad Pro", Myriad, "DejaVu Sans Condensed", "Liberation Sans", "Nimbus Sans L", Tahoma, Geneva, "Helvetica Neue", Helvetica, Arial, sans-serif;
       font-weight: 400;
@@ -764,7 +768,8 @@ footer {
       padding: 1em; }
   .weather-info-section table {
     padding: 1em;
-    background-color: #FFF; }
+    background-color: #FFF;
+    text-align: left; }
     .weather-info-section table tr {
       font-family: "Montserrat", Frutiger, "Frutiger Linotype", Univers, Calibri, "Gill Sans", "Gill Sans MT", "Myriad Pro", Myriad, "DejaVu Sans Condensed", "Liberation Sans", "Nimbus Sans L", Tahoma, Geneva, "Helvetica Neue", Helvetica, Arial, sans-serif;
       font-weight: 400;
@@ -800,11 +805,12 @@ footer {
   flex-direction: column;
   justify-content: center; }
   .pic-section .pic-fig {
-    margin: 1em 0;
+    margin: 1em 0 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center; }
+    align-items: center;
+    text-align: center; }
     .pic-section .pic-fig a {
       max-width: 26em; }
       .pic-section .pic-fig a img {
@@ -813,17 +819,20 @@ footer {
         .pic-section .pic-fig a img:focus, .pic-section .pic-fig a img:hover {
           outline: 3px solid #FFF;
           outline-offset: -1em; }
-    .pic-section .pic-fig figcaption {
+    .pic-section .pic-fig figcaption p {
+      font-family: "Cutive Mono", Consolas, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", Monaco, "Courier New", Courier, monospace;
+      font-weight: 400;
+      margin: 0.25em; }
+      .pic-section .pic-fig figcaption p:nth-child(2) {
+        font-size: 0.8em; }
+    .pic-section .pic-fig figcaption .fig-num {
       font-family: "Montserrat", Frutiger, "Frutiger Linotype", Univers, Calibri, "Gill Sans", "Gill Sans MT", "Myriad Pro", Myriad, "DejaVu Sans Condensed", "Liberation Sans", "Nimbus Sans L", Tahoma, Geneva, "Helvetica Neue", Helvetica, Arial, sans-serif;
       font-weight: 700; }
-      .pic-section .pic-fig figcaption .fig-num {
-        font-family: "Cutive Mono", Consolas, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", Monaco, "Courier New", Courier, monospace;
-        font-weight: 400; }
   @media only screen and (min-width: 58em) {
     .pic-section {
       flex-direction: row;
       flex-wrap: wrap; }
       .pic-section .pic-fig {
-        margin: 1em; } }
+        margin: 1em 1em 0; } }
 
 /*# sourceMappingURL=main.css.map */

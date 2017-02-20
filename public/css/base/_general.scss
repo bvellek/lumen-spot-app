@@ -78,6 +78,9 @@ a {
   color: $link-purple;
 }
 
+details[open] {
+  text-align: center;
+}
 
 button {
     -moz-box-shadow: inset 0px 1px 0px 0px #ffffff;
