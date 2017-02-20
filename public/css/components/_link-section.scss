@@ -7,13 +7,10 @@
 
   a {
     @include font-heading(900);
-    font-size: 2.25em;
+    font-size: 2.5em;
     padding: 0.5em 0.2em;
-    color: $purple10;
+    color: $dark-purple;
 
-    // &:hover {
-    //   color: $white;
-    // }
 
     &:focus {
       outline: 1px solid $focus-color;

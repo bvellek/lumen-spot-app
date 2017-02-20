@@ -422,7 +422,7 @@ h1 {
   font-family: 'Archivo Black'; }
 
 h2 {
-  font-size: 2.5em;
+  font-size: 2.4em;
   font-weight: 900;
   margin-top: 0.4em;
   margin-bottom: 0.4em; }
@@ -533,7 +533,7 @@ button:active {
   height: 40vh;
   min-height: 20em;
   max-height: 40em;
-  background-image: url("../img/mountain-banner.jpg");
+  background-image: url("../img/min-mountain-banner.jpg");
   background-size: cover;
   background-color: #694387;
   display: flex;
@@ -621,9 +621,9 @@ button:active {
   .link-section a {
     font-family: "Montserrat", Frutiger, "Frutiger Linotype", Univers, Calibri, "Gill Sans", "Gill Sans MT", "Myriad Pro", Myriad, "DejaVu Sans Condensed", "Liberation Sans", "Nimbus Sans L", Tahoma, Geneva, "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-weight: 900;
-    font-size: 2.25em;
+    font-size: 2.5em;
     padding: 0.5em 0.2em;
-    color: #694387; }
+    color: #774b98; }
     .link-section a:focus {
       outline: 1px solid #555; }
 
