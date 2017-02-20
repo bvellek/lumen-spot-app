@@ -17,6 +17,23 @@
   p {
     font-size: 1.25em;
     padding: 0 0.5em;
+
+    &:nth-child(5) {
+      margin-bottom: 0;
+    }
   }
 
+  span {
+    @include font-heading(400);
+    font-size: 0.8em;
+    text-transform: uppercase;
+  }
+
+  ul {
+    max-width: 30em;
+    li {
+      margin-bottom: 1em;
+      font-size: 1.25em;
+    }
+  }
 }
