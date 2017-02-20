@@ -18,11 +18,63 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    border-radius: 3px;
   }
 
+  figure {
+    background: $white;
+    width: 100%;
+    margin: 0;
+    text-align: center;
+      img {
+        padding: 1em;
+      }
+  }
 
-  .wu-logo {
-    width: 90px;
-    display: block;
+  table {
+    // border: 1px solid $light-grey;
+    // border-top: none;
+    // // border-radius: 3px;
+    padding: 1em;
+    background-color: $white;
+
+    tr {
+      @include font-heading(400);
+      text-transform: uppercase;
+      font-size: 0.625em;
+
+      &:nth-child(5) {
+        text-align: center;
+
+        td {
+          padding-top: 2em;
+        }
+      }
+
+      td:nth-child(2) {
+        @include font-mono(bold);
+        font-size: 1.625em;
+        padding-left: 2.5em;
+        text-align: right;
+        max-width: 13em;
+        @media only screen and (min-width: $small-break) {
+          font-size: 1.3em;
+        }
+      }
+      @media only screen and (min-width: $small-break) {
+        font-size: 0.9em;
+      }
+    }
+
+    caption {
+      caption-side: bottom;
+      font-size: 0.8em;
+
+      .wu-logo {
+        width: 90px;
+        display: block;
+        padding-bottom: 1em;
+      }
+    }
   }
 }

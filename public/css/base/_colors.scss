@@ -10,6 +10,6 @@ $purple10: saturate(#684D7D, 10%);
 
 $light-purple: lighten(desaturate($purple10, 20%), 10%);
 
-$dark-purple: lighten($purple10, 5%);
+$link-purple: lighten($purple10, 5%);
 
 $light-grey: lighten(saturate(#D0CEDD, 30%), 10%);

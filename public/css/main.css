@@ -466,7 +466,8 @@ li {
   margin-bottom: 0.5em; }
 
 a {
-  text-decoration: none; }
+  text-decoration: none;
+  color: #774b98; }
 
 button {
   -moz-box-shadow: inset 0px 1px 0px 0px #ffffff;
@@ -696,7 +697,6 @@ footer {
     .sun-info-section summary h3 {
       display: inline-block; }
   .sun-info-section table {
-    border: 1px solid #e9e7f7;
     border-radius: 3px;
     padding: 1em;
     background-color: #FFF; }
@@ -713,7 +713,7 @@ footer {
         text-align: right; }
         @media only screen and (min-width: 40em) {
           .sun-info-section table tr td:nth-child(2) {
-            font-size: 1.5em; } }
+            font-size: 1.3em; } }
       @media only screen and (min-width: 40em) {
         .sun-info-section table tr {
           font-size: 0.9em; } }
@@ -736,10 +736,47 @@ footer {
   .weather-info-section .weather-container {
     display: flex;
     flex-direction: column;
-    align-items: center; }
-  .weather-info-section .wu-logo {
-    width: 90px;
-    display: block; }
+    align-items: center;
+    border-radius: 3px; }
+  .weather-info-section figure {
+    background: #FFF;
+    width: 100%;
+    margin: 0;
+    text-align: center; }
+    .weather-info-section figure img {
+      padding: 1em; }
+  .weather-info-section table {
+    padding: 1em;
+    background-color: #FFF; }
+    .weather-info-section table tr {
+      font-family: "Montserrat", Frutiger, "Frutiger Linotype", Univers, Calibri, "Gill Sans", "Gill Sans MT", "Myriad Pro", Myriad, "DejaVu Sans Condensed", "Liberation Sans", "Nimbus Sans L", Tahoma, Geneva, "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-weight: 400;
+      text-transform: uppercase;
+      font-size: 0.625em; }
+      .weather-info-section table tr:nth-child(5) {
+        text-align: center; }
+        .weather-info-section table tr:nth-child(5) td {
+          padding-top: 2em; }
+      .weather-info-section table tr td:nth-child(2) {
+        font-family: "Cutive Mono", Consolas, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", Monaco, "Courier New", Courier, monospace;
+        font-weight: bold;
+        font-size: 1.625em;
+        padding-left: 2.5em;
+        text-align: right;
+        max-width: 13em; }
+        @media only screen and (min-width: 40em) {
+          .weather-info-section table tr td:nth-child(2) {
+            font-size: 1.3em; } }
+      @media only screen and (min-width: 40em) {
+        .weather-info-section table tr {
+          font-size: 0.9em; } }
+    .weather-info-section table caption {
+      caption-side: bottom;
+      font-size: 0.8em; }
+      .weather-info-section table caption .wu-logo {
+        width: 90px;
+        display: block;
+        padding-bottom: 1em; }
 
 .pic-section {
   display: flex;
