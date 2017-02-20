@@ -114,6 +114,7 @@ button:hover {
     background: linear-gradient(to bottom, #f6f6f6 5%, #ffffff 100%);
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f6f6f6', endColorstr='#ffffff', GradientType=0);
     background-color: #f6f6f6;
+    border-color: $purple10;
 }
 
 button:active {

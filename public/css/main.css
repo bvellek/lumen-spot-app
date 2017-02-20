@@ -503,7 +503,8 @@ button:hover {
   background: -ms-linear-gradient(top, #f6f6f6 5%, #ffffff 100%);
   background: linear-gradient(to bottom, #f6f6f6 5%, #ffffff 100%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f6f6f6', endColorstr='#ffffff', GradientType=0);
-  background-color: #f6f6f6; }
+  background-color: #f6f6f6;
+  border-color: #694387; }
 
 button:active {
   position: relative;
@@ -632,7 +633,7 @@ footer {
     font-family: "Cutive Mono", Consolas, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", Monaco, "Courier New", Courier, monospace;
     font-weight: 400; }
     .search-form input:focus, .search-form input:hover {
-      border-color: #25B238;
+      border-color: #694387;
       box-shadow: 0 0 2px 0 rgba(73, 143, 225, 0.7); }
 
 .info-container {
