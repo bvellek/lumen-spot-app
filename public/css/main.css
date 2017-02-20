@@ -578,6 +578,26 @@ button:active {
     width: 95%;
     align-self: center; }
 
+.what-section {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  max-width: 60em; }
+  .what-section > * {
+    width: 90%; }
+  .what-section h2 {
+    text-align: center;
+    margin-bottom: 0; }
+  .what-section p {
+    font-size: 1.25em;
+    padding: 0 0.5em; }
+  @media only screen and (min-width: 58em) {
+    .what-section {
+      flex-direction: row; }
+      .what-section p {
+        padding-right: 2em; } }
+
 .photo-slide-section {
   background-color: #e9e7f7;
   padding: 1.5em 0; }
@@ -608,7 +628,7 @@ footer {
   background: #694387; }
 
 .search-form {
-  margin: 0 auto 1em;
+  margin: 1.5em auto 1em;
   display: flex;
   flex-direction: column;
   max-width: 40em;

@@ -1,5 +1,5 @@
 .search-form {
-  margin: 0 auto $margin-after;
+  margin: ($margin-before * 0.5) auto $margin-after;
   display: flex;
   flex-direction: column;
   max-width: 40em;
