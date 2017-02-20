@@ -1,4 +1,9 @@
 .photo-slide-section {
   background-color: $light-grey;
   padding: 1.5em 0;
+
+  img {
+    max-width: 60em;
+    width: 95%
+  }
 }

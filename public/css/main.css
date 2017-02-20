@@ -580,6 +580,9 @@ button:active {
 .photo-slide-section {
   background-color: #e9e7f7;
   padding: 1.5em 0; }
+  .photo-slide-section img {
+    max-width: 60em;
+    width: 95%; }
 
 .link-section {
   text-align: center;
