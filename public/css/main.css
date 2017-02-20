@@ -689,6 +689,12 @@ footer {
         font-size: 1.625em;
         padding-left: 2.5em;
         text-align: right; }
+        @media only screen and (min-width: 40em) {
+          .sun-info-section table tr td:nth-child(2) {
+            font-size: 1.5em; } }
+      @media only screen and (min-width: 40em) {
+        .sun-info-section table tr {
+          font-size: 0.9em; } }
     .sun-info-section table caption {
       caption-side: bottom;
       font-size: 0.8em; }

@@ -31,6 +31,15 @@
         font-size: 1.625em;
         padding-left: 2.5em;
         text-align: right;
+
+
+        @media only screen and (min-width: $small-break) {
+          font-size: 1.5em;
+        }
+      }
+
+      @media only screen and (min-width: $small-break) {
+        font-size: 0.9em;
       }
     }
     caption {
