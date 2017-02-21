@@ -4,7 +4,7 @@ import SearchLink from './search-link';
 
 export default function HeroNav() {
   return (
-    <nav class="landing-nav">
+    <nav className="landing-nav">
       <SearchLink linkTitle="Search..." />
     </nav>
   );

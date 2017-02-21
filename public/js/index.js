@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import LandingMain from './components/landing-main';
+import LandingContainer from './components/landing-container';
 
 
-document.addEventListener('DOMContentLoaded', () => ReactDOM.render((<LandingMain />), document.getElementById('root')));
+document.addEventListener('DOMContentLoaded', () => ReactDOM.render((<LandingContainer />), document.getElementById('root')));
