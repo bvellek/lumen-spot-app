@@ -11,7 +11,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack",
-    "start": "webpack-dev-server --progress"
+    "start": "webpack-dev-server"
   },
   "repository": {
     "type": "git",
@@ -21,7 +21,8 @@
     "express": "^4.14.1",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
-    "react-router": "^3.0.2"
+    "react-router": "^3.0.2",
+    "webpack-dev-middleware": "^1.10.1"
   },
   "devDependencies": {
     "autoprefixer": "^6.7.3",
