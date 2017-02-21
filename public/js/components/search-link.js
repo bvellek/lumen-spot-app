@@ -6,3 +6,8 @@ export default function SearchLink(props) {
     <Link className="sliding-middle-out" to="/location">{props.linkTitle}</Link>
   );
 };
+
+
+SearchLink.propTypes = {
+  linkTitle: React.PropTypes.string,
+};
