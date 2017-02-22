@@ -1,9 +1,13 @@
 .photo-slide-section {
   background-color: $light-grey;
-  padding: 1.5em 0;
+  padding-top: 2em;
+  padding-bottom: 2em;
+  margin-top: $margin-before;
+  margin-bottom: $margin-after;
 
-  img {
-    max-width: 60em;
-    width: 95%
-  }
+  //
+  // img {
+  //   max-width: 60em;
+  //   width: 95%
+  // }
 }

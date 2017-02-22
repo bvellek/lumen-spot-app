@@ -3,7 +3,7 @@ import React from 'react';
 
 export default function ImageSlider() {
   return (
-    <section>
+    <section className="photo-slide-section">
       <div id="slider">
         <figure>
           <img src="./public/img/img-slider/01-min-circle.jpg" alt="roundabout" />
