@@ -1,9 +1,21 @@
 import React from 'react';
 
+
 export default function ImageSlider() {
   return (
-    <section className="info-section photo-slide-section">
-      <img src="./public/img/img-slider/02-min-circle.jpg" alt="roundabout" />
+    <section>
+      <div id="slider">
+        <figure>
+          <img src="./public/img/img-slider/01-min-circle.jpg" alt="roundabout" />
+          <img src="./public/img/img-slider/02-min-circle.jpg" alt="roundabout" />
+          <img src="./public/img/img-slider/03-min-circle.jpg" alt="roundabout" />
+          <img src="./public/img/img-slider/04-min-circle.jpg" alt="roundabout" />
+          <img src="./public/img/img-slider/05-min-circle.jpg" alt="roundabout" />
+        </figure>
+      </div>
     </section>
   );
 };
+
+
+    // <section className="info-section photo-slide-section">
