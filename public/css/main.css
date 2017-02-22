@@ -569,7 +569,8 @@ body:hover .visually-hidden input {
   100% {
     left: -400%; } }
 div#slider {
-  overflow: hidden; }
+  overflow: hidden;
+  max-height: 33.75em; }
 
 div#slider figure img {
   width: 20%;
