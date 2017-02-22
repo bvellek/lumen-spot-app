@@ -591,6 +591,10 @@ body:hover .visually-hidden input {
     width: 95%;
     align-self: center; }
 
+* {
+  min-height: 0;
+  min-width: 0; }
+
 .what-section {
   display: flex;
   flex-direction: column;
