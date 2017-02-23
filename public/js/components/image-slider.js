@@ -18,5 +18,4 @@ export default function ImageSlider() {
   );
 };
 
-
-    // <section className="info-section photo-slide-section">
+module.exports = ImageSlider;

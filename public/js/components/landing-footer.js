@@ -7,3 +7,6 @@ export default function LandingFooter() {
     </footer>
   );
 };
+
+
+module.exports = LandingFooter;

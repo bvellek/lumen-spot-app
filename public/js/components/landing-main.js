@@ -19,3 +19,6 @@ export default function LandingMain() {
     </main>
   );
 };
+
+
+module.exports = LandingMain;

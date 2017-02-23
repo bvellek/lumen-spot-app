@@ -10,3 +10,6 @@ export default function SearchFormContainer() {
       </div>
   );
 };
+
+
+module.exports = SearchForm;

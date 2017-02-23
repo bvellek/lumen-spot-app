@@ -46,3 +46,6 @@ export default function WeatherResults() {
     </section>
   );
 };
+
+
+module.exports = WeatherResults;

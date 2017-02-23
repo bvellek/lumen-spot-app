@@ -8,7 +8,7 @@ const ReactDOMServer = require('react-dom/server');
 const pug = require('pug');
 // const path = require('path');
 
-const InfoWhat = require('./public/js/components/info-what');
+const InfoWhat = require('./public/js/components/search-form');
 
 const app = express();
 

@@ -13,3 +13,6 @@ export default function Hero() {
     </header>
   );
 };
+
+
+module.exports = Hero;

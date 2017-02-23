@@ -21,3 +21,6 @@ export default function SVGLogo() {
     </svg>
   );
 };
+
+
+module.exports = SVGLogo;

@@ -21,3 +21,6 @@ export default function InfoLight() {
     </section>
   );
 };
+
+
+module.exports = InfoLight;

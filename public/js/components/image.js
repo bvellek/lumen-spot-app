@@ -10,3 +10,5 @@ export default function Image() {
     </figure>
   );
 };
+
+module.exports = Image;

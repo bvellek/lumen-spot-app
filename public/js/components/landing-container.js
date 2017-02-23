@@ -13,3 +13,6 @@ export default function LandingContainer() {
     </div>
   );
 }
+
+
+module.exports = LandingContainer;

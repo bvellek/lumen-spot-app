@@ -8,3 +8,6 @@ export default function ImageCaption() {
     </figcaption>
   );
 };
+
+
+module.exports = ImageCaption;
