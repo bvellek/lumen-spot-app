@@ -12363,11 +12363,11 @@ function ImageSlider() {
       _react2.default.createElement(
         "figure",
         null,
-        _react2.default.createElement("img", { src: "./public/img/img-slider/01-min-circle.jpg", alt: "roundabout" }),
-        _react2.default.createElement("img", { src: "./public/img/img-slider/02-min-circle.jpg", alt: "roundabout" }),
-        _react2.default.createElement("img", { src: "./public/img/img-slider/03-min-circle.jpg", alt: "roundabout" }),
-        _react2.default.createElement("img", { src: "./public/img/img-slider/04-min-circle.jpg", alt: "roundabout" }),
-        _react2.default.createElement("img", { src: "./public/img/img-slider/01-min-circle.jpg", alt: "roundabout" })
+        _react2.default.createElement("img", { src: "./img/img-slider/01-min-circle.jpg", alt: "roundabout" }),
+        _react2.default.createElement("img", { src: "./img/img-slider/02-min-circle.jpg", alt: "roundabout" }),
+        _react2.default.createElement("img", { src: "./img/img-slider/03-min-circle.jpg", alt: "roundabout" }),
+        _react2.default.createElement("img", { src: "./img/img-slider/04-min-circle.jpg", alt: "roundabout" }),
+        _react2.default.createElement("img", { src: "./img/img-slider/01-min-circle.jpg", alt: "roundabout" })
       )
     )
   );
@@ -12615,6 +12615,8 @@ function InfoWhat() {
     )
   );
 };
+
+module.exports = InfoWhat;
 
 /***/ }),
 /* 122 */
@@ -12950,7 +12952,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var routes = _react2.default.createElement(
   _reactRouter.Router,
-  { history: _reactRouter.hashHistory },
+  { history: _reactRouter.browserHistory },
   _react2.default.createElement(_reactRouter.Route, { path: '/', component: _landingContainer2.default }),
   _react2.default.createElement(_reactRouter.Route, { path: '/location', component: _locationContainer2.default })
 );
@@ -12998,7 +13000,9 @@ function SearchFormContainer() {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = SearchForm;
+exports.SearchForm = undefined;
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 var _react = __webpack_require__(3);
 
@@ -13006,52 +13010,115 @@ var _react2 = _interopRequireDefault(_react);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function SearchForm() {
-  return _react2.default.createElement(
-    "form",
-    { className: "search-form", action: "index.html", method: "get" },
-    _react2.default.createElement(
-      "legend",
-      null,
-      _react2.default.createElement(
-        "h2",
-        null,
-        "SEARCH..."
-      )
-    ),
-    _react2.default.createElement(
-      "label",
-      { htmlFor: "search-input" },
-      "Location: ",
-      _react2.default.createElement(
-        "span",
-        null,
-        "(ex: Grand Canyon | Seattle, WA | 1600\xA0Pennsylvania Ave NW Washington, D.C.\xA020500)"
-      )
-    ),
-    _react2.default.createElement("input", { id: "search-input", type: "search", name: "address" }),
-    _react2.default.createElement(
-      "div",
-      { className: "search-btn-container" },
-      _react2.default.createElement(
-        "button",
-        { type: "submit", name: "address-submit" },
-        "\uD83D\uDD0E Submit ",
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+// export default function SearchForm() {
+//   return (
+//     <form className="search-form" action="index.html" method="get">
+//       <legend><h2>SEARCH...</h2></legend>
+//       <label htmlFor="search-input">Location: <span>(ex: Grand Canyon | Seattle, WA | 1600&nbsp;Pennsylvania Ave NW Washington, D.C.&nbsp;20500)</span></label>
+//       <input id="search-input" type="search" name="address" />
+//       <div className="search-btn-container">
+//         <button type="submit" name="address-submit">🔎 Submit <span className="visually-hidden">Location</span></button>{' '}
+//         <button type="button" name="current-location">📍 Current Location</button>
+//       </div>
+//     </form>
+//   );
+// };
+
+var SearchForm = exports.SearchForm = function (_React$Component) {
+  _inherits(SearchForm, _React$Component);
+
+  function SearchForm(props) {
+    _classCallCheck(this, SearchForm);
+
+    var _this = _possibleConstructorReturn(this, (SearchForm.__proto__ || Object.getPrototypeOf(SearchForm)).call(this, props));
+
+    _this.locationSubmit = _this.locationSubmit.bind(_this);
+    _this.currentLocationFind = _this.currentLocationFind.bind(_this);
+    return _this;
+  }
+
+  _createClass(SearchForm, [{
+    key: "locationSubmit",
+    value: function locationSubmit(e) {
+      e.preventDefault();
+
+      var location = this.locationInput.value;
+      console.log(location, e);
+      // this.props.dispatch(actions.fetchGeo());
+    }
+  }, {
+    key: "currentLocationFind",
+    value: function currentLocationFind(e) {
+      console.log(e);
+
+      //this.props.dispatch(actions.fetchCurrentLocation());
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var _this2 = this;
+
+      return _react2.default.createElement(
+        "form",
+        { className: "search-form", method: "get", onSubmit: this.locationSubmit },
         _react2.default.createElement(
-          "span",
-          { className: "visually-hidden" },
-          "Location"
+          "legend",
+          null,
+          _react2.default.createElement(
+            "h2",
+            null,
+            "SEARCH..."
+          )
+        ),
+        _react2.default.createElement(
+          "label",
+          { htmlFor: "search-input" },
+          "Location:",
+          _react2.default.createElement(
+            "span",
+            null,
+            "(ex: Grand Canyon | Seattle, WA | 1600\xA0Pennsylvania Ave NW Washington, D.C.\xA020500)"
+          )
+        ),
+        _react2.default.createElement("input", { id: "search-input", type: "search", name: "address", ref: function ref(_ref) {
+            return _this2.locationInput = _ref;
+          } }),
+        _react2.default.createElement(
+          "div",
+          { className: "search-btn-container" },
+          _react2.default.createElement(
+            "button",
+            { type: "submit", name: "location-submit" },
+            "\uD83D\uDD0E Submit",
+            _react2.default.createElement(
+              "span",
+              { className: "visually-hidden" },
+              "Location"
+            )
+          ),
+          ' ',
+          _react2.default.createElement(
+            "button",
+            { type: "button", name: "current-location", onClick: this.currentLocationFind },
+            "\uD83D\uDCCD Current Location"
+          )
         )
-      ),
-      ' ',
-      _react2.default.createElement(
-        "button",
-        { type: "button", name: "current-location" },
-        "\uD83D\uDCCD Current Location"
-      )
-    )
-  );
-};
+      );
+    }
+  }]);
+
+  return SearchForm;
+}(_react2.default.Component);
+
+;
+
+exports.default = SearchForm;
 
 /***/ }),
 /* 133 */

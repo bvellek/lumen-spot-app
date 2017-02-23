@@ -10,3 +10,5 @@ export default function InfoWhat() {
     </section>
   );
 };
+
+module.exports = InfoWhat;

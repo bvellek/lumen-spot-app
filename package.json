@@ -10,7 +10,7 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack",
+    "build": "webpack & grunt build",
     "start": "webpack-dashboard -- webpack-dev-server",
     "serve": "babel-node server.js"
   },
@@ -34,6 +34,7 @@
     "babel-preset-react": "^6.23.0",
     "cssnano": "^3.10.0",
     "grunt": "^1.0.1",
+    "grunt-cli": "^1.2.0",
     "grunt-contrib-uglify": "^2.1.0",
     "grunt-postcss": "^0.8.0",
     "grunt-sass": "^2.0.0",

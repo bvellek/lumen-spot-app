@@ -1,26 +1,31 @@
+require('babel-core/register')({
+    presets: ['es2015', 'react']
+});
+
 const express = require('express');
 const React = require('react');
 const ReactDOMServer = require('react-dom/server');
 const pug = require('pug');
-const path = require('path');
+// const path = require('path');
 
-const SearchForm = require('./public/js/components/search-form')
+const InfoWhat = require('./public/js/components/info-what');
 
 const app = express();
 
 
 
 
-app.engine('pug', require('pug').__express)
+// app.engine('pug', require('pug').__express);
 app.set('view engine', 'pug');
 
 app.use(express.static(__dirname + '/public'));
+app.use(express.static(__dirname + '/assets'));
 
 
 
 app.get('/', (req, res) => {
 
-  const router = ReactDOMServer.renderToString(<SearchForm />);
+  const router = ReactDOMServer.renderToStaticMarkup(React.createElement(InfoWhat));
   console.log(router);
   res.render('landing', {
     title: 'Lumen Spot',

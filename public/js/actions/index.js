@@ -15,12 +15,6 @@ export const fetchGeoError = () => ({
 });
 
 
-
-
-
-
-
-
 // Find Current Location
 export const GET_CURRENT_LOCATION_SUCCESS = 'GET_CURRENT_LOCATION_SUCCESS';
 export const getCurrentLocationSuccess = () => ({
@@ -47,16 +41,16 @@ export const getCurrentLocation = () => dispatch => {
       let long = position.coords.longitude;
       let coords = `${lat},${long}`;
       console.log(coords);
-      return coords;
+      res(coords);
     }
 
     function error(err) {
-      console.warn('Error' + err.code + ': ' + err.message);
+      console.warn(`Error ${err.code}: ${err.message}`);
+      rej(err);
     }
 
     navigator.geolocation.getCurrentPosition(success, error, posOptions);
-
-
+    
   }.then((coords) => (
     dispatch(
       getCurrentLocationSuccess(coords)

@@ -52,5 +52,5 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-sass');
   grunt.loadNpmTasks('grunt-postcss');
 
-  grunt.registerTask('build', ['webpack', 'uglify', 'sass', 'postcss']);
+  grunt.registerTask('build', ['uglify', 'sass', 'postcss']);
 }
