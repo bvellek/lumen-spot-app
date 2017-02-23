@@ -37,7 +37,7 @@ export default function WeatherResults() {
 
               </tbody>
               <caption>Powered by Weather Underground:
-                <a href="https://www.wunderground.com" target="_wunderground"><img className="wu-logo" src="./public/img/wu-logo-horizontal.png" alt="Weather Underground Logo" /></a>
+                <a href="https://www.wunderground.com" target="_wunderground"><img className="wu-logo" src="./img/wu-logo-horizontal.png" alt="Weather Underground Logo" /></a>
               </caption>
             </table>
           </figcaption>

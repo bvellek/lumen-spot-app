@@ -8378,6 +8378,8 @@ SearchLink.propTypes = {
   linkTitle: _react2.default.PropTypes.string
 };
 
+module.exports = SearchLink;
+
 /***/ }),
 /* 73 */
 /***/ (function(module, exports, __webpack_require__) {
@@ -8429,6 +8431,8 @@ function SVGLogo() {
     )
   );
 };
+
+module.exports = SVGLogo;
 
 /***/ }),
 /* 74 */
@@ -12157,6 +12161,8 @@ function HeroNav() {
   );
 };
 
+module.exports = HeroNav;
+
 /***/ }),
 /* 114 */
 /***/ (function(module, exports, __webpack_require__) {
@@ -12195,6 +12201,8 @@ function Hero() {
     )
   );
 };
+
+module.exports = Hero;
 
 /***/ }),
 /* 115 */
@@ -12254,6 +12262,8 @@ function ImageCaption() {
   );
 };
 
+module.exports = ImageCaption;
+
 /***/ }),
 /* 116 */
 /***/ (function(module, exports, __webpack_require__) {
@@ -12294,46 +12304,7 @@ function ImageResultsContainer() {
   );
 };
 
-//
-// <figure class="pic-fig">
-//   <a href="#" target="_blank"><img src="https://drscdn.500px.org/photo/115695497/w%3D440_h%3D440/e248f193954484ca20fd33f27d84c473?v=1" alt=""></a>
-//   <figcaption>
-//     <p><span class="fig-num">A: </span>6.4 <span class="fig-num">ISO: </span>200 <span class="fig-num">SS: </span>1/500</p>
-//     <p class="photog">&copy; <span>Photographer Name</span>/ 500px</p>
-//   </figcaption>
-// </figure>
-//
-// <figure class="pic-fig">
-//   <a href="#" target="_blank"><img src="https://drscdn.500px.org/photo/123278719/w%3D440_h%3D440/7b53dfb85751fb1cd4a94cca70da87f8?v=6" alt=""></a>
-//   <figcaption>
-//     <p><span class="fig-num">A: </span>2.8 <span class="fig-num">ISO: </span>500 <span class="fig-num">SS: </span>1/100</p>
-//     <p class="photog">&copy; <span>Photographer Name</span>/ 500px</p>
-//   </figcaption>
-// </figure>
-//
-// <figure class="pic-fig">
-//   <a href="#" target="_blank"><img src="https://drscdn.500px.org/photo/95525429/w%3D440_h%3D440/c630087adb44bcbd826efd05e7ce2324?v=15" alt=""></a>
-//   <figcaption>
-//     <p><span class="fig-num">A: </span>22 <span class="fig-num">ISO: </span>100 <span class="fig-num">SS: </span>1/100</p>
-//     <p class="photog">&copy; <span>Photographer Name</span>/ 500px</p>
-//   </figcaption>
-// </figure>
-//
-// <figure class="pic-fig">
-//   <a href="#" target="_blank"><img src="https://drscdn.500px.org/photo/78910471/w%3D440_h%3D440/f9050d332590fdf01658a2dd15fe9bf9?v=0" alt=""></a>
-//   <figcaption>
-//     <p><span class="fig-num">A: </span>6.4 <span class="fig-num">ISO: </span>300 <span class="fig-num">SS: </span>1/500</p>
-//     <p class="photog">&copy; <span>Photographer Name</span>/ 500px</p>
-//   </figcaption>
-// </figure>
-//
-// <figure class="pic-fig">
-//   <a href="#" target="_blank"><img src="https://drscdn.500px.org/photo/58995026/w%3D440_h%3D440/c93a08eda43901506a9040058175bc91?v=0" alt=""></a>
-//   <figcaption>
-//     <p><span class="fig-num">A: </span>14 <span class="fig-num">ISO: </span>100 <span class="fig-num">SS: </span>1/250</p>
-//     <p class="photog">&copy; <span>Photographer Name</span>/ 500px</p>
-//   </figcaption>
-// </figure>
+module.exports = ImageResultsContainer;
 
 /***/ }),
 /* 117 */
@@ -12373,7 +12344,7 @@ function ImageSlider() {
   );
 };
 
-// <section className="info-section photo-slide-section">
+module.exports = ImageSlider;
 
 /***/ }),
 /* 118 */
@@ -12409,6 +12380,8 @@ function Image() {
     _react2.default.createElement(_imageCaption2.default, null)
   );
 };
+
+module.exports = Image;
 
 /***/ }),
 /* 119 */
@@ -12473,6 +12446,8 @@ function InfoAbout() {
     )
   );
 };
+
+module.exports = InfoAbout;
 
 /***/ }),
 /* 120 */
@@ -12577,6 +12552,8 @@ function InfoLight() {
   );
 };
 
+module.exports = InfoLight;
+
 /***/ }),
 /* 121 */
 /***/ (function(module, exports, __webpack_require__) {
@@ -12658,6 +12635,8 @@ function LandingContainer() {
   );
 }
 
+module.exports = LandingContainer;
+
 /***/ }),
 /* 123 */
 /***/ (function(module, exports, __webpack_require__) {
@@ -12692,6 +12671,8 @@ function LandingFooter() {
     )
   );
 };
+
+module.exports = LandingFooter;
 
 /***/ }),
 /* 124 */
@@ -12743,6 +12724,8 @@ function LandingMain() {
   );
 };
 
+module.exports = LandingMain;
+
 /***/ }),
 /* 125 */
 /***/ (function(module, exports, __webpack_require__) {
@@ -12772,6 +12755,8 @@ function LinkSection() {
     _react2.default.createElement(_searchLink2.default, { linkTitle: 'Find Your Light' })
   );
 };
+
+module.exports = LinkSection;
 
 /***/ }),
 /* 126 */
@@ -12813,6 +12798,8 @@ function LocationContainer() {
   );
 };
 
+module.exports = LocationContainer;
+
 /***/ }),
 /* 127 */
 /***/ (function(module, exports, __webpack_require__) {
@@ -12853,6 +12840,8 @@ function LocationHeader() {
   );
 };
 
+module.exports = LocationHeader;
+
 /***/ }),
 /* 128 */
 /***/ (function(module, exports, __webpack_require__) {
@@ -12888,6 +12877,8 @@ function LocationInfoContainer() {
   );
 };
 
+module.exports = LocationInfoContainer;
+
 /***/ }),
 /* 129 */
 /***/ (function(module, exports, __webpack_require__) {
@@ -12922,6 +12913,8 @@ function LocationMain() {
     _react2.default.createElement(_imageResultsContainer2.default, null)
   );
 };
+
+module.exports = LocationMain;
 
 /***/ }),
 /* 130 */
@@ -12959,6 +12952,9 @@ var routes = _react2.default.createElement(
 
 exports.default = routes;
 
+
+module.exports = routes;
+
 /***/ }),
 /* 131 */
 /***/ (function(module, exports, __webpack_require__) {
@@ -12990,6 +12986,8 @@ function SearchFormContainer() {
   );
 };
 
+module.exports = _searchForm2.default;
+
 /***/ }),
 /* 132 */
 /***/ (function(module, exports, __webpack_require__) {
@@ -13015,20 +13013,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-// export default function SearchForm() {
-//   return (
-//     <form className="search-form" action="index.html" method="get">
-//       <legend><h2>SEARCH...</h2></legend>
-//       <label htmlFor="search-input">Location: <span>(ex: Grand Canyon | Seattle, WA | 1600&nbsp;Pennsylvania Ave NW Washington, D.C.&nbsp;20500)</span></label>
-//       <input id="search-input" type="search" name="address" />
-//       <div className="search-btn-container">
-//         <button type="submit" name="address-submit">🔎 Submit <span className="visually-hidden">Location</span></button>{' '}
-//         <button type="button" name="current-location">📍 Current Location</button>
-//       </div>
-//     </form>
-//   );
-// };
 
 var SearchForm = exports.SearchForm = function (_React$Component) {
   _inherits(SearchForm, _React$Component);
@@ -13119,6 +13103,9 @@ var SearchForm = exports.SearchForm = function (_React$Component) {
 ;
 
 exports.default = SearchForm;
+
+
+module.exports = SearchForm;
 
 /***/ }),
 /* 133 */
@@ -13297,6 +13284,8 @@ function SunResults() {
   );
 }
 
+module.exports = SunResults;
+
 /***/ }),
 /* 134 */
 /***/ (function(module, exports, __webpack_require__) {
@@ -13430,7 +13419,7 @@ function WeatherResults() {
               _react2.default.createElement(
                 "a",
                 { href: "https://www.wunderground.com", target: "_wunderground" },
-                _react2.default.createElement("img", { className: "wu-logo", src: "./public/img/wu-logo-horizontal.png", alt: "Weather Underground Logo" })
+                _react2.default.createElement("img", { className: "wu-logo", src: "./img/wu-logo-horizontal.png", alt: "Weather Underground Logo" })
               )
             )
           )
@@ -13439,6 +13428,8 @@ function WeatherResults() {
     )
   );
 };
+
+module.exports = WeatherResults;
 
 /***/ }),
 /* 135 */

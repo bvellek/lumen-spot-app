@@ -1,21 +1,15 @@
-require('babel-core/register')({
-    presets: ['es2015', 'react']
-});
-
 const express = require('express');
 const React = require('react');
 const ReactDOMServer = require('react-dom/server');
 const pug = require('pug');
-// const path = require('path');
 
-const InfoWhat = require('./public/js/components/search-form');
+
+const LandingContainer = require('./public/js/components/landing-container');
+const LocationContainer = require('./public/js/components/location-container');
 
 const app = express();
 
 
-
-
-// app.engine('pug', require('pug').__express);
 app.set('view engine', 'pug');
 
 app.use(express.static(__dirname + '/public'));
@@ -25,15 +19,23 @@ app.use(express.static(__dirname + '/assets'));
 
 app.get('/', (req, res) => {
 
-  const router = ReactDOMServer.renderToStaticMarkup(React.createElement(InfoWhat));
-  console.log(router);
+  const landingComponent = ReactDOMServer.renderToStaticMarkup(React.createElement(LandingContainer));
+  console.log(landingComponent);
   res.render('landing', {
     title: 'Lumen Spot',
-    react: router
+    react: landingComponent
   })
 });
 
+app.get('/location', (req, res) => {
 
+  const locationComponent = ReactDOMServer.renderToStaticMarkup(React.createElement(LocationContainer));
+  console.log(locationComponent);
+  res.render('landing', {
+    title: 'Lumen Spot Location Search',
+    react: locationComponent
+  })
+});
 
 
 

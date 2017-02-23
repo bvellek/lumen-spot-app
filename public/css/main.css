@@ -629,11 +629,9 @@ body:hover .visually-hidden input {
     left: -300%; }
   100% {
     left: -400%; } }
-
 div#slider {
   overflow: hidden;
-  max-height: 33.75em;
-  max-width: 60em;
+  max-width: 55em;
   margin: 0 auto; }
 
 div#slider figure img {
@@ -885,3 +883,5 @@ footer {
       flex-wrap: wrap; }
       .pic-section .pic-fig {
         margin: 1em 1em 0; } }
+
+/*# sourceMappingURL=main.css.map */
