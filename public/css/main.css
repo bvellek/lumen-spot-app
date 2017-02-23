@@ -749,6 +749,12 @@ footer {
       border-color: #694387;
       box-shadow: 0 0 2px 0 rgba(73, 143, 225, 0.7); }
 
+.coord-results {
+  font-size: 1em;
+  text-align: center;
+  font-weight: 400;
+  margin-top: 2em; }
+
 .info-container {
   background-color: #e9e7f7;
   margin-top: 3em;
