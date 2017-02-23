@@ -1,11 +1,11 @@
 import React from 'react';
-import { Router, Route, hashHistory } from 'react-router';
+import { Router, Route, browserHistory } from 'react-router';
 
 import LandingContainer from './landing-container';
 import LocationContainer from './location-container';
 
 const routes = (
-  <Router history={hashHistory}>
+  <Router history={browserHistory}>
     <Route path="/" component={LandingContainer} />
     <Route path="/location" component={LocationContainer}>
       {/* <Route path="/:coords" component={LocationResults} /> */}
