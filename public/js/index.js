@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import routes from './components/router';
+import CLIRouter from './components/cli-router';
 
 
-document.addEventListener('DOMContentLoaded', () => ReactDOM.render((routes), document.getElementById('root')));
+document.addEventListener('DOMContentLoaded', () => ReactDOM.render((<CLIRouter />), document.getElementById('root')));
