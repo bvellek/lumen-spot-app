@@ -1,0 +1,15 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='x-ua-compatible', content='ie=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    meta(name='description', content='Lumen Spot is a service to help photographers find information about sunrise, sunset, and twilight times for desired locations. We provide information about current weather conditions and provide images for inspiration.')
+    title #{title}
+    link(rel='shortcut icon', href='./public/img/favicon.ico', type='image/x-icon')
+    link(href='https://fonts.googleapis.com/css?family=Cutive+Mono|Montserrat:400,700,900', rel='stylesheet')
+    link(rel='stylesheet', href='./public/css/main.css')
+  body
+    div#root
+      #{react}
+    script(src='/assets/js/bundle.js')

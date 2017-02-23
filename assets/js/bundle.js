@@ -12127,8 +12127,6 @@ document.addEventListener('DOMContentLoaded', function () {
   return _reactDom2.default.render(_router2.default, document.getElementById('root'));
 });
 
-// import LandingContainer from './components/landing-container';
-
 /***/ }),
 /* 113 */
 /***/ (function(module, exports, __webpack_require__) {
