@@ -11,8 +11,8 @@
   "scripts": {
     "test": "mocha --recursive --compilers js:babel-register",
     "build": "webpack & grunt build",
-    "start": "webpack-dashboard -- webpack-dev-server",
-    "serve": "babel-node server.js"
+    "dev": "webpack-dashboard -- webpack-dev-server",
+    "start": "babel-node server.js"
   },
   "repository": {
     "type": "git",
