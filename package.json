@@ -10,9 +10,9 @@
   },
   "scripts": {
     "test": "mocha --recursive --compilers js:babel-register",
-    "build": "webpack & grunt build & babel server.js --out-file babel-server.js",
+    "build": "webpack & grunt build & babel server.js --out-file babelServer.js",
     "dev": "webpack-dashboard -- webpack-dev-server",
-    "start": "babel-server.js"
+    "start": "babelServer.js"
   },
   "repository": {
     "type": "git",
