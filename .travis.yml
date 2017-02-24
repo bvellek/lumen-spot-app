@@ -1,2 +1,9 @@
 language: node_js
 node_js: node
+deploy:
+  provider: heroku
+  api_key:
+    secure: Qjm35jPfYvcJYOdBqYOhcJdmGqCdxZphyE3b+XCEGuj5vz13P6db9c+o310J++479phqmcuTPL+H3OdfdK8NX3UTROVNAbI6JGbV1agGtSfYZ/CUh9DDrNNddQa7CsvbuGGHOeZL/lUqsqWdNI1TzW2y9HMzvqdLVW6P/5BVWQtkkZN1SVlRFRrCsnJ1LUaF9X49JBotvDL1Yujl7hfCTNqef5NKhPx6chBl2nKXyhVKmYTZgxGAGrVD1pquNlOpdhl52J3ABd5i8OxCQpj2nsH/qk+DxG8oPRMsgGej1ztNBRyJsJBp+3zm0QW1pwIkyDS5zb1KThfnoL6MQnHL2TxLO1eu3lfP7fPGQGe38sRdc46S432PNGfW75aV+kVF6AkIQCmaNUqaWYIZ3kucnLCwYigGK3HdNa3hAgoyOuw4okSRTzYO97HMqD2HK0Hx6B3f7yhZZlQNfhar0qh0u/5S5DcP4+ZIfZPoM/I5pemh45/NhxbFwuRnPHCGAtmm/u8tn/e73a4i5slu2jeGHf/jtcGYOLbFv7nCNFD8niJMB/lMmSIsQHr6TGkzW1TRDrYZNI02SZhop2rgQsab69q/fVPZfPjgajynv0v5JNocG4Dbx+xiNhwOgQin8HMZLuCDUqITopKuhXR3XRxtotluJCFTiMsgU9erTKM/Q2c=
+  app: lumen-spot
+  on:
+    repo: bvellek/lumen-spot-app
