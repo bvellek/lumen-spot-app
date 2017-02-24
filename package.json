@@ -12,7 +12,8 @@
     "test": "mocha --recursive --compilers js:babel-register",
     "build": "webpack & grunt build",
     "dev": "webpack-dashboard -- webpack-dev-server",
-    "start": "./node_modules/.bin/babel-node server.js"
+    "start": "./node_modules/.bin/babel-node server.js",
+    "1start": "node server_bundle.js"
   },
   "repository": {
     "type": "git",

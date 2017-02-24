@@ -6,7 +6,7 @@
 // const LandingContainer = require('./public/js/components/landing-container');
 // const LocationContainer = require('./public/js/components/location-container');
 
-
+import ReactDOM from 'react-dom';
 import express from 'express';
 import pug from 'pug';
 import React from 'react';
