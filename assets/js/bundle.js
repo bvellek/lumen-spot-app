@@ -8378,9 +8378,6 @@ SearchLink.propTypes = {
   linkTitle: _react2.default.PropTypes.string
 };
 
-// 
-// module.exports = SearchLink;
-
 /***/ }),
 /* 73 */
 /***/ (function(module, exports, __webpack_require__) {
@@ -8432,8 +8429,6 @@ function SVGLogo() {
     )
   );
 };
-
-// module.exports = SVGLogo;
 
 /***/ }),
 /* 74 */
@@ -12162,8 +12157,6 @@ function CLIRouter() {
     } });
 };
 
-// module.exports = CLIRouter;
-
 /***/ }),
 /* 114 */
 /***/ (function(module, exports, __webpack_require__) {
@@ -12193,8 +12186,6 @@ function HeroNav() {
     _react2.default.createElement(_searchLink2.default, { linkTitle: 'Search...' })
   );
 };
-
-// module.exports = HeroNav;
 
 /***/ }),
 /* 115 */
@@ -12234,8 +12225,6 @@ function Hero() {
     )
   );
 };
-
-// module.exports = Hero;
 
 /***/ }),
 /* 116 */
@@ -12295,8 +12284,6 @@ function ImageCaption() {
   );
 };
 
-// module.exports = ImageCaption;
-
 /***/ }),
 /* 117 */
 /***/ (function(module, exports, __webpack_require__) {
@@ -12337,8 +12324,6 @@ function ImageResultsContainer() {
   );
 };
 
-// module.exports = ImageResultsContainer;
-
 /***/ }),
 /* 118 */
 /***/ (function(module, exports, __webpack_require__) {
@@ -12377,8 +12362,6 @@ function ImageSlider() {
   );
 };
 
-// module.exports = ImageSlider;
-
 /***/ }),
 /* 119 */
 /***/ (function(module, exports, __webpack_require__) {
@@ -12413,8 +12396,6 @@ function Image() {
     _react2.default.createElement(_imageCaption2.default, null)
   );
 };
-
-// module.exports = Image;
 
 /***/ }),
 /* 120 */
@@ -12479,8 +12460,6 @@ function InfoAbout() {
     )
   );
 };
-
-// module.exports = InfoAbout;
 
 /***/ }),
 /* 121 */
@@ -12585,8 +12564,6 @@ function InfoLight() {
   );
 };
 
-// module.exports = InfoLight;
-
 /***/ }),
 /* 122 */
 /***/ (function(module, exports, __webpack_require__) {
@@ -12625,8 +12602,6 @@ function InfoWhat() {
     )
   );
 };
-
-// module.exports = InfoWhat;
 
 /***/ }),
 /* 123 */
@@ -12668,8 +12643,6 @@ function LandingContainer() {
   );
 }
 
-// module.exports = LandingContainer;
-
 /***/ }),
 /* 124 */
 /***/ (function(module, exports, __webpack_require__) {
@@ -12704,8 +12677,6 @@ function LandingFooter() {
     )
   );
 };
-
-// module.exports = LandingFooter;
 
 /***/ }),
 /* 125 */
@@ -12757,9 +12728,6 @@ function LandingMain() {
   );
 };
 
-// 
-// module.exports = LandingMain;
-
 /***/ }),
 /* 126 */
 /***/ (function(module, exports, __webpack_require__) {
@@ -12789,8 +12757,6 @@ function LinkSection() {
     _react2.default.createElement(_searchLink2.default, { linkTitle: 'Find Your Light' })
   );
 };
-
-// module.exports = LinkSection;
 
 /***/ }),
 /* 127 */
@@ -12832,8 +12798,6 @@ function LocationContainer() {
   );
 };
 
-// module.exports = LocationContainer;
-
 /***/ }),
 /* 128 */
 /***/ (function(module, exports, __webpack_require__) {
@@ -12874,8 +12838,6 @@ function LocationHeader() {
   );
 };
 
-// module.exports = LocationHeader;
-
 /***/ }),
 /* 129 */
 /***/ (function(module, exports, __webpack_require__) {
@@ -12911,9 +12873,6 @@ function LocationInfoContainer() {
   );
 };
 
-// 
-// module.exports = LocationInfoContainer;
-
 /***/ }),
 /* 130 */
 /***/ (function(module, exports, __webpack_require__) {
@@ -12948,8 +12907,6 @@ function LocationMain() {
     _react2.default.createElement(_imageResultsContainer2.default, null)
   );
 };
-
-// module.exports = LocationMain;
 
 /***/ }),
 /* 131 */
@@ -12996,8 +12953,6 @@ function NotFoundPage() {
     )
   );
 };
-
-// module.exports = NotFoundPage;
 
 /***/ }),
 /* 132 */
@@ -13050,8 +13005,6 @@ var PageContainer = function (_React$Component) {
 exports.default = PageContainer;
 ;
 
-// module.exports = PageContainer;
-
 /***/ }),
 /* 133 */
 /***/ (function(module, exports, __webpack_require__) {
@@ -13097,8 +13050,6 @@ var routes = _react2.default.createElement(
 
 exports.default = routes;
 
-// module.exports = routes;
-
 /***/ }),
 /* 134 */
 /***/ (function(module, exports, __webpack_require__) {
@@ -13130,8 +13081,6 @@ function SearchCoordResults() {
     " are 46.858202, -121.762489"
   );
 };
-
-// module.exports = SearchCoordResults;
 
 /***/ }),
 /* 135 */
@@ -13168,8 +13117,6 @@ function SearchFormContainer() {
     _react2.default.createElement('hr', null)
   );
 };
-
-// module.exports = SearchFormContainer;
 
 /***/ }),
 /* 136 */
@@ -13286,8 +13233,6 @@ var SearchForm = exports.SearchForm = function (_React$Component) {
 ;
 
 exports.default = SearchForm;
-// 
-// module.exports = SearchForm;
 
 /***/ }),
 /* 137 */
@@ -13466,8 +13411,6 @@ function SunResults() {
   );
 }
 
-// module.exports = SunResults;
-
 /***/ }),
 /* 138 */
 /***/ (function(module, exports, __webpack_require__) {
@@ -13610,8 +13553,6 @@ function WeatherResults() {
     )
   );
 };
-
-// module.exports = WeatherResults;
 
 /***/ }),
 /* 139 */

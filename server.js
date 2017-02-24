@@ -1,14 +1,3 @@
-// const express = require('express');
-// const pug = require('pug');
-//
-// const React = require('react');
-// const { renderToStaticMarkup } = require('react-dom/server');
-// const { match, RouterContext } = require('react-router');
-//
-// const app = express();
-//
-// const routes = require('./public/js/components/router');
-// const NotFoundPage = require('./public/js/components/not-found-page');
 
 
 // const LandingContainer = require('./public/js/components/landing-container');
