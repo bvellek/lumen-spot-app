@@ -1,4 +1,4 @@
-
+import "babel-polyfill";
 
 // const LandingContainer = require('./public/js/components/landing-container');
 // const LocationContainer = require('./public/js/components/location-container');
