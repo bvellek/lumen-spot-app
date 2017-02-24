@@ -43,5 +43,3 @@ export class SearchForm extends React.Component {
 };
 
 export default SearchForm;
-
-module.exports = SearchForm;

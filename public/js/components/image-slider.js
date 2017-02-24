@@ -17,5 +17,3 @@ export default function ImageSlider() {
     </section>
   );
 };
-
-module.exports = ImageSlider;

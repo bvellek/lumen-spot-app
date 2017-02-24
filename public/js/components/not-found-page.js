@@ -12,5 +12,3 @@ export default function NotFoundPage() {
     </div>
   );
 };
-
-module.exports = NotFoundPage;

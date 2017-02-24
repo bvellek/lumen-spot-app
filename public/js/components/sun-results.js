@@ -53,6 +53,3 @@ export default function SunResults() {
     </section>
   );
 }
-
-
-module.exports = SunResults;

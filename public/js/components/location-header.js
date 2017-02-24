@@ -14,5 +14,3 @@ export default function LocationHeader() {
     </header>
   );
 };
-
-module.exports = LocationHeader;

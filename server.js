@@ -1,21 +1,30 @@
-const express = require('express');
-const pug = require('pug');
-
-const React = require('react');
-const { renderToStaticMarkup } = require('react-dom/server');
-const { match, RouterContext } = require('react-router');
-
-const app = express();
-
-const routes = require('./public/js/components/router');
-const NotFoundPage = require('./public/js/components/not-found-page');
+// const express = require('express');
+// const pug = require('pug');
+//
+// const React = require('react');
+// const { renderToStaticMarkup } = require('react-dom/server');
+// const { match, RouterContext } = require('react-router');
+//
+// const app = express();
+//
+// const routes = require('./public/js/components/router');
+// const NotFoundPage = require('./public/js/components/not-found-page');
 
 
 // const LandingContainer = require('./public/js/components/landing-container');
 // const LocationContainer = require('./public/js/components/location-container');
 
 
+import express from 'express';
+import pug from 'pug';
+import React from 'react';
+import { renderToStaticMarkup } from 'react-dom/server';
+import { match, RouterContext } from 'react-router';
 
+const app = express();
+
+import routes from './public/js/components/router';
+import NotFoundPage from './public/js/components/not-found-page';
 
 app.set('view engine', 'pug');
 

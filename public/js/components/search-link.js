@@ -11,6 +11,3 @@ export default function SearchLink(props) {
 SearchLink.propTypes = {
   linkTitle: React.PropTypes.string,
 };
-
-
-module.exports = SearchLink;

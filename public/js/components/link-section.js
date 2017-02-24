@@ -9,5 +9,3 @@ export default function LinkSection() {
     </section>
   );
 };
-
-module.exports = LinkSection;

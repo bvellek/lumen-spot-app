@@ -13,5 +13,3 @@ export default function LocationContainer() {
     </div>
   );
 };
-
-module.exports = LocationContainer;

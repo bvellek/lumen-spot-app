@@ -7,5 +7,3 @@ export default class PageContainer extends React.Component {
     );
   };
 };
-
-module.exports = PageContainer;

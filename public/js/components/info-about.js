@@ -12,5 +12,3 @@ export default function InfoAbout() {
     </section>
   );
 };
-
-module.exports = InfoAbout;

@@ -9,5 +9,3 @@ export default function HeroNav() {
     </nav>
   );
 };
-
-module.exports = HeroNav;

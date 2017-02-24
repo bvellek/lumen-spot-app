@@ -16,6 +16,3 @@ export default function ImageResultsContainer() {
     </section>
   );
 };
-
-
-module.exports = ImageResultsContainer;
