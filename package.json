@@ -12,7 +12,7 @@
     "test": "mocha --recursive --compilers js:babel-register",
     "build": "webpack & grunt build & babel server.js --out-file babelServer.js",
     "dev": "webpack-dashboard -- webpack-dev-server",
-    "start": "babelServer.js"
+    "start": "node babelServer.js"
   },
   "repository": {
     "type": "git",
