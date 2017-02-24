@@ -1,4 +1,7 @@
-import "babel-polyfill";
+// import "babel-polyfill";
+// require('babel-core/register')({
+//     presets: ['es2015', 'react']
+// });
 
 // const LandingContainer = require('./public/js/components/landing-container');
 // const LocationContainer = require('./public/js/components/location-container');
