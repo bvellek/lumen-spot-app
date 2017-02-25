@@ -1,25 +1,21 @@
 const path = require('path');
 const DashboardPlugin = require('webpack-dashboard/plugin');
-const webpack = require('webpack');
 
 module.exports = {
-  context: path.join(__dirname, 'public/js'),
-  entry: [
-    './index.js',
-  ],
-  output: {
-    path: path.resolve(__dirname, 'assets/js'),
-    filename: 'bundle.js'
+  // context: path.join(__dirname, 'public/js'),
+  entry: {
+    bundle: './public/js/index.js',
   },
-
+  output: {
+    path: path.join(__dirname, 'assets/js'),
+    filename: '[name].js'
+  },
   module: {
     rules: [
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        use: [
-          'babel-loader',
-        ],
+        use: ['babel-loader']
       }
     ]
   },

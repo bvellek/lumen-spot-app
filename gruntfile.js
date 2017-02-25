@@ -1,6 +1,4 @@
-module.exports = function(grunt) {
-  var webpackConfig = require('./webpack.config.js');
-
+module.exports = function (grunt) {
   grunt.initConfig({
     dirs: {
       theme: './public/',
@@ -8,9 +6,7 @@ module.exports = function(grunt) {
       js: './js/',
       assets: 'assets/'
     },
-    webpack: {
-      options: webpackConfig
-    },
+
     sass: {
       dev: {
         options: {
@@ -22,11 +18,12 @@ module.exports = function(grunt) {
         }
       }
     },
+
     postcss: {
       options: {
         map: true, //inline sourcemaps
         processors: [
-          require('autoprefixer')({browsers: 'last 2 versions'}),
+          require('autoprefixer')({ browsers: 'last 2 versions' }),
           require('cssnano')()
         ]
       },
@@ -34,11 +31,11 @@ module.exports = function(grunt) {
         src: './public/css/main.css',
         dest: './assets/css/main.min.css'
       }
-
     },
+
     uglify: {
       js: {
-        options:{report:"gzip"},
+        options: { report: 'gzip' },
         files: {
           '<%= dirs.assets %><%= dirs.js %>bundle.min.js': '<%= dirs.assets %><%= dirs.js %>bundle.js'
         }
@@ -47,10 +44,9 @@ module.exports = function(grunt) {
   });
 
 
-  grunt.loadNpmTasks('grunt-webpack');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-sass');
   grunt.loadNpmTasks('grunt-postcss');
 
   grunt.registerTask('build', ['uglify', 'sass', 'postcss']);
-}
+};
