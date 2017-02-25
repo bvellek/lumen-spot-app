@@ -1,3 +1,6 @@
 {
-  "extends": "equimper"
+  "extends": "equimper",
+  "rules": {
+        "max-len": 0
+    }
 }
