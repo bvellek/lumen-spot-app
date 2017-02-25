@@ -1,14 +1,5 @@
-// import "babel-polyfill";
-// require('babel-core/register')({
-//     presets: ['es2015', 'react']
-// });
-
-// const LandingContainer = require('./public/js/components/landing-container');
-// const LocationContainer = require('./public/js/components/location-container');
-// require('babel-register');
-// require('babel-polyfill');
-
 import express from 'express';
+import path from 'path';
 
 import React from 'react';
 import { renderToStaticMarkup } from 'react-dom/server';
@@ -21,31 +12,9 @@ const app = express();
 
 
 app.set('view engine', 'pug');
+app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'assets')));
 
-app.use(express.static(__dirname + '/public'));
-app.use(express.static(__dirname + '/assets'));
-
-
-//
-// app.get('/', (req, res) => {
-//
-//   const landingComponent = renderToStaticMarkup(React.createElement(LandingContainer));
-//   console.log(landingComponent);
-//   res.render('index', {
-//     title: 'Lumen Spot',
-//     react: landingComponent
-//   })
-// });
-//
-// app.get('/location', (req, res) => {
-//
-//   const locationComponent = renderToStaticMarkup(React.createElement(LocationContainer));
-//   console.log(locationComponent);
-//   res.render('index', {
-//     title: 'Lumen Spot Location Search',
-//     react: locationComponent
-//   })
-// });
 
 app.get('*', (req, res) => {
   match(
@@ -68,7 +37,7 @@ app.get('*', (req, res) => {
         markup = renderToStaticMarkup(<NotFoundPage />);
         res.status(404);
       }
-      return res.render('index', { react: markup })
+      return res.render('index', { react: markup });
     }
   );
 });
@@ -77,4 +46,3 @@ app.get('*', (req, res) => {
 app.listen(process.env.PORT || 8081);
 console.log(`the server is listening on port ${process.env.PORT || 8081}`);
 console.log(`Visit localhost:${process.env.PORT || 8081}`);
-console.log('IT WORKS!!!!!!');
