@@ -5,18 +5,20 @@
 
 // const LandingContainer = require('./public/js/components/landing-container');
 // const LocationContainer = require('./public/js/components/location-container');
+// require('babel-register');
+// require('babel-polyfill');
 
-import ReactDOM from 'react-dom';
 import express from 'express';
-import pug from 'pug';
+
 import React from 'react';
 import { renderToStaticMarkup } from 'react-dom/server';
 import { match, RouterContext } from 'react-router';
 
-const app = express();
-
 import routes from './public/js/components/router';
 import NotFoundPage from './public/js/components/not-found-page';
+
+const app = express();
+
 
 app.set('view engine', 'pug');
 
@@ -49,7 +51,6 @@ app.get('*', (req, res) => {
   match(
     { routes, location: req.url },
     (err, redirectLocation, renderProps) => {
-
       if (err) {
         return res.status(500).send(err.message);
       }
@@ -67,12 +68,10 @@ app.get('*', (req, res) => {
         markup = renderToStaticMarkup(<NotFoundPage />);
         res.status(404);
       }
-
       return res.render('index', { react: markup })
     }
   );
 });
-
 
 
 app.listen(process.env.PORT || 8081);

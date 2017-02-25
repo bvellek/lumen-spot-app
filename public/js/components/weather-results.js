@@ -32,7 +32,7 @@ export default function WeatherResults() {
                   <td>From the SSW at 1.6 MPH Gusting to 2.0 MPH</td>
                 </tr>
                 <tr>
-                  <td colSpan="2"><a className="sliding-middle-out" href="https://www.wunderground.com/US/WA/Mount_Rainier_Natl_Park.html" target="_blank">Detailed Forecast</a></td>
+                  <td colSpan="2"><a className="sliding-middle-out" href="https://www.wunderground.com/US/WA/Mount_Rainier_Natl_Park.html" target="_blank" rel="noopener noreferrer">Detailed Forecast</a></td>
                 </tr>
 
               </tbody>
@@ -45,4 +45,4 @@ export default function WeatherResults() {
       </details>
     </section>
   );
-};
+}

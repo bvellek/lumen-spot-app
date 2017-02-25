@@ -12,4 +12,4 @@ export default function LocationContainer() {
       <LocationMain />
     </div>
   );
-};
+}

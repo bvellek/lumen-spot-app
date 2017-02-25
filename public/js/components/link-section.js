@@ -8,4 +8,4 @@ export default function LinkSection() {
       <SearchLink linkTitle="Find Your Light" />
     </section>
   );
-};
+}

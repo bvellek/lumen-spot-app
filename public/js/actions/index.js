@@ -50,7 +50,7 @@ export const getCurrentLocation = () => dispatch => {
     }
 
     navigator.geolocation.getCurrentPosition(success, error, posOptions);
-    
+
   }.then((coords) => (
     dispatch(
       getCurrentLocationSuccess(coords)
@@ -60,4 +60,4 @@ export const getCurrentLocation = () => dispatch => {
       getCurrentLocationError(error)
     )
   ))
-};
+}

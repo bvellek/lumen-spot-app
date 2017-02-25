@@ -20,4 +20,4 @@ export default function InfoLight() {
       </div>
     </section>
   );
-};
+}

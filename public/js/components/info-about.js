@@ -1,7 +1,7 @@
 import React from 'react';
 
 export default function InfoAbout() {
-  return(
+  return (
     <section className="info-section">
       <div className="about-section">
         <h2>About</h2>
@@ -11,4 +11,4 @@ export default function InfoAbout() {
       </div>
     </section>
   );
-};
+}

@@ -5,7 +5,7 @@ export class SearchForm extends React.Component {
     super(props);
     this.locationSubmit = this.locationSubmit.bind(this);
     this.currentLocationFind = this.currentLocationFind.bind(this);
-  };
+  }
 
   locationSubmit(e) {
     e.preventDefault();
@@ -13,13 +13,13 @@ export class SearchForm extends React.Component {
     const location = this.locationInput.value;
     console.log(location, e);
     // this.props.dispatch(actions.fetchGeo());
-  };
+  }
 
   currentLocationFind(e) {
     console.log(e);
 
     //this.props.dispatch(actions.fetchCurrentLocation());
-  };
+  }
 
   render() {
     return (
@@ -39,7 +39,7 @@ export class SearchForm extends React.Component {
         </div>
       </form>
     );
-  };
-};
+  }
+}
 
 export default SearchForm;

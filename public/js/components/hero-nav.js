@@ -8,4 +8,4 @@ export default function HeroNav() {
       <SearchLink linkTitle="Search..." />
     </nav>
   );
-};
+}

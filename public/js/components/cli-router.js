@@ -7,4 +7,4 @@ export default function CLIRouter() {
   return (
     <Router history={browserHistory} routes={routes} onUpdate={() => window.scrollTo(0, 0)} />
   );
-};
+}

@@ -1,6 +1,6 @@
 const path = require('path');
 const DashboardPlugin = require('webpack-dashboard/plugin');
-var webpack = require('webpack');
+const webpack = require('webpack');
 
 module.exports = {
   context: path.join(__dirname, 'public/js'),
@@ -8,7 +8,7 @@ module.exports = {
     './index.js',
   ],
   output: {
-    path: path.resolve(__dirname, "assets/js"),
+    path: path.resolve(__dirname, 'assets/js'),
     filename: 'bundle.js'
   },
 

@@ -12,8 +12,8 @@
     "test": "mocha --recursive --compilers js:babel-register",
     "build": "webpack & grunt build",
     "dev": "webpack-dashboard -- webpack-dev-server",
-    "start": "./node_modules/.bin/babel-node server.js",
-    "1start": "node server_bundle.js"
+    "1start": "./node_modules/.bin/babel-node server.js",
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",
@@ -22,11 +22,12 @@
   "dependencies": {
     "babel": "^6.23.0",
     "babel-cli": "^6.23.0",
-    "babel-polyfill": "^6.23.0",
     "babel-core": "^6.23.1",
-    "babel-loader": "^6.3.1",
+    "babel-polyfill": "^6.23.0",
     "babel-preset-es2015": "^6.22.0",
     "babel-preset-react": "^6.23.0",
+    "babel-preset-stage-0": "^6.22.0",
+    "babel-register": "^6.23.0",
     "express": "^4.14.1",
     "pug": "^2.0.0-beta11",
     "react": "^15.4.2",
@@ -35,8 +36,10 @@
   },
   "devDependencies": {
     "autoprefixer": "^6.7.3",
+    "babel-loader": "^6.3.1",
     "chai": "^3.5.0",
     "cssnano": "^3.10.0",
+    "eslint-config-equimper": "^1.4.0",
     "grunt": "^1.0.1",
     "grunt-cli": "^1.2.0",
     "grunt-contrib-uglify": "^2.1.0",
