@@ -30,9 +30,9 @@ export const fetchLocationCoords = searchQuery => dispatch => {
     dispatch(
       fetchLocationCoordsSuccess(coords)
     );
-    dispatch(
-      fetchSunTimes(coords)
-    );
+    // dispatch(
+    //   fetchSunTimes(coords)
+    // );
     dispatch(
       fetchWeather(coords)
     );
@@ -80,9 +80,9 @@ export const getCurrentLocation = () => dispatch => {
     dispatch(
       fetchLocationCoordsSuccess(coords)
     );
-    dispatch(
-      fetchSunTimes(coords)
-    );
+    // dispatch(
+    //   fetchSunTimes(coords)
+    // );
     dispatch(
       fetchWeather(coords)
     );
