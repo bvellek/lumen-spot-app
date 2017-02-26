@@ -153,7 +153,7 @@ export const fetchWeatherError = (error) => ({
 });
 
 export const fetchWeather = coords => dispatch => {
-  const url = `//api.wunderground.com/api/55dac1657530ad42/conditions/q/${coords}.json`;
+  const url = `https://api.wunderground.com/api/55dac1657530ad42/conditions/q/${coords}.json`;
   return fetch(url, {
     method: 'GET'
   }).then((response) => {
