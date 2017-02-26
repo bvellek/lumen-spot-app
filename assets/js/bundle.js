@@ -13525,7 +13525,7 @@ var ImageResultsContainer = exports.ImageResultsContainer = function (_React$Com
       var images = this.props.inspiration;
       if (images != null) {
         imageList = images.photos.map(function (pic, i) {
-          return _react2.default.createElement(_image2.default, { altText: pic.name, aperture: pic.aperture, iso: pic.iso, ss: pic.ss, imageURL: pic.image_url, imageLink: 'https://500px.com' + pic.url, imageLinkTarget: '_' + pic.user.id, photog: pic.user.firstname.toUpperCase() + ' ' + pic.user.lastname.toUpperCase(), key: i });
+          return _react2.default.createElement(_image2.default, { altText: pic.name, aperture: pic.aperture, iso: pic.iso, ss: pic.shutter_speed, imageURL: pic.image_url, imageLink: 'https://500px.com' + pic.url, imageLinkTarget: '_' + pic.user.id, photog: pic.user.firstname.toUpperCase() + ' ' + pic.user.lastname.toUpperCase(), key: i });
         });
       } else {
         imageList = _react2.default.createElement(
@@ -13657,7 +13657,8 @@ function Image(props) {
         _react2.default.createElement(
           "span",
           null,
-          props.photog
+          props.photog,
+          " "
         ),
         "/ 500px"
       )
