@@ -1,4 +1,4 @@
-// Convert Location to Lat/Long
+// Seach Location to Lat/Long
 export const FETCH_LOCATION_COORDS_SUCCESS = 'FETCH_LOCATION_COORDS_SUCCESS';
 export const fetchLocationCoordsSuccess = (coords) => ({
   type: FETCH_LOCATION_COORDS_SUCCESS,
@@ -28,11 +28,14 @@ export const fetchLocationCoords = searchQuery => dispatch => {
           rej(error);
         }
     });
-  }).then((coords) => (
+  }).then((coords) => {
     dispatch(
       fetchLocationCoordsSuccess(coords)
-    )
-  )).catch((error) => (
+    );
+    dispatch(
+      fetchSunTimes(coords)
+    );
+  }).catch((error) => (
     dispatch(
       fetchLocationCoordsError(error)
     )
@@ -70,13 +73,59 @@ export const getCurrentLocation = () => dispatch => {
       rej(err);
     }
     navigator.geolocation.getCurrentPosition(success, error, positionOptions);
-  }).then((coords) => (
+  }).then((coords) => {
     dispatch(
-      getCurrentLocationSuccess(coords)
-    )
-  )).catch((error) => (
+      fetchLocationCoordsSuccess(coords)
+    );
+    dispatch(
+      fetchSunTimes(coords)
+    );
+  }).catch((error) => (
     dispatch(
       getCurrentLocationError(error)
+    )
+  ));
+};
+
+
+// Fetch Sun Times
+export const FETCH_SUN_TIMES_SUCCESS = 'FETCH_SUN_TIMES_SUCCESS';
+export const fetchSunTimesSuccess = (results) => ({
+  type: FETCH_SUN_TIMES_SUCCESS,
+  results
+});
+
+export const FETCH_SUN_TIMES_ERROR = 'FETCH_SUN_TIMES_ERROR';
+export const fetchSunTimesError = (error) => ({
+  type: FETCH_SUN_TIMES_ERROR,
+  error
+});
+
+export const fetchSunTimes = coords => dispatch => {
+  const coordsArray = coords.split(',');
+  const lat = coordsArray[0];
+  const long = coordsArray[1];
+  const url = `http://api.sunrise-sunset.org/json?lat=${lat}&lng=${long}&formatted=0`;
+  console.log('SUNNNNNNN', url);
+  return fetch(url, {
+    method: 'GET'
+  }).then((response) => {
+    if (response.state < 200 || response.state >= 300) {
+      const error = new Error(response.statusText);
+      error.response = response;
+      throw error;
+    }
+    return response;
+  }).then((response) => (
+    response.json()
+  )).then((results) => (
+    dispatch(
+      fetchSunTimesSuccess(results)
+    )
+  ))
+  .catch((error) => (
+    dispatch(
+      fetchSunTimesError(error)
     )
   ));
 };

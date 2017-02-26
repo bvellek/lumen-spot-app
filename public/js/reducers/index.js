@@ -4,7 +4,8 @@ const initialState = {
   locationCoords: null,
   displayResults: false,
   warningState: false,
-  warningMessage: null
+  warningMessage: null,
+  sunTimesResults: null,
 };
 
 export const locationReducer = (state = initialState, action) => {
@@ -30,6 +31,20 @@ export const locationReducer = (state = initialState, action) => {
     });
     return modState;
   } else if (action.type === actions.FETCH_LOCATION_COORDS_ERROR) {
+    const warning = action.error;
+    const modState = Object.assign({}, state, {
+      warningState: true,
+      warningMessage: warning
+    });
+    return modState;
+  } else if (action.type === actions.FETCH_SUN_TIMES_SUCCESS) {
+    const sunResults = action.results;
+    console.log('IN REDUCER', sunResults);
+    const modState = Object.assign({}, state, {
+      sunTimesResults: sunResults
+    });
+    return modState;
+  } else if (action.type === actions.FETCH_SUN_TIMES_ERROR) {
     const warning = action.error;
     const modState = Object.assign({}, state, {
       warningState: true,
