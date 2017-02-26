@@ -12,18 +12,16 @@ export class SearchForm extends React.Component {
   }
 
 
-  getCurrentLocation(e) {
-    console.log(e);
+  getCurrentLocation() {
     this.props.dispatch(actions.getCurrentLocation());
     console.log(store.getState());
   }
 
   locationSubmit(e) {
     e.preventDefault();
-
     const location = this.locationInput.value;
     console.log(location, e);
-    // this.props.dispatch(actions.fetchGeo());
+    this.props.dispatch(actions.fetchLocationCoords(location));
   }
 
   render() {

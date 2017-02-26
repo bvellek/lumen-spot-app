@@ -22,6 +22,20 @@ export const locationReducer = (state = initialState, action) => {
       warningMessage: warning
     });
     return modState;
+  } else if (action.type === actions.FETCH_LOCATION_COORDS_SUCCESS) {
+    const coords = action.coords;
+    const modState = Object.assign({}, state, {
+      locationCoords: coords,
+      displayResults: true
+    });
+    return modState;
+  } else if (action.type === actions.FETCH_LOCATION_COORDS_ERROR) {
+    const warning = action.error;
+    const modState = Object.assign({}, state, {
+      warningState: true,
+      warningMessage: warning
+    });
+    return modState;
   }
 
   return state;
