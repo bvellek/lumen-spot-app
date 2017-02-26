@@ -1,0 +1,11 @@
+.no-search {
+  background: $light-grey;
+  width: 100%;
+
+
+  p {
+    max-width: 22em;
+    padding: 2em;
+    margin: $margin-before*2.5 auto $margin-after;
+  }
+}

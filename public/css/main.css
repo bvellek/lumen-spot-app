@@ -749,6 +749,14 @@ footer {
       border-color: #694387;
       box-shadow: 0 0 2px 0 rgba(73, 143, 225, 0.7); }
 
+.no-search {
+  background: #e9e7f7;
+  width: 100%; }
+  .no-search p {
+    max-width: 22em;
+    padding: 2em;
+    margin: 7.5em auto 1em; }
+
 .coord-results {
   font-size: 1em;
   text-align: center;
