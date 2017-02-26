@@ -6,6 +6,7 @@ const initialState = {
   warningState: false,
   warningMessage: null,
   sunTimesResults: null,
+  weatherResults: null
 };
 
 export const locationReducer = (state = initialState, action) => {
@@ -45,6 +46,19 @@ export const locationReducer = (state = initialState, action) => {
     });
     return modState;
   } else if (action.type === actions.FETCH_SUN_TIMES_ERROR) {
+    const warning = action.error;
+    const modState = Object.assign({}, state, {
+      warningState: true,
+      warningMessage: warning
+    });
+    return modState;
+  } else if (action.type === actions.FETCH_WEATHER_SUCCESS) {
+    const weather = action.weather;
+    const modState = Object.assign({}, state, {
+      weatherResults: weather
+    });
+    return modState;
+  } else if (action.type === actions.FETCH_WEATHER_ERROR) {
     const warning = action.error;
     const modState = Object.assign({}, state, {
       warningState: true,

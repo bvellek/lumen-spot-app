@@ -1,38 +1,50 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
 
-export default function WeatherResults() {
-  return (
-    <section className="weather-info-section">
-      <details>
-        <summary>
-          <h3>Weather Info</h3>
-        </summary>
+export class WeatherResults extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+
+  render() {
+    let weatherDiv;
+    const weatherInfo = this.props.weatherResults;
+    if (weatherInfo != null) {
+      const iconURL = `https://icons.wxug.com/i/c/i/${weatherInfo.current_observation.icon}.gif`;
+      const iconAlt = `${weatherInfo.current_observation.icon} icon`;
+      const weatherWord = weatherInfo.current_observation.weather;
+      const temp = weatherInfo.current_observation.temp_f;
+      const uv = weatherInfo.current_observation.UV;
+      const wind = weatherInfo.current_observation.wind_string;
+      const forecastURL = weatherInfo.current_observation.forecast_url;
+      const forecastURLTarget = `_${forecastURL}`;
+      weatherDiv = (
         <div className="weather-container">
           <figure>
-            <img src="http://icons.wxug.com/i/c/i/snow.gif" alt="snow" />
+            <img src={iconURL} alt={iconAlt} />
           </figure>
           <figcaption>
             <table>
               <tbody>
                 <tr>
                   <td>weather:</td>
-                  <td>Snow</td>
+                  <td>{weatherWord}</td>
                 </tr>
                 <tr>
                   <td>temp:</td>
-                  <td>35.3<span> &deg;F</span></td>
+                  <td>{temp}<span> &deg;F</span></td>
                 </tr>
                 <tr>
                   <td>UV:</td>
-                  <td>1</td>
+                  <td>{uv}</td>
                 </tr>
                 <tr>
                   <td>wind:</td>
-                  <td>From the SSW at 1.6 MPH Gusting to 2.0 MPH</td>
+                  <td>{wind}</td>
                 </tr>
                 <tr>
-                  <td colSpan="2"><a className="sliding-middle-out" href="https://www.wunderground.com/US/WA/Mount_Rainier_Natl_Park.html" target="_blank" rel="noopener noreferrer">Detailed Forecast</a></td>
+                  <td colSpan="2"><a className="sliding-middle-out" href={forecastURL} target={forecastURLTarget}>Detailed Forecast</a></td>
                 </tr>
 
               </tbody>
@@ -42,7 +54,29 @@ export default function WeatherResults() {
             </table>
           </figcaption>
         </div>
-      </details>
-    </section>
-  );
+      );
+    } else {
+        weatherDiv = (
+          <div className="weather-container">
+            <p>Sorry! Something went wrong and we cannot provide sun times right now. </p>
+          </div>
+      );
+    }
+    return (
+      <section className="weather-info-section">
+        <details>
+          <summary>
+            <h3>Weather Info</h3>
+          </summary>
+          { weatherDiv }
+        </details>
+      </section>
+    );
+  }
 }
+
+const mapStateToProps = (state, props) => ({
+  weatherResults: state.weatherResults
+});
+
+export default connect(mapStateToProps)(WeatherResults);

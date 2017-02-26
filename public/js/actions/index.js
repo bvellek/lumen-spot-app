@@ -16,12 +16,10 @@ export const fetchLocationCoords = searchQuery => dispatch => {
   return new Promise((res, rej) => {
     const geocoder = new google.maps.Geocoder();
     geocoder.geocode({ 'address': address }, (results, status) => {
-      console.log('!!!!!!!!', results, status);
         if (status === 'OK') {
           const lat = results[0].geometry.location.lat();
           const long = results[0].geometry.location.lng();
           const coords = `${lat},${long}`;
-          console.log(lat, long, coords);
           res(coords);
         } else {
           const error = 'Sorry! We could not geocode your location';
@@ -34,6 +32,9 @@ export const fetchLocationCoords = searchQuery => dispatch => {
     );
     dispatch(
       fetchSunTimes(coords)
+    );
+    dispatch(
+      fetchWeather(coords)
     );
   }).catch((error) => (
     dispatch(
@@ -65,7 +66,6 @@ export const getCurrentLocation = () => dispatch => {
       const lat = position.coords.latitude;
       const long = position.coords.longitude;
       const coords = `${lat},${long}`;
-      console.log(coords);
       res(coords);
     }
     function error(err) {
@@ -79,6 +79,9 @@ export const getCurrentLocation = () => dispatch => {
     );
     dispatch(
       fetchSunTimes(coords)
+    );
+    dispatch(
+      fetchWeather(coords)
     );
   }).catch((error) => (
     dispatch(
@@ -106,11 +109,10 @@ export const fetchSunTimes = coords => dispatch => {
   const lat = coordsArray[0];
   const long = coordsArray[1];
   const url = `http://api.sunrise-sunset.org/json?lat=${lat}&lng=${long}&formatted=0`;
-  console.log('SUNNNNNNN', url);
   return fetch(url, {
     method: 'GET'
   }).then((response) => {
-    if (response.state < 200 || response.state >= 300) {
+    if (response.status < 200 || response.status >= 300) {
       const error = new Error(response.statusText);
       error.response = response;
       throw error;
@@ -126,6 +128,46 @@ export const fetchSunTimes = coords => dispatch => {
   .catch((error) => (
     dispatch(
       fetchSunTimesError(error)
+    )
+  ));
+};
+
+
+// Fetch Weather Info
+export const FETCH_WEATHER_SUCCESS = 'FETCH_WEATHER_SUCCESS';
+export const fetchWeatherSuccess = (weather) => ({
+  type: FETCH_WEATHER_SUCCESS,
+  weather
+});
+
+export const FETCH_WEATHER_ERROR = 'FETCH_WEATHER_ERROR';
+export const fetchWeatherError = (error) => ({
+  type: FETCH_WEATHER_ERROR,
+  error
+});
+
+export const fetchWeather = coords => dispatch => {
+  const url = `http://api.wunderground.com/api/55dac1657530ad42/conditions/q/${coords}.json`;
+  console.log('WEATHER', url);
+  return fetch(url, {
+    method: 'GET'
+  }).then((response) => {
+    if (response.status < 200 || response.status >= 300) {
+      const error = new Error(response.statusText);
+      error.response = response;
+      throw error;
+    }
+    return response;
+  }).then((response) => (
+    response.json()
+  )).then((weather) => (
+    dispatch(
+      fetchWeatherSuccess(weather)
+    )
+  ))
+  .catch((error) => (
+    dispatch(
+      fetchWeatherError(error)
     )
   ));
 };
