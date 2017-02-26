@@ -6,7 +6,8 @@ const initialState = {
   warningState: false,
   warningMessage: null,
   sunTimesResults: null,
-  weatherResults: null
+  weatherResults: null,
+  inspirationResults: null,
 };
 
 export const locationReducer = (state = initialState, action) => {
@@ -60,6 +61,19 @@ export const locationReducer = (state = initialState, action) => {
     return modState;
   } else if (action.type === actions.FETCH_WEATHER_ERROR) {
     const warning = action.error;
+    const modState = Object.assign({}, state, {
+      warningState: true,
+      warningMessage: warning
+    });
+    return modState;
+  } else if (action.type === actions.FETCH_INSPIRATION_SUCCESS) {
+    const inspiration = action.inspiration;
+    const modState = Object.assign({}, state, {
+      inspirationResults: inspiration
+    });
+    return modState;
+  } else if (action.type === actions.FETCH_INSPIRATION_ERROR) {
+    const warning = action.console.error();
     const modState = Object.assign({}, state, {
       warningState: true,
       warningMessage: warning

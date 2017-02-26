@@ -58,7 +58,7 @@ export class WeatherResults extends React.Component {
     } else {
         weatherDiv = (
           <div className="weather-container">
-            <p>Sorry! Something went wrong and we cannot provide sun times right now. </p>
+            <p>Sorry! Something went wrong and we cannot provide weather conditions at this time. </p>
           </div>
       );
     }

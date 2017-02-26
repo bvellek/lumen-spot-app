@@ -36,6 +36,9 @@ export const fetchLocationCoords = searchQuery => dispatch => {
     dispatch(
       fetchWeather(coords)
     );
+    dispatch(
+      fetchInspiration(coords)
+    );
   }).catch((error) => (
     dispatch(
       fetchLocationCoordsError(error)
@@ -82,6 +85,9 @@ export const getCurrentLocation = () => dispatch => {
     );
     dispatch(
       fetchWeather(coords)
+    );
+    dispatch(
+      fetchInspiration(coords)
     );
   }).catch((error) => (
     dispatch(
@@ -148,7 +154,6 @@ export const fetchWeatherError = (error) => ({
 
 export const fetchWeather = coords => dispatch => {
   const url = `http://api.wunderground.com/api/55dac1657530ad42/conditions/q/${coords}.json`;
-  console.log('WEATHER', url);
   return fetch(url, {
     method: 'GET'
   }).then((response) => {
@@ -168,6 +173,47 @@ export const fetchWeather = coords => dispatch => {
   .catch((error) => (
     dispatch(
       fetchWeatherError(error)
+    )
+  ));
+};
+
+
+// Fetch 500px Inspiration
+export const FETCH_INSPIRATION_SUCCESS = 'FETCH_INSPIRATION_SUCCESS';
+export const fetchInspirationSuccess = (inspiration) => ({
+  type: FETCH_INSPIRATION_SUCCESS,
+  inspiration
+});
+
+export const FETCH_INSPIRATION_ERROR = 'ETCH_INSPIRATION_ERROR';
+export const fetchInspirationError = (error) => ({
+  type: FETCH_INSPIRATION_ERROR,
+  error
+});
+
+export const fetchInspiration = coords => dispatch => {
+  const url = `https://api.500px.com/v1/photos/search?geo=${coords},16093&image_size=440&consumer_key=R8Sy4wkElwg0T1PPCce2tE5nXxJHeKKfRVKJclov
+`;
+  console.log('500PX', url);
+  return fetch(url, {
+    method: 'GET'
+  }).then((response) => {
+    if (response.status < 200 || response.status >= 300) {
+      const error = new Error(response.statusText);
+      error.response = response;
+      throw error;
+    }
+    return response;
+  }).then((response) => (
+    response.json()
+  )).then((inspiration) => (
+    dispatch(
+      fetchInspirationSuccess(inspiration)
+    )
+  ))
+  .catch((error) => (
+    dispatch(
+      fetchInspirationError(error)
     )
   ));
 };
