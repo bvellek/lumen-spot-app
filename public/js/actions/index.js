@@ -1,12 +1,12 @@
 // Convert Location to Lat/Long
-export const FETCH_GEO_SUCCESS = 'FETCH_GEO_SUCCESS';
+export const FETCH_LOCATION_COORDS_SUCCESS = 'FETCH_LOCATION_COORDS_SUCCESS';
 export const fetchGeoSuccess = (locationInput, coords) => ({
   type: FETCH_LOCATION_COORDS_SUCCESS,
   locationInput,
   coords
 });
 
-export const FETCH_GEO_ERROR = 'FETCH_GEO_ERROR';
+export const FETCH_LOCATION_COORDS_ERROR = 'FETCH_LOCATION_COORDS_ERROR';
 export const fetchGeoError = (locationInput, coords, error) => ({
   type: FETCH_LOCATION_COORDS_ERROR,
   locationInput,
@@ -28,27 +28,30 @@ export const getCurrentLocationError = (error) => ({
 });
 
 export const getCurrentLocation = () => dispatch => {
-
-  return new Promise(function(res, rej) {
-    const posOptions = {
-      timeout: 6000
-    };
-
+  const positionOptions = {
+    timeout: 6000
+  };
+  return new Promise((res, rej) => {
     function success(position) {
-      let lat = position.coords.latitude;
-      let long = position.coords.longitude;
-      let coords = `${lat},${long}`;
+      const lat = position.coords.latitude;
+      const long = position.coords.longitude;
+      const coords = `${lat},${long}`;
       console.log(coords);
       res(coords);
     }
-
     function error(err) {
       console.warn(`Error ${err.code}: ${err.message}`);
       rej(err);
     }
-
-    navigator.geolocation.getCurrentPosition(success, error, posOptions);
-
+    navigator.geolocation.getCurrentPosition(success, error, positionOptions);
   })
-  .then((coords) => (dispatch(getCurrentLocationSuccess(coords))))
-  .catch((error) => (dispatch(getCurrentLocationError(error))))
+  .then((coords) => (
+    dispatch(
+      getCurrentLocationSuccess(coords)
+    )
+  )).catch((error) => (
+    dispatch(
+      getCurrentLocationError(error)
+    )
+  ));
+};
