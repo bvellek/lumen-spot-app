@@ -14,7 +14,7 @@ export const fetchLocationCoordsError = (error) => ({
 export const fetchLocationCoords = searchQuery => dispatch => {
   const address = searchQuery;
   return new Promise((res, rej) => {
-    const geocoder = new google.maps.Geocoder();
+    const geocoder = new google.maps.Geocoder(); // eslint-disable-line
     geocoder.geocode({ 'address': address }, (results, status) => {
         if (status === 'OK') {
           const lat = results[0].geometry.location.lat();

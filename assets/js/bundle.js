@@ -14427,14 +14427,19 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 var SearchCoordResults = exports.SearchCoordResults = function (_React$Component) {
   _inherits(SearchCoordResults, _React$Component);
 
-  function SearchCoordResults(props) {
+  function SearchCoordResults() {
     _classCallCheck(this, SearchCoordResults);
 
-    return _possibleConstructorReturn(this, (SearchCoordResults.__proto__ || Object.getPrototypeOf(SearchCoordResults)).call(this, props));
+    return _possibleConstructorReturn(this, (SearchCoordResults.__proto__ || Object.getPrototypeOf(SearchCoordResults)).apply(this, arguments));
   }
 
   _createClass(SearchCoordResults, [{
     key: 'render',
+
+    // constructor(props) {
+    //   super(props);
+    // }
+
     value: function render() {
       var url = 'https://www.google.com/maps/@' + this.props.coords + ',12z';
       var targetString = '_' + this.props.coords;
@@ -14467,7 +14472,7 @@ var SearchCoordResults = exports.SearchCoordResults = function (_React$Component
   return SearchCoordResults;
 }(_react2.default.Component);
 
-var mapStateToProps = function mapStateToProps(state, props) {
+var mapStateToProps = function mapStateToProps(state) {
   return {
     coords: state.locationCoords,
     displayResults: state.displayResults

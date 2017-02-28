@@ -3,10 +3,6 @@ import { connect } from 'react-redux';
 
 
 export class SunResults extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     let sunTable;
     if (this.props.sunResults != null) {
@@ -91,7 +87,7 @@ export class SunResults extends React.Component {
   }
 }
 
-const mapStateToProps = (state, props) => ({
+const mapStateToProps = (state) => ({
   sunResults: state.sunTimesResults
 });
 
