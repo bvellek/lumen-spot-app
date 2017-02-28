@@ -1,3 +1,5 @@
+import 'isomorphic-fetch';
+
 // Seach Location to Lat/Long
 export const FETCH_LOCATION_COORDS_SUCCESS = 'FETCH_LOCATION_COORDS_SUCCESS';
 export const fetchLocationCoordsSuccess = (coords) => ({
