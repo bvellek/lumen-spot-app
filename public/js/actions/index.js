@@ -113,7 +113,6 @@ export const fetchSunTimesError = (error) => ({
 });
 
 export const fetchSunTimes = coords => dispatch => {
-  console.log('********00000000********', coords);
   const url = '/location';
   const coordinates = coords;
   return fetch(url, {
@@ -200,7 +199,6 @@ export const fetchInspirationError = (error) => ({
 export const fetchInspiration = coords => dispatch => {
   const url = `https://api.500px.com/v1/photos/search?geo=${coords},16093&image_size=440&consumer_key=R8Sy4wkElwg0T1PPCce2tE5nXxJHeKKfRVKJclov
 `;
-  console.log('500PX', url);
   return fetch(url, {
     method: 'GET'
   }).then((response) => {
