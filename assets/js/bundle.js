@@ -8555,7 +8555,7 @@ var fetchLocationCoords = exports.fetchLocationCoords = function fetchLocationCo
   return function (dispatch) {
     var address = searchQuery;
     return new Promise(function (res, rej) {
-      var geocoder = new google.maps.Geocoder();
+      var geocoder = new google.maps.Geocoder(); // eslint-disable-line
       geocoder.geocode({ 'address': address }, function (results, status) {
         if (status === 'OK') {
           var lat = results[0].geometry.location.lat();
@@ -14427,19 +14427,14 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 var SearchCoordResults = exports.SearchCoordResults = function (_React$Component) {
   _inherits(SearchCoordResults, _React$Component);
 
-  function SearchCoordResults() {
+  function SearchCoordResults(props) {
     _classCallCheck(this, SearchCoordResults);
 
-    return _possibleConstructorReturn(this, (SearchCoordResults.__proto__ || Object.getPrototypeOf(SearchCoordResults)).apply(this, arguments));
+    return _possibleConstructorReturn(this, (SearchCoordResults.__proto__ || Object.getPrototypeOf(SearchCoordResults)).call(this, props));
   }
 
   _createClass(SearchCoordResults, [{
     key: 'render',
-
-    // constructor(props) {
-    //   super(props);
-    // }
-
     value: function render() {
       var url = 'https://www.google.com/maps/@' + this.props.coords + ',12z';
       var targetString = '_' + this.props.coords;
@@ -14472,7 +14467,7 @@ var SearchCoordResults = exports.SearchCoordResults = function (_React$Component
   return SearchCoordResults;
 }(_react2.default.Component);
 
-var mapStateToProps = function mapStateToProps(state) {
+var mapStateToProps = function mapStateToProps(state, props) {
   return {
     coords: state.locationCoords,
     displayResults: state.displayResults
@@ -14672,10 +14667,10 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 var SunResults = exports.SunResults = function (_React$Component) {
   _inherits(SunResults, _React$Component);
 
-  function SunResults(props) {
+  function SunResults() {
     _classCallCheck(this, SunResults);
 
-    return _possibleConstructorReturn(this, (SunResults.__proto__ || Object.getPrototypeOf(SunResults)).call(this, props));
+    return _possibleConstructorReturn(this, (SunResults.__proto__ || Object.getPrototypeOf(SunResults)).apply(this, arguments));
   }
 
   _createClass(SunResults, [{
@@ -14862,7 +14857,7 @@ var SunResults = exports.SunResults = function (_React$Component) {
   return SunResults;
 }(_react2.default.Component);
 
-var mapStateToProps = function mapStateToProps(state, props) {
+var mapStateToProps = function mapStateToProps(state) {
   return {
     sunResults: state.sunTimesResults
   };
