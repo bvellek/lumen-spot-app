@@ -47,6 +47,10 @@
       text-transform: uppercase;
       font-size: 0.625em;
 
+      &:nth-child(4) td {
+        vertical-align: top;
+      }
+
       &:nth-child(5) {
         text-align: center;
 

@@ -2,7 +2,7 @@ import express from 'express';
 import path from 'path';
 
 import React from 'react';
-import { renderToStaticMarkup } from 'react-dom/server';
+import { renderToString } from 'react-dom/server';
 import { match, RouterContext } from 'react-router';
 
 import routes from './public/js/components/router';
@@ -31,10 +31,10 @@ app.get('*', (req, res) => {
       let markup;
       if (renderProps) {
         // if current route matched we have renderProps
-        markup = renderToStaticMarkup(<RouterContext {...renderProps} />);
+        markup = renderToString(<RouterContext {...renderProps} />);
       } else {
         // otherwise render 404 page
-        markup = renderToStaticMarkup(<NotFoundPage />);
+        markup = renderToString(<NotFoundPage />);
         res.status(404);
       }
       return res.render('index', { react: markup });

@@ -842,6 +842,8 @@ footer {
       font-weight: 400;
       text-transform: uppercase;
       font-size: 0.625em; }
+      .weather-info-section table tr:nth-child(4) td {
+        vertical-align: top; }
       .weather-info-section table tr:nth-child(5) {
         text-align: center; }
         .weather-info-section table tr:nth-child(5) td {
