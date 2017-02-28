@@ -8569,9 +8569,7 @@ var fetchLocationCoords = exports.fetchLocationCoords = function fetchLocationCo
       });
     }).then(function (coords) {
       dispatch(fetchLocationCoordsSuccess(coords));
-      // dispatch(
-      //   fetchSunTimes(coords)
-      // );
+      dispatch(fetchSunTimes(coords));
       dispatch(fetchWeather(coords));
       dispatch(fetchInspiration(coords));
     }).catch(function (error) {
@@ -8616,9 +8614,7 @@ var getCurrentLocation = exports.getCurrentLocation = function getCurrentLocatio
       navigator.geolocation.getCurrentPosition(success, error, positionOptions);
     }).then(function (coords) {
       dispatch(fetchLocationCoordsSuccess(coords));
-      // dispatch(
-      //   fetchSunTimes(coords)
-      // );
+      dispatch(fetchSunTimes(coords));
       dispatch(fetchWeather(coords));
       dispatch(fetchInspiration(coords));
     }).catch(function (error) {
