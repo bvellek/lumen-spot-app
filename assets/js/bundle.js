@@ -13516,10 +13516,10 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 var ImageResultsContainer = exports.ImageResultsContainer = function (_React$Component) {
   _inherits(ImageResultsContainer, _React$Component);
 
-  function ImageResultsContainer(props) {
+  function ImageResultsContainer() {
     _classCallCheck(this, ImageResultsContainer);
 
-    return _possibleConstructorReturn(this, (ImageResultsContainer.__proto__ || Object.getPrototypeOf(ImageResultsContainer)).call(this, props));
+    return _possibleConstructorReturn(this, (ImageResultsContainer.__proto__ || Object.getPrototypeOf(ImageResultsContainer)).apply(this, arguments));
   }
 
   _createClass(ImageResultsContainer, [{
@@ -13554,7 +13554,7 @@ var ImageResultsContainer = exports.ImageResultsContainer = function (_React$Com
   return ImageResultsContainer;
 }(_react2.default.Component);
 
-var mapStateToProps = function mapStateToProps(state, props) {
+var mapStateToProps = function mapStateToProps(state) {
   return {
     inspiration: state.inspirationResults
   };
@@ -13590,11 +13590,11 @@ function ImageSlider() {
       _react2.default.createElement(
         "figure",
         null,
-        _react2.default.createElement("img", { src: "./img/img-slider/01-min-circle.jpg", alt: "roundabout" }),
-        _react2.default.createElement("img", { src: "./img/img-slider/02-min-circle.jpg", alt: "roundabout" }),
-        _react2.default.createElement("img", { src: "./img/img-slider/03-min-circle.jpg", alt: "roundabout" }),
-        _react2.default.createElement("img", { src: "./img/img-slider/04-min-circle.jpg", alt: "roundabout" }),
-        _react2.default.createElement("img", { src: "./img/img-slider/01-min-circle.jpg", alt: "roundabout" })
+        _react2.default.createElement("img", { src: "./img/img-slider/01-min-circle.jpg", alt: "circle on far left" }),
+        _react2.default.createElement("img", { src: "./img/img-slider/02-min-circle.jpg", alt: "circle moved toward right" }),
+        _react2.default.createElement("img", { src: "./img/img-slider/03-min-circle.jpg", alt: "cirle centered" }),
+        _react2.default.createElement("img", { src: "./img/img-slider/04-min-circle.jpg", alt: "circle to right" }),
+        _react2.default.createElement("img", { src: "./img/img-slider/01-min-circle.jpg", alt: "circle on far left" })
       )
     )
   );
@@ -14078,10 +14078,10 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 var LocationContainer = exports.LocationContainer = function (_React$Component) {
   _inherits(LocationContainer, _React$Component);
 
-  function LocationContainer(props) {
+  function LocationContainer() {
     _classCallCheck(this, LocationContainer);
 
-    return _possibleConstructorReturn(this, (LocationContainer.__proto__ || Object.getPrototypeOf(LocationContainer)).call(this, props));
+    return _possibleConstructorReturn(this, (LocationContainer.__proto__ || Object.getPrototypeOf(LocationContainer)).apply(this, arguments));
   }
 
   _createClass(LocationContainer, [{
@@ -14107,7 +14107,7 @@ var LocationContainer = exports.LocationContainer = function (_React$Component) 
   return LocationContainer;
 }(_react2.default.Component);
 
-var mapStateToProps = function mapStateToProps(state, props) {
+var mapStateToProps = function mapStateToProps(state) {
   return {
     displayResults: state.displayResults
   };
@@ -14427,10 +14427,10 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 var SearchCoordResults = exports.SearchCoordResults = function (_React$Component) {
   _inherits(SearchCoordResults, _React$Component);
 
-  function SearchCoordResults(props) {
+  function SearchCoordResults() {
     _classCallCheck(this, SearchCoordResults);
 
-    return _possibleConstructorReturn(this, (SearchCoordResults.__proto__ || Object.getPrototypeOf(SearchCoordResults)).call(this, props));
+    return _possibleConstructorReturn(this, (SearchCoordResults.__proto__ || Object.getPrototypeOf(SearchCoordResults)).apply(this, arguments));
   }
 
   _createClass(SearchCoordResults, [{
@@ -14467,7 +14467,7 @@ var SearchCoordResults = exports.SearchCoordResults = function (_React$Component
   return SearchCoordResults;
 }(_react2.default.Component);
 
-var mapStateToProps = function mapStateToProps(state, props) {
+var mapStateToProps = function mapStateToProps(state) {
   return {
     coords: state.locationCoords,
     displayResults: state.displayResults
@@ -14893,10 +14893,10 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 var WeatherResults = exports.WeatherResults = function (_React$Component) {
   _inherits(WeatherResults, _React$Component);
 
-  function WeatherResults(props) {
+  function WeatherResults() {
     _classCallCheck(this, WeatherResults);
 
-    return _possibleConstructorReturn(this, (WeatherResults.__proto__ || Object.getPrototypeOf(WeatherResults)).call(this, props));
+    return _possibleConstructorReturn(this, (WeatherResults.__proto__ || Object.getPrototypeOf(WeatherResults)).apply(this, arguments));
   }
 
   _createClass(WeatherResults, [{
