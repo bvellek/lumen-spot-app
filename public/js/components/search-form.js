@@ -18,7 +18,7 @@ export class SearchForm extends React.Component {
   }
 
   handleChange(event) {
-      this.setState({ value: event.target.value });
+      this.setState({ value: event.target.value.toUpperCase() });
     }
 
   locationSubmit(e) {

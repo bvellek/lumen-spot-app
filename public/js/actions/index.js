@@ -185,7 +185,7 @@ export const fetchInspirationSuccess = (inspiration) => ({
   inspiration
 });
 
-export const FETCH_INSPIRATION_ERROR = 'ETCH_INSPIRATION_ERROR';
+export const FETCH_INSPIRATION_ERROR = 'FETCH_INSPIRATION_ERROR';
 export const fetchInspirationError = (error) => ({
   type: FETCH_INSPIRATION_ERROR,
   error

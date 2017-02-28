@@ -8680,7 +8680,7 @@ var fetchInspirationSuccess = exports.fetchInspirationSuccess = function fetchIn
   };
 };
 
-var FETCH_INSPIRATION_ERROR = exports.FETCH_INSPIRATION_ERROR = 'ETCH_INSPIRATION_ERROR';
+var FETCH_INSPIRATION_ERROR = exports.FETCH_INSPIRATION_ERROR = 'FETCH_INSPIRATION_ERROR';
 var fetchInspirationError = exports.fetchInspirationError = function fetchInspirationError(error) {
   return {
     type: FETCH_INSPIRATION_ERROR,
@@ -14565,7 +14565,7 @@ var SearchForm = exports.SearchForm = function (_React$Component) {
   }, {
     key: 'handleChange',
     value: function handleChange(event) {
-      this.setState({ value: event.target.value });
+      this.setState({ value: event.target.value.toUpperCase() });
     }
   }, {
     key: 'locationSubmit',
