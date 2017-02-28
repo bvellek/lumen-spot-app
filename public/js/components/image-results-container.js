@@ -5,9 +5,7 @@ import Image from './image';
 
 
 export class ImageResultsContainer extends React.Component {
-  constructor(props) {
-    super(props);
-  }
+
 
   render() {
     let imageList;
@@ -32,7 +30,7 @@ export class ImageResultsContainer extends React.Component {
   }
 }
 
-const mapStateToProps = (state, props) => ({
+const mapStateToProps = (state) => ({
   inspiration: state.inspirationResults
 });
 

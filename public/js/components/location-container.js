@@ -6,11 +6,8 @@ import SearchFormContainer from './search-form-container';
 import LocationMain from './location-main';
 import NoSearch from './no-search';
 
-export class LocationContainer extends React.Component {
-  constructor(props) {
-    super(props);
-  }
 
+export class LocationContainer extends React.Component {
   render() {
     let toRender = null;
     if (this.props.displayResults) {
@@ -29,7 +26,7 @@ export class LocationContainer extends React.Component {
   }
 }
 
-const mapStateToProps = (state, props) => ({
+const mapStateToProps = (state) => ({
   displayResults: state.displayResults
 });
 

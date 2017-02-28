@@ -15,7 +15,7 @@ export const fetchLocationCoords = searchQuery => dispatch => {
   const address = searchQuery;
   return new Promise((res, rej) => {
     const geocoder = new google.maps.Geocoder(); // eslint-disable-line
-    geocoder.geocode({ 'address': address }, (results, status) => {
+    geocoder.geocode({ address }, (results, status) => {
         if (status === 'OK') {
           const lat = results[0].geometry.location.lat();
           const long = results[0].geometry.location.lng();
@@ -111,21 +111,25 @@ export const fetchSunTimesError = (error) => ({
 });
 
 export const fetchSunTimes = coords => dispatch => {
-  const coordsArray = coords.split(',');
-  const lat = coordsArray[0];
-  const long = coordsArray[1];
-  const url = `http://api.sunrise-sunset.org/json?lat=${lat}&lng=${long}&formatted=0`;
+  console.log('********00000000********', coords);
+  const url = '/location';
+  const coordinates = coords;
   return fetch(url, {
-    method: 'GET'
+    method: 'POST',
+    headers: {
+     Accept: 'application/json',
+     'Content-type': 'application/json'
+   },
+    body: JSON.stringify({ coords: coordinates })
   }).then((response) => {
     if (response.status < 200 || response.status >= 300) {
       const error = new Error(response.statusText);
       error.response = response;
       throw error;
     }
-    return response;
+    return response.json();
   }).then((response) => (
-    response.json()
+    response
   )).then((results) => (
     dispatch(
       fetchSunTimesSuccess(results)

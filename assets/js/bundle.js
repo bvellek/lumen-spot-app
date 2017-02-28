@@ -8523,7 +8523,7 @@ var fetchLocationCoords = exports.fetchLocationCoords = function fetchLocationCo
     var address = searchQuery;
     return new Promise(function (res, rej) {
       var geocoder = new google.maps.Geocoder(); // eslint-disable-line
-      geocoder.geocode({ 'address': address }, function (results, status) {
+      geocoder.geocode({ address: address }, function (results, status) {
         if (status === 'OK') {
           var lat = results[0].geometry.location.lat();
           var long = results[0].geometry.location.lng();
@@ -8609,21 +8609,25 @@ var fetchSunTimesError = exports.fetchSunTimesError = function fetchSunTimesErro
 
 var fetchSunTimes = exports.fetchSunTimes = function fetchSunTimes(coords) {
   return function (dispatch) {
-    var coordsArray = coords.split(',');
-    var lat = coordsArray[0];
-    var long = coordsArray[1];
-    var url = 'http://api.sunrise-sunset.org/json?lat=' + lat + '&lng=' + long + '&formatted=0';
+    console.log('********00000000********', coords);
+    var url = '/location';
+    var coordinates = coords;
     return fetch(url, {
-      method: 'GET'
+      method: 'POST',
+      headers: {
+        Accept: 'application/json',
+        'Content-type': 'application/json'
+      },
+      body: JSON.stringify({ coords: coordinates })
     }).then(function (response) {
       if (response.status < 200 || response.status >= 300) {
         var error = new Error(response.statusText);
         error.response = response;
         throw error;
       }
-      return response;
-    }).then(function (response) {
       return response.json();
+    }).then(function (response) {
+      return response;
     }).then(function (results) {
       return dispatch(fetchSunTimesSuccess(results));
     }).catch(function (error) {
@@ -15049,7 +15053,7 @@ var WeatherResults = exports.WeatherResults = function (_React$Component) {
   return WeatherResults;
 }(_react2.default.Component);
 
-var mapStateToProps = function mapStateToProps(state, props) {
+var mapStateToProps = function mapStateToProps(state) {
   return {
     weatherResults: state.weatherResults
   };

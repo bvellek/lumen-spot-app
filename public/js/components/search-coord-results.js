@@ -2,10 +2,6 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 export class SearchCoordResults extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     const url = `https://www.google.com/maps/@${this.props.coords},12z`;
     const targetString = `_${this.props.coords}`;
@@ -24,7 +20,7 @@ export class SearchCoordResults extends React.Component {
   }
 }
 
-const mapStateToProps = (state, props) => ({
+const mapStateToProps = (state) => ({
   coords: state.locationCoords,
   displayResults: state.displayResults
 });

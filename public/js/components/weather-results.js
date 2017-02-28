@@ -3,10 +3,6 @@ import { connect } from 'react-redux';
 
 
 export class WeatherResults extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     let weatherDiv;
     const weatherInfo = this.props.weatherResults;
@@ -75,7 +71,7 @@ export class WeatherResults extends React.Component {
   }
 }
 
-const mapStateToProps = (state, props) => ({
+const mapStateToProps = (state) => ({
   weatherResults: state.weatherResults
 });
 

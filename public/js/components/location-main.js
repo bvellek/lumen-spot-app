@@ -10,5 +10,4 @@ export default function LocationMain() {
       <ImageResultsContainer />
     </main>
   );
-
 }
