@@ -2,11 +2,12 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import * as actions from '../actions/index';
-import store from '../store';
 
 export class SearchForm extends React.Component {
   constructor(props) {
     super(props);
+    this.state = { value: '' };
+    this.handleChange = this.handleChange.bind(this);
     this.locationSubmit = this.locationSubmit.bind(this);
     this.getCurrentLocation = this.getCurrentLocation.bind(this);
   }
@@ -14,13 +15,15 @@ export class SearchForm extends React.Component {
 
   getCurrentLocation() {
     this.props.dispatch(actions.getCurrentLocation());
-    console.log(store.getState());
   }
+
+  handleChange(event) {
+      this.setState({ value: event.target.value });
+    }
 
   locationSubmit(e) {
     e.preventDefault();
-    const location = this.locationInput.value;
-    console.log(location, e);
+    const location = this.state.value;
     this.props.dispatch(actions.fetchLocationCoords(location));
   }
 
@@ -31,9 +34,9 @@ export class SearchForm extends React.Component {
           <h2>SEARCH...</h2>
         </legend>
         <label htmlFor="search-input">Location:
-          <span>(ex: Grand Canyon | Seattle, WA | 1600&nbsp;Pennsylvania Ave NW Washington, D.C.&nbsp;20500)</span>
+          <span> (ex: Grand Canyon | Seattle, WA | 1600&nbsp;Pennsylvania Ave NW Washington, D.C.&nbsp;20500)</span>
         </label>
-        <input id="search-input" type="search" name="address" ref={ref => this.locationInput = ref} />
+        <input id="search-input" type="search" name="address" value={this.state.value} onChange={this.handleChange} />
         <div className="search-btn-container">
           <button type="submit" name="location-submit">🔎 Submit
             <span className="visually-hidden">Location</span>
