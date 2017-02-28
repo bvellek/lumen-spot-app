@@ -64,7 +64,7 @@ export const getCurrentLocationError = (error) => ({
 
 export const getCurrentLocation = () => dispatch => {
   const positionOptions = {
-    timeout: 6000
+    timeout: 8000
   };
   return new Promise((res, rej) => {
     function success(position) {

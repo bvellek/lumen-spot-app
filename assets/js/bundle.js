@@ -8569,7 +8569,7 @@ var getCurrentLocationError = exports.getCurrentLocationError = function getCurr
 var getCurrentLocation = exports.getCurrentLocation = function getCurrentLocation() {
   return function (dispatch) {
     var positionOptions = {
-      timeout: 6000
+      timeout: 8000
     };
     return new Promise(function (res, rej) {
       function success(position) {
