@@ -830,7 +830,10 @@ footer {
     text-align: center; }
     .weather-info-section figure img {
       padding: 1em; }
+  .weather-info-section figcaption {
+    width: 100%; }
   .weather-info-section table {
+    width: 100%;
     padding: 1em;
     background-color: #FFF;
     text-align: left; }
@@ -867,9 +870,10 @@ footer {
 .pic-section {
   display: flex;
   flex-direction: column;
-  justify-content: center; }
+  justify-content: center;
+  padding-bottom: 3em; }
   .pic-section .pic-fig {
-    margin: 1em 0 0;
+    margin: 2em 0 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
