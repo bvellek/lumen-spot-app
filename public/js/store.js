@@ -9,4 +9,6 @@ const middleware = [
   thunk
 ];
 
-export default createStore(reducers.locationReducer, applyMiddleware(...middleware));
+export default function configureStore() {
+  return createStore(reducers.locationReducer, applyMiddleware(...middleware));
+}
