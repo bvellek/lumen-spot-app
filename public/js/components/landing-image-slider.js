@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-export default function ImageSlider() {
+export default function LandingImageSlider() {
   return (
     <section className="photo-slide-section">
       <div id="slider">

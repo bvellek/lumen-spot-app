@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 
-export class SunResults extends React.Component {
+export class SunResultsContainer extends React.Component {
   render() {
     let sunTable;
     if (this.props.sunResults != null) {
@@ -22,7 +22,6 @@ export class SunResults extends React.Component {
         const options = { hour: '2-digit', minute: '2-digit' };
         return (new Date(time)).toLocaleTimeString('en-us', options);
       });
-      console.log(formattedTimes);
 
       sunTable = (
         <table>
@@ -91,4 +90,4 @@ const mapStateToProps = (state) => ({
   sunResults: state.sunTimesResults
 });
 
-export default connect(mapStateToProps)(SunResults);
+export default connect(mapStateToProps)(SunResultsContainer);

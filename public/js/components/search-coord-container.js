@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-export class SearchCoordResults extends React.Component {
+export class SearchCoordContainer extends React.Component {
   render() {
     const url = `https://www.google.com/maps/@${this.props.coords},12z`;
     const targetString = `_${this.props.coords}`;
@@ -25,4 +25,4 @@ const mapStateToProps = (state) => ({
   displayResults: state.displayResults
 });
 
-export default connect(mapStateToProps)(SearchCoordResults);
+export default connect(mapStateToProps)(SearchCoordContainer);

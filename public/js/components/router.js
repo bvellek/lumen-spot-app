@@ -1,14 +1,14 @@
 import React from 'react';
 import { Route, IndexRoute } from 'react-router';
 
-import PageContainer from './page-container';
-import LandingContainer from './landing-container';
+import App from './app';
+import LandingPage from './landing-page';
 import LocationContainer from './location-container';
 import NotFoundPage from './not-found-page';
 
 const routes = (
-  <Route path="/" component={PageContainer}>
-    <IndexRoute component={LandingContainer} />
+  <Route path="/" component={App}>
+    <IndexRoute component={LandingPage} />
     <Route path="location" component={LocationContainer} />
     {/* <Route path="location/:coords" component={LocationContainer} /> */}
     <Route path="*" component={NotFoundPage} />

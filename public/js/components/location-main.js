@@ -1,12 +1,12 @@
 import React from 'react';
 
-import LocationInfoContainer from './location-info-container';
+import LocationData from './location-data';
 import ImageResultsContainer from './image-results-container';
 
 export default function LocationMain() {
   return (
     <main>
-      <LocationInfoContainer />
+      <LocationData />
       <ImageResultsContainer />
     </main>
   );
