@@ -8,6 +8,7 @@ const initialState = {
   sunTimesResults: null,
   weatherResults: null,
   inspirationResults: null,
+  loadingStatus: false,
 };
 
 export const locationReducer = (state = initialState, action) => {
@@ -15,7 +16,8 @@ export const locationReducer = (state = initialState, action) => {
     const coords = action.coords;
     const modState = Object.assign({}, state, {
       locationCoords: coords,
-      displayResults: true
+      displayResults: true,
+      loadingStatus: false
     });
     return modState;
   } else if (action.type === actions.GET_CURRENT_LOCATION_ERROR) {
@@ -29,7 +31,8 @@ export const locationReducer = (state = initialState, action) => {
     const coords = action.coords;
     const modState = Object.assign({}, state, {
       locationCoords: coords,
-      displayResults: true
+      displayResults: true,
+      loadingStatus: false
     });
     return modState;
   } else if (action.type === actions.FETCH_LOCATION_COORDS_ERROR) {
@@ -76,6 +79,12 @@ export const locationReducer = (state = initialState, action) => {
     const modState = Object.assign({}, state, {
       warningState: true,
       warningMessage: warning
+    });
+    return modState;
+  } else if (action.type === actions.LOADING_STATUS_TRUE) {
+    const modState = Object.assign({}, state, {
+      loadingStatus: true,
+      displayResults: false
     });
     return modState;
   }

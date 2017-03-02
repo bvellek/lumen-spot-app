@@ -8501,11 +8501,19 @@ module.exports = g;
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.fetchInspiration = exports.fetchInspirationError = exports.FETCH_INSPIRATION_ERROR = exports.fetchInspirationSuccess = exports.FETCH_INSPIRATION_SUCCESS = exports.fetchWeather = exports.fetchWeatherError = exports.FETCH_WEATHER_ERROR = exports.fetchWeatherSuccess = exports.FETCH_WEATHER_SUCCESS = exports.fetchSunTimes = exports.fetchSunTimesError = exports.FETCH_SUN_TIMES_ERROR = exports.fetchSunTimesSuccess = exports.FETCH_SUN_TIMES_SUCCESS = exports.getCurrentLocation = exports.getCurrentLocationError = exports.GET_CURRENT_LOCATION_ERROR = exports.getCurrentLocationSuccess = exports.GET_CURRENT_LOCATION_SUCCESS = exports.fetchLocationCoords = exports.fetchLocationCoordsError = exports.FETCH_LOCATION_COORDS_ERROR = exports.fetchLocationCoordsSuccess = exports.FETCH_LOCATION_COORDS_SUCCESS = undefined;
+exports.fetchInspiration = exports.fetchInspirationError = exports.FETCH_INSPIRATION_ERROR = exports.fetchInspirationSuccess = exports.FETCH_INSPIRATION_SUCCESS = exports.fetchWeather = exports.fetchWeatherError = exports.FETCH_WEATHER_ERROR = exports.fetchWeatherSuccess = exports.FETCH_WEATHER_SUCCESS = exports.fetchSunTimes = exports.fetchSunTimesError = exports.FETCH_SUN_TIMES_ERROR = exports.fetchSunTimesSuccess = exports.FETCH_SUN_TIMES_SUCCESS = exports.getCurrentLocation = exports.getCurrentLocationError = exports.GET_CURRENT_LOCATION_ERROR = exports.getCurrentLocationSuccess = exports.GET_CURRENT_LOCATION_SUCCESS = exports.fetchLocationCoords = exports.fetchLocationCoordsError = exports.FETCH_LOCATION_COORDS_ERROR = exports.fetchLocationCoordsSuccess = exports.FETCH_LOCATION_COORDS_SUCCESS = exports.loadingStatusTrue = exports.LOADING_STATUS_TRUE = undefined;
 
 __webpack_require__(178);
 
-// Seach Location to Lat/Long
+// Loading Element
+var LOADING_STATUS_TRUE = exports.LOADING_STATUS_TRUE = 'LOADING_STATUS_TRUE';
+var loadingStatusTrue = exports.loadingStatusTrue = function loadingStatusTrue() {
+  return {
+    type: LOADING_STATUS_TRUE
+  };
+};
+
+// Search Location to Lat/Long
 var FETCH_LOCATION_COORDS_SUCCESS = exports.FETCH_LOCATION_COORDS_SUCCESS = 'FETCH_LOCATION_COORDS_SUCCESS';
 var fetchLocationCoordsSuccess = exports.fetchLocationCoordsSuccess = function fetchLocationCoordsSuccess(coords) {
   return {
@@ -8524,6 +8532,7 @@ var fetchLocationCoordsError = exports.fetchLocationCoordsError = function fetch
 
 var fetchLocationCoords = exports.fetchLocationCoords = function fetchLocationCoords(searchQuery) {
   return function (dispatch) {
+    dispatch(loadingStatusTrue());
     var address = searchQuery;
     return new Promise(function (res, rej) {
       var geocoder = new google.maps.Geocoder(); // eslint-disable-line
@@ -8568,6 +8577,7 @@ var getCurrentLocationError = exports.getCurrentLocationError = function getCurr
 
 var getCurrentLocation = exports.getCurrentLocation = function getCurrentLocation() {
   return function (dispatch) {
+    dispatch(loadingStatusTrue());
     var positionOptions = {
       timeout: 8000
     };
@@ -14145,6 +14155,8 @@ var LocationContainer = exports.LocationContainer = function (_React$Component) 
       var toRender = null;
       if (this.props.displayResults) {
         toRender = _react2.default.createElement(_locationMain2.default, null);
+      } else if (this.props.loadingStatus) {
+        toRender = _react2.default.createElement('div', null);
       } else {
         toRender = _react2.default.createElement(_noSearch2.default, null);
       }
@@ -14164,7 +14176,8 @@ var LocationContainer = exports.LocationContainer = function (_React$Component) 
 
 var mapStateToProps = function mapStateToProps(state) {
   return {
-    displayResults: state.displayResults
+    displayResults: state.displayResults,
+    loadingStatus: state.loadingStatus
   };
 };
 
@@ -14458,6 +14471,21 @@ var SearchCoordContainer = exports.SearchCoordContainer = function (_React$Compo
           ' are ',
           this.props.coords
         );
+      } else if (this.props.loadingStatus) {
+        message = _react2.default.createElement(
+          'div',
+          { className: 'loading-element' },
+          _react2.default.createElement(
+            'h4',
+            null,
+            'Finding your location...'
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'loader' },
+            'Loading...'
+          )
+        );
       } else {
         message = _react2.default.createElement('div', null);
       }
@@ -14475,7 +14503,8 @@ var SearchCoordContainer = exports.SearchCoordContainer = function (_React$Compo
 var mapStateToProps = function mapStateToProps(state) {
   return {
     coords: state.locationCoords,
-    displayResults: state.displayResults
+    displayResults: state.displayResults,
+    loadingStatus: state.loadingStatus
   };
 };
 
@@ -15090,7 +15119,8 @@ var initialState = {
   warningMessage: null,
   sunTimesResults: null,
   weatherResults: null,
-  inspirationResults: null
+  inspirationResults: null,
+  loadingStatus: false
 };
 
 var locationReducer = exports.locationReducer = function locationReducer() {
@@ -15101,7 +15131,8 @@ var locationReducer = exports.locationReducer = function locationReducer() {
     var coords = action.coords;
     var modState = Object.assign({}, state, {
       locationCoords: coords,
-      displayResults: true
+      displayResults: true,
+      loadingStatus: false
     });
     return modState;
   } else if (action.type === actions.GET_CURRENT_LOCATION_ERROR) {
@@ -15115,7 +15146,8 @@ var locationReducer = exports.locationReducer = function locationReducer() {
     var _coords = action.coords;
     var _modState2 = Object.assign({}, state, {
       locationCoords: _coords,
-      displayResults: true
+      displayResults: true,
+      loadingStatus: false
     });
     return _modState2;
   } else if (action.type === actions.FETCH_LOCATION_COORDS_ERROR) {
@@ -15164,6 +15196,12 @@ var locationReducer = exports.locationReducer = function locationReducer() {
       warningMessage: _warning4
     });
     return _modState9;
+  } else if (action.type === actions.LOADING_STATUS_TRUE) {
+    var _modState10 = Object.assign({}, state, {
+      loadingStatus: true,
+      displayResults: false
+    });
+    return _modState10;
   }
 
   return state;
