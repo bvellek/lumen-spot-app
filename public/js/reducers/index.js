@@ -24,7 +24,8 @@ export const locationReducer = (state = initialState, action) => {
     const warning = action.error;
     const modState = Object.assign({}, state, {
       warningState: true,
-      warningMessage: warning
+      warningMessage: warning,
+      loadingStatus: false
     });
     return modState;
   } else if (action.type === actions.FETCH_LOCATION_COORDS_SUCCESS) {

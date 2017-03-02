@@ -60,7 +60,7 @@ export class WeatherResultsContainer extends React.Component {
     }
     return (
       <section className="weather-info-section">
-        <details>
+        <details open>
           <summary>
             <h3>Weather Info</h3>
           </summary>

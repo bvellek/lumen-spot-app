@@ -15067,7 +15067,7 @@ var WeatherResultsContainer = exports.WeatherResultsContainer = function (_React
         { className: 'weather-info-section' },
         _react2.default.createElement(
           'details',
-          null,
+          { open: true },
           _react2.default.createElement(
             'summary',
             null,
@@ -15139,7 +15139,8 @@ var locationReducer = exports.locationReducer = function locationReducer() {
     var warning = action.error;
     var _modState = Object.assign({}, state, {
       warningState: true,
-      warningMessage: warning
+      warningMessage: warning,
+      loadingStatus: false
     });
     return _modState;
   } else if (action.type === actions.FETCH_LOCATION_COORDS_SUCCESS) {
