@@ -8543,7 +8543,7 @@ var fetchLocationCoords = exports.fetchLocationCoords = function fetchLocationCo
           var coords = lat + ',' + long;
           res(coords);
         } else {
-          var error = 'Sorry! We could not geocode your location';
+          var error = 'Sorry! We could not geocode your location.';
           rej(error);
         }
       });
@@ -8579,7 +8579,7 @@ var getCurrentLocation = exports.getCurrentLocation = function getCurrentLocatio
   return function (dispatch) {
     dispatch(loadingStatusTrue());
     var positionOptions = {
-      timeout: 8000
+      timeout: 6000
     };
     return new Promise(function (res, rej) {
       function success(position) {
@@ -14318,7 +14318,7 @@ function NoResults() {
     _react2.default.createElement(
       "p",
       null,
-      "Please use '\uD83D\uDCCD Current Location' or '\uD83D\uDD0E Submit' a desired location in the field above to see\xA0results"
+      "Please use '\uD83D\uDCCD Current Location' or '\uD83D\uDD0E Submit' a desired location in the field above to see\xA0results."
     )
   );
 }
@@ -14486,6 +14486,12 @@ var SearchCoordContainer = exports.SearchCoordContainer = function (_React$Compo
             'Loading...'
           )
         );
+      } else if (this.props.warningState) {
+        message = _react2.default.createElement(
+          'h4',
+          { className: 'warning' },
+          this.props.warningMessage
+        );
       } else {
         message = _react2.default.createElement('div', null);
       }
@@ -14504,7 +14510,9 @@ var mapStateToProps = function mapStateToProps(state) {
   return {
     coords: state.locationCoords,
     displayResults: state.displayResults,
-    loadingStatus: state.loadingStatus
+    loadingStatus: state.loadingStatus,
+    warningState: state.warningState,
+    warningMessage: state.warningMessage
   };
 };
 
@@ -15136,7 +15144,8 @@ var locationReducer = exports.locationReducer = function locationReducer() {
     });
     return modState;
   } else if (action.type === actions.GET_CURRENT_LOCATION_ERROR) {
-    var warning = action.error;
+    var warning = 'Sorry we were not able to get your current location. Please enter a location above.';
+    console.log('*****************', warning);
     var _modState = Object.assign({}, state, {
       warningState: true,
       warningMessage: warning,
@@ -15155,7 +15164,8 @@ var locationReducer = exports.locationReducer = function locationReducer() {
     var _warning = action.error;
     var _modState3 = Object.assign({}, state, {
       warningState: true,
-      warningMessage: _warning
+      warningMessage: _warning,
+      loadingStatus: false
     });
     return _modState3;
   } else if (action.type === actions.FETCH_SUN_TIMES_SUCCESS) {

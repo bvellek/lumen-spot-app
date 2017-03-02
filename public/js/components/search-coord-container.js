@@ -17,9 +17,11 @@ export class SearchCoordContainer extends React.Component {
           <div className="loader">Loading...</div>
         </div>
     );
-    } else {
-      message = <div />;
-    }
+  } else if (this.props.warningState) {
+    message = <h4 className="warning">{this.props.warningMessage}</h4>;
+  } else {
+    message = <div />;
+  }
     return (
       <div>
         { message }
@@ -31,7 +33,9 @@ export class SearchCoordContainer extends React.Component {
 const mapStateToProps = (state) => ({
   coords: state.locationCoords,
   displayResults: state.displayResults,
-  loadingStatus: state.loadingStatus
+  loadingStatus: state.loadingStatus,
+  warningState: state.warningState,
+  warningMessage: state.warningMessage
 });
 
 export default connect(mapStateToProps)(SearchCoordContainer);

@@ -32,7 +32,7 @@ export const fetchLocationCoords = searchQuery => dispatch => {
           const coords = `${lat},${long}`;
           res(coords);
         } else {
-          const error = 'Sorry! We could not geocode your location';
+          const error = 'Sorry! We could not geocode your location.';
           rej(error);
         }
     });
@@ -73,7 +73,7 @@ export const getCurrentLocationError = (error) => ({
 export const getCurrentLocation = () => dispatch => {
   dispatch(loadingStatusTrue());
   const positionOptions = {
-    timeout: 8000
+    timeout: 6000
   };
   return new Promise((res, rej) => {
     function success(position) {

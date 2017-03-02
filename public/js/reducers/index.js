@@ -21,7 +21,8 @@ export const locationReducer = (state = initialState, action) => {
     });
     return modState;
   } else if (action.type === actions.GET_CURRENT_LOCATION_ERROR) {
-    const warning = action.error;
+    const warning = 'Sorry we were not able to get your current location. Please enter a location above.';
+    console.log('*****************', warning);
     const modState = Object.assign({}, state, {
       warningState: true,
       warningMessage: warning,
@@ -40,7 +41,8 @@ export const locationReducer = (state = initialState, action) => {
     const warning = action.error;
     const modState = Object.assign({}, state, {
       warningState: true,
-      warningMessage: warning
+      warningMessage: warning,
+      loadingStatus: false
     });
     return modState;
   } else if (action.type === actions.FETCH_SUN_TIMES_SUCCESS) {
