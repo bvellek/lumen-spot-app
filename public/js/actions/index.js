@@ -167,7 +167,7 @@ export const fetchWeatherError = (error) => ({
 });
 
 export const fetchWeather = coords => dispatch => {
-  const url = `https://api.wunderground.com/api/55dac1657530ad42/conditions/q/${coords}.json`;
+  const url = `//api.wunderground.com/api/55dac1657530ad42/conditions/q/${coords}.json`;
   return fetch(url, {
     method: 'GET'
   }).then((response) => {
@@ -206,7 +206,7 @@ export const fetchInspirationError = (error) => ({
 });
 
 export const fetchInspiration = coords => dispatch => {
-  const url = `https://api.500px.com/v1/photos/search?geo=${coords},16093&image_size=440&consumer_key=R8Sy4wkElwg0T1PPCce2tE5nXxJHeKKfRVKJclov
+  const url = `//api.500px.com/v1/photos/search?geo=${coords},16093&image_size=440&consumer_key=R8Sy4wkElwg0T1PPCce2tE5nXxJHeKKfRVKJclov
 `;
   return fetch(url, {
     method: 'GET'

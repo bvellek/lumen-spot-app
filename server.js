@@ -24,6 +24,7 @@ app.get('*', (req, res) => {
   match(
     { routes, location: req.url },
     (err, redirectLocation, renderProps) => {
+      console.log('*****&&&&****&&&&***&&&&', renderProps);
       if (err) {
         return res.status(500).send(err.message);
       }

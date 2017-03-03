@@ -8707,7 +8707,7 @@ var fetchInspirationError = exports.fetchInspirationError = function fetchInspir
 
 var fetchInspiration = exports.fetchInspiration = function fetchInspiration(coords) {
   return function (dispatch) {
-    var url = 'https://api.500px.com/v1/photos/search?geo=' + coords + ',16093&image_size=440&consumer_key=R8Sy4wkElwg0T1PPCce2tE5nXxJHeKKfRVKJclov\n';
+    var url = '//api.500px.com/v1/photos/search?geo=' + coords + ',16093&image_size=440&consumer_key=R8Sy4wkElwg0T1PPCce2tE5nXxJHeKKfRVKJclov\n';
     return fetch(url, {
       method: 'GET'
     }).then(function (response) {
@@ -15112,7 +15112,7 @@ exports.default = (0, _reactRedux.connect)(mapStateToProps)(WeatherResultsContai
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.locationReducer = undefined;
+exports.locationReducer = exports.initialState = undefined;
 
 var _index = __webpack_require__(76);
 
@@ -15120,7 +15120,7 @@ var actions = _interopRequireWildcard(_index);
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
-var initialState = {
+var initialState = exports.initialState = {
   locationCoords: null,
   displayResults: false,
   warningState: false,
@@ -15145,7 +15145,6 @@ var locationReducer = exports.locationReducer = function locationReducer() {
     return modState;
   } else if (action.type === actions.GET_CURRENT_LOCATION_ERROR) {
     var warning = 'Sorry we were not able to get your current location. Please enter a location above.';
-    console.log('*****************', warning);
     var _modState = Object.assign({}, state, {
       warningState: true,
       warningMessage: warning,
