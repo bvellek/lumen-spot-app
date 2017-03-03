@@ -1,6 +1,6 @@
 import * as actions from '../actions/index';
 
-const initialState = {
+export const initialState = {
   locationCoords: null,
   displayResults: false,
   warningState: false,
@@ -22,7 +22,6 @@ export const locationReducer = (state = initialState, action) => {
     return modState;
   } else if (action.type === actions.GET_CURRENT_LOCATION_ERROR) {
     const warning = 'Sorry we were not able to get your current location. Please enter a location above.';
-    console.log('*****************', warning);
     const modState = Object.assign({}, state, {
       warningState: true,
       warningMessage: warning,

@@ -11,6 +11,7 @@
   "scripts": {
     "test1": "mocha --recursive --compilers js:babel-register",
     "test": "jest",
+    "test-coverage": "jest coverage",
     "test:watch": "npm test -- --watch",
     "build": "webpack & grunt build",
     "production": "webpack -p",
