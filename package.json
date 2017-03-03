@@ -9,7 +9,9 @@
     "test": "test"
   },
   "scripts": {
-    "test": "mocha --recursive --compilers js:babel-register",
+    "test1": "mocha --recursive --compilers js:babel-register",
+    "test": "jest",
+    "test:watch": "npm test -- --watch",
     "build": "webpack & grunt build",
     "production": "webpack -p",
     "dev": "webpack-dashboard -- webpack-dev-server",
@@ -29,6 +31,7 @@
     "body-parser": "^1.16.1",
     "express": "^4.14.1",
     "isomorphic-fetch": "^2.2.1",
+    "jest": "^19.0.2",
     "pug": "^2.0.0-beta11",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
