@@ -21,6 +21,9 @@ app.use(bodyParser.json());
 
 
 app.get('*', (req, res) => {
+  if (req.headers['x-forwarded-proto'] !== 'https' && process.env.NODE_ENV === 'production') {
+    res.redirect(`https://lumen-spot.herokuapp.com${req.url}`);
+  }
   match(
     { routes, location: req.url },
     (err, redirectLocation, renderProps) => {
