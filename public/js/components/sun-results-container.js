@@ -68,7 +68,7 @@ export class SunResultsContainer extends React.Component {
       );
     } else {
       sunTable = (
-        <p>Sorry! Something went wrong and we cannot provide sun times right now. </p>
+        <p className="error-message">Sorry! Something went wrong and we cannot provide sun times right now. </p>
       );
     }
 

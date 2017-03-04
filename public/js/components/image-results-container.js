@@ -18,7 +18,7 @@ export class ImageResultsContainer extends React.Component {
       });
     } else {
         imageList = (
-            <p>Sorry! Something went wrong and we cannot provide inspiration pictures at the moment. </p>
+            <p className="error-message">Sorry! Something went wrong and we cannot provide inspiration pictures at the moment. </p>
       );
     }
     return (

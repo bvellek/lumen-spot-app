@@ -13599,7 +13599,7 @@ var ImageResultsContainer = exports.ImageResultsContainer = function (_React$Com
       } else {
         imageList = _react2.default.createElement(
           'p',
-          null,
+          { className: 'error-message' },
           'Sorry! Something went wrong and we cannot provide inspiration pictures at the moment. '
         );
       }
@@ -14866,7 +14866,7 @@ var SunResultsContainer = exports.SunResultsContainer = function (_React$Compone
       } else {
         sunTable = _react2.default.createElement(
           'p',
-          null,
+          { className: 'error-message' },
           'Sorry! Something went wrong and we cannot provide sun times right now. '
         );
       }
@@ -15065,7 +15065,7 @@ var WeatherResultsContainer = exports.WeatherResultsContainer = function (_React
           { className: 'weather-container' },
           _react2.default.createElement(
             'p',
-            null,
+            { className: 'error-message' },
             'Sorry! Something went wrong and we cannot provide weather conditions at this time. '
           )
         );
