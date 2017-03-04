@@ -1,7 +1,7 @@
 const path = require('path');
-const DashboardPlugin = require('webpack-dashboard/plugin');
 
 module.exports = {
+  devtool: 'cheap-module-source-map',
   entry: {
     bundle: './public/js/index.js',
   },
@@ -20,6 +20,5 @@ module.exports = {
   },
 
   plugins: [
-    new DashboardPlugin()
   ]
 };

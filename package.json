@@ -9,14 +9,11 @@
     "test": "test"
   },
   "scripts": {
-    "test1": "mocha --recursive --compilers js:babel-register",
     "test": "jest",
-    "test-coverage": "jest coverage",
-    "test:watch": "npm test -- --watch",
+    "test:watch": "npm test --coverage --colors --watch",
     "build": "webpack & grunt build",
     "production": "webpack -p",
     "dev": "webpack-dashboard -- webpack-dev-server",
-    "1start": "./node_modules/.bin/babel-node server.js",
     "start": "node index.js"
   },
   "repository": {
@@ -57,7 +54,6 @@
     "mocha": "^3.2.0",
     "react-addons-test-utils": "^15.4.2",
     "webpack": "^2.2.1",
-    "webpack-dashboard": "^0.3.0",
     "webpack-dev-server": "^2.3.0"
   }
 }
