@@ -1,15 +1,17 @@
 import express from 'express';
 import path from 'path';
 import bodyParser from 'body-parser';
-
+import 'isomorphic-fetch';
 import React from 'react';
 import { renderToString } from 'react-dom/server';
 import { match, RouterContext } from 'react-router';
+import { createStore } from 'redux';
+import { Provider } from 'react-redux';
 
 import routes from './public/js/components/router';
 import NotFoundPage from './public/js/components/not-found-page';
+import * as reducers from './public/js/reducers/index';
 
-require('isomorphic-fetch');
 
 const app = express();
 
@@ -25,9 +27,8 @@ app.get('*', (req, res) => {
     res.redirect(`https://lumen-spot.herokuapp.com${req.url}`);
   }
   match(
-    { routes, location: req.url },
+    { routes, location: req.url || '/' },
     (err, redirectLocation, renderProps) => {
-      console.log('*****&&&&****&&&&***&&&&', renderProps);
       if (err) {
         return res.status(500).send(err.message);
       }
@@ -38,8 +39,28 @@ app.get('*', (req, res) => {
 
       let markup;
       if (renderProps) {
+        const initialState = {
+          locationCoords: null,
+          displayResults: false,
+          warningState: false,
+          warningMessage: null,
+          sunTimesResults: null,
+          weatherResults: null,
+          inspirationResults: null,
+          loadingStatus: false,
+          routing: { location: renderProps.location }
+        };
+
+        const store = createStore(reducers.locationReducer, initialState);
+
+        const component = (
+          <Provider store={store}>
+            <RouterContext {...renderProps} />
+          </Provider>
+        );
+
         // if current route matched we have renderProps
-        markup = renderToString(<RouterContext {...renderProps} />);
+        markup = renderToString(component);
       } else {
         // otherwise render 404 page
         markup = renderToString(<NotFoundPage />);
