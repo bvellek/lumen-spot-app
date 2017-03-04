@@ -8,7 +8,7 @@ export const initialState = {
   sunTimesResults: null,
   weatherResults: null,
   inspirationResults: null,
-  loadingStatus: false,
+  coordsLoadingStatus: false,
 };
 
 export const locationReducer = (state = initialState, action) => {
@@ -17,7 +17,7 @@ export const locationReducer = (state = initialState, action) => {
     const modState = Object.assign({}, state, {
       locationCoords: coords,
       displayResults: true,
-      loadingStatus: false
+      coordsLoadingStatus: false
     });
     return modState;
   } else if (action.type === actions.GET_CURRENT_LOCATION_ERROR) {
@@ -25,7 +25,7 @@ export const locationReducer = (state = initialState, action) => {
     const modState = Object.assign({}, state, {
       warningState: true,
       warningMessage: warning,
-      loadingStatus: false
+      coordsLoadingStatus: false
     });
     return modState;
   } else if (action.type === actions.FETCH_LOCATION_COORDS_SUCCESS) {
@@ -33,7 +33,7 @@ export const locationReducer = (state = initialState, action) => {
     const modState = Object.assign({}, state, {
       locationCoords: coords,
       displayResults: true,
-      loadingStatus: false
+      coordsLoadingStatus: false
     });
     return modState;
   } else if (action.type === actions.FETCH_LOCATION_COORDS_ERROR) {
@@ -41,7 +41,7 @@ export const locationReducer = (state = initialState, action) => {
     const modState = Object.assign({}, state, {
       warningState: true,
       warningMessage: warning,
-      loadingStatus: false
+      coordsLoadingStatus: false
     });
     return modState;
   } else if (action.type === actions.FETCH_SUN_TIMES_SUCCESS) {
@@ -83,9 +83,9 @@ export const locationReducer = (state = initialState, action) => {
       warningMessage: warning
     });
     return modState;
-  } else if (action.type === actions.LOADING_STATUS_TRUE) {
+  } else if (action.type === actions.COORDS_LOADING_STATUS_TRUE) {
     const modState = Object.assign({}, state, {
-      loadingStatus: true,
+      coordsLoadingStatus: true,
       displayResults: false
     });
     return modState;

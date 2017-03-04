@@ -1,9 +1,9 @@
 import 'isomorphic-fetch';
 
 // Loading Element
-export const LOADING_STATUS_TRUE = 'LOADING_STATUS_TRUE';
-export const loadingStatusTrue = () => ({
-  type: LOADING_STATUS_TRUE,
+export const COORDS_LOADING_STATUS_TRUE = 'COORDS_LOADING_STATUS_TRUE';
+export const coordsLoadingStatusTrue = () => ({
+  type: COORDS_LOADING_STATUS_TRUE,
 });
 
 
@@ -21,7 +21,7 @@ export const fetchLocationCoordsError = (error) => ({
 });
 
 export const fetchLocationCoords = searchQuery => dispatch => {
-  dispatch(loadingStatusTrue());
+  dispatch(coordsLoadingStatusTrue());
   const address = searchQuery;
   return new Promise((res, rej) => {
     const geocoder = new google.maps.Geocoder(); // eslint-disable-line
@@ -71,7 +71,7 @@ export const getCurrentLocationError = (error) => ({
 });
 
 export const getCurrentLocation = () => dispatch => {
-  dispatch(loadingStatusTrue());
+  dispatch(coordsLoadingStatusTrue());
   const positionOptions = {
     timeout: 6000
   };

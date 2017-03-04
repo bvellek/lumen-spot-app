@@ -12,7 +12,7 @@ export class LocationContainer extends React.Component {
     let toRender = null;
     if (this.props.displayResults) {
       toRender = <LocationMain />;
-    } else if (this.props.loadingStatus) {
+    } else if (this.props.coordsLoadingStatus) {
       toRender = <div />;
     } else {
       toRender = <NoSearch />;
@@ -30,7 +30,7 @@ export class LocationContainer extends React.Component {
 
 const mapStateToProps = (state) => ({
   displayResults: state.displayResults,
-  loadingStatus: state.loadingStatus
+  coordsLoadingStatus: state.coordsLoadingStatus
 });
 
 export default connect(mapStateToProps)(LocationContainer);

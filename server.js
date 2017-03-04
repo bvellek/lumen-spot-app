@@ -47,7 +47,7 @@ app.get('*', (req, res) => {
           sunTimesResults: null,
           weatherResults: null,
           inspirationResults: null,
-          loadingStatus: false,
+          coordsLoadingStatus: false,
           routing: { location: renderProps.location }
         };
 

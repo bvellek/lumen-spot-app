@@ -8501,15 +8501,15 @@ module.exports = g;
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.fetchInspiration = exports.fetchInspirationError = exports.FETCH_INSPIRATION_ERROR = exports.fetchInspirationSuccess = exports.FETCH_INSPIRATION_SUCCESS = exports.fetchWeather = exports.fetchWeatherError = exports.FETCH_WEATHER_ERROR = exports.fetchWeatherSuccess = exports.FETCH_WEATHER_SUCCESS = exports.fetchSunTimes = exports.fetchSunTimesError = exports.FETCH_SUN_TIMES_ERROR = exports.fetchSunTimesSuccess = exports.FETCH_SUN_TIMES_SUCCESS = exports.getCurrentLocation = exports.getCurrentLocationError = exports.GET_CURRENT_LOCATION_ERROR = exports.getCurrentLocationSuccess = exports.GET_CURRENT_LOCATION_SUCCESS = exports.fetchLocationCoords = exports.fetchLocationCoordsError = exports.FETCH_LOCATION_COORDS_ERROR = exports.fetchLocationCoordsSuccess = exports.FETCH_LOCATION_COORDS_SUCCESS = exports.loadingStatusTrue = exports.LOADING_STATUS_TRUE = undefined;
+exports.fetchInspiration = exports.fetchInspirationError = exports.FETCH_INSPIRATION_ERROR = exports.fetchInspirationSuccess = exports.FETCH_INSPIRATION_SUCCESS = exports.fetchWeather = exports.fetchWeatherError = exports.FETCH_WEATHER_ERROR = exports.fetchWeatherSuccess = exports.FETCH_WEATHER_SUCCESS = exports.fetchSunTimes = exports.fetchSunTimesError = exports.FETCH_SUN_TIMES_ERROR = exports.fetchSunTimesSuccess = exports.FETCH_SUN_TIMES_SUCCESS = exports.getCurrentLocation = exports.getCurrentLocationError = exports.GET_CURRENT_LOCATION_ERROR = exports.getCurrentLocationSuccess = exports.GET_CURRENT_LOCATION_SUCCESS = exports.fetchLocationCoords = exports.fetchLocationCoordsError = exports.FETCH_LOCATION_COORDS_ERROR = exports.fetchLocationCoordsSuccess = exports.FETCH_LOCATION_COORDS_SUCCESS = exports.coordsLoadingStatusTrue = exports.COORDS_LOADING_STATUS_TRUE = undefined;
 
 __webpack_require__(178);
 
 // Loading Element
-var LOADING_STATUS_TRUE = exports.LOADING_STATUS_TRUE = 'LOADING_STATUS_TRUE';
-var loadingStatusTrue = exports.loadingStatusTrue = function loadingStatusTrue() {
+var COORDS_LOADING_STATUS_TRUE = exports.COORDS_LOADING_STATUS_TRUE = 'COORDS_LOADING_STATUS_TRUE';
+var coordsLoadingStatusTrue = exports.coordsLoadingStatusTrue = function coordsLoadingStatusTrue() {
   return {
-    type: LOADING_STATUS_TRUE
+    type: COORDS_LOADING_STATUS_TRUE
   };
 };
 
@@ -8532,7 +8532,7 @@ var fetchLocationCoordsError = exports.fetchLocationCoordsError = function fetch
 
 var fetchLocationCoords = exports.fetchLocationCoords = function fetchLocationCoords(searchQuery) {
   return function (dispatch) {
-    dispatch(loadingStatusTrue());
+    dispatch(coordsLoadingStatusTrue());
     var address = searchQuery;
     return new Promise(function (res, rej) {
       var geocoder = new google.maps.Geocoder(); // eslint-disable-line
@@ -8577,7 +8577,7 @@ var getCurrentLocationError = exports.getCurrentLocationError = function getCurr
 
 var getCurrentLocation = exports.getCurrentLocation = function getCurrentLocation() {
   return function (dispatch) {
-    dispatch(loadingStatusTrue());
+    dispatch(coordsLoadingStatusTrue());
     var positionOptions = {
       timeout: 6000
     };
@@ -14155,7 +14155,7 @@ var LocationContainer = exports.LocationContainer = function (_React$Component) 
       var toRender = null;
       if (this.props.displayResults) {
         toRender = _react2.default.createElement(_locationMain2.default, null);
-      } else if (this.props.loadingStatus) {
+      } else if (this.props.coordsLoadingStatus) {
         toRender = _react2.default.createElement('div', null);
       } else {
         toRender = _react2.default.createElement(_noSearch2.default, null);
@@ -14177,7 +14177,7 @@ var LocationContainer = exports.LocationContainer = function (_React$Component) 
 var mapStateToProps = function mapStateToProps(state) {
   return {
     displayResults: state.displayResults,
-    loadingStatus: state.loadingStatus
+    coordsLoadingStatus: state.coordsLoadingStatus
   };
 };
 
@@ -14471,7 +14471,7 @@ var SearchCoordContainer = exports.SearchCoordContainer = function (_React$Compo
           ' are ',
           this.props.coords
         );
-      } else if (this.props.loadingStatus) {
+      } else if (this.props.coordsLoadingStatus) {
         message = _react2.default.createElement(
           'div',
           { className: 'loading-element' },
@@ -14510,7 +14510,7 @@ var mapStateToProps = function mapStateToProps(state) {
   return {
     coords: state.locationCoords,
     displayResults: state.displayResults,
-    loadingStatus: state.loadingStatus,
+    coordsLoadingStatus: state.coordsLoadingStatus,
     warningState: state.warningState,
     warningMessage: state.warningMessage
   };
@@ -15128,7 +15128,7 @@ var initialState = exports.initialState = {
   sunTimesResults: null,
   weatherResults: null,
   inspirationResults: null,
-  loadingStatus: false
+  coordsLoadingStatus: false
 };
 
 var locationReducer = exports.locationReducer = function locationReducer() {
@@ -15140,7 +15140,7 @@ var locationReducer = exports.locationReducer = function locationReducer() {
     var modState = Object.assign({}, state, {
       locationCoords: coords,
       displayResults: true,
-      loadingStatus: false
+      coordsLoadingStatus: false
     });
     return modState;
   } else if (action.type === actions.GET_CURRENT_LOCATION_ERROR) {
@@ -15148,7 +15148,7 @@ var locationReducer = exports.locationReducer = function locationReducer() {
     var _modState = Object.assign({}, state, {
       warningState: true,
       warningMessage: warning,
-      loadingStatus: false
+      coordsLoadingStatus: false
     });
     return _modState;
   } else if (action.type === actions.FETCH_LOCATION_COORDS_SUCCESS) {
@@ -15156,7 +15156,7 @@ var locationReducer = exports.locationReducer = function locationReducer() {
     var _modState2 = Object.assign({}, state, {
       locationCoords: _coords,
       displayResults: true,
-      loadingStatus: false
+      coordsLoadingStatus: false
     });
     return _modState2;
   } else if (action.type === actions.FETCH_LOCATION_COORDS_ERROR) {
@@ -15164,7 +15164,7 @@ var locationReducer = exports.locationReducer = function locationReducer() {
     var _modState3 = Object.assign({}, state, {
       warningState: true,
       warningMessage: _warning,
-      loadingStatus: false
+      coordsLoadingStatus: false
     });
     return _modState3;
   } else if (action.type === actions.FETCH_SUN_TIMES_SUCCESS) {
@@ -15206,9 +15206,9 @@ var locationReducer = exports.locationReducer = function locationReducer() {
       warningMessage: _warning4
     });
     return _modState9;
-  } else if (action.type === actions.LOADING_STATUS_TRUE) {
+  } else if (action.type === actions.COORDS_LOADING_STATUS_TRUE) {
     var _modState10 = Object.assign({}, state, {
-      loadingStatus: true,
+      coordsLoadingStatus: true,
       displayResults: false
     });
     return _modState10;

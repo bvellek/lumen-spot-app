@@ -3,11 +3,11 @@ import * as actions from '../public/js/actions/index';
 
 // Loading Status Test
 describe('Loading Status Action', () => {
-  it('should create an action to change loading status to true', () => {
+  it('should create an action to change coords loading status to true', () => {
     const expectedAction = {
-      type: 'LOADING_STATUS_TRUE'
+      type: 'COORDS_LOADING_STATUS_TRUE'
     };
-    expect(actions.loadingStatusTrue()).toEqual(expectedAction);
+    expect(actions.coordsLoadingStatusTrue()).toEqual(expectedAction);
   });
 });
 

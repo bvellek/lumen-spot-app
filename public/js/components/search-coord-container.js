@@ -10,7 +10,7 @@ export class SearchCoordContainer extends React.Component {
     let message = null;
     if (this.props.displayResults) {
       message = <h4 className="coord-results">Your search <a className="sliding-middle-out" href={url} target={targetString}>coordinates</a> are {this.props.coords}</h4>;
-    } else if (this.props.loadingStatus) {
+    } else if (this.props.coordsLoadingStatus) {
       message = (
         <div className="loading-element">
           <h4>Finding your location...</h4>
@@ -33,7 +33,7 @@ export class SearchCoordContainer extends React.Component {
 const mapStateToProps = (state) => ({
   coords: state.locationCoords,
   displayResults: state.displayResults,
-  loadingStatus: state.loadingStatus,
+  coordsLoadingStatus: state.coordsLoadingStatus,
   warningState: state.warningState,
   warningMessage: state.warningMessage
 });

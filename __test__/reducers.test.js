@@ -10,11 +10,11 @@ describe('Location Reducer', () => {
       sunTimesResults: null,
       weatherResults: null,
       inspirationResults: null,
-      loadingStatus: false,
+      coordsLoadingStatus: false,
     });
   });
 
-  it('should handle LOADING_STATUS_TRUE', () => {
+  it('should handle COORDS_LOADING_STATUS_TRUE', () => {
     const stateAfter = {
       locationCoords: null,
       displayResults: false,
@@ -23,10 +23,10 @@ describe('Location Reducer', () => {
       sunTimesResults: null,
       weatherResults: null,
       inspirationResults: null,
-      loadingStatus: true,
+      coordsLoadingStatus: true,
     };
     expect(locationReducer(initialState, {
-    type: 'LOADING_STATUS_TRUE'
+    type: 'COORDS_LOADING_STATUS_TRUE'
     })).toEqual(stateAfter);
   });
 
@@ -40,7 +40,7 @@ describe('Location Reducer', () => {
       sunTimesResults: null,
       weatherResults: null,
       inspirationResults: null,
-      loadingStatus: false,
+      coordsLoadingStatus: false,
     };
     expect(locationReducer(initialState, {
     type: 'FETCH_LOCATION_COORDS_SUCCESS',
@@ -58,7 +58,7 @@ describe('Location Reducer', () => {
       sunTimesResults: null,
       weatherResults: null,
       inspirationResults: null,
-      loadingStatus: false,
+      coordsLoadingStatus: false,
     };
     expect(locationReducer(initialState, {
     type: 'FETCH_LOCATION_COORDS_ERROR',
@@ -76,7 +76,7 @@ describe('Location Reducer', () => {
       sunTimesResults: null,
       weatherResults: null,
       inspirationResults: null,
-      loadingStatus: false,
+      coordsLoadingStatus: false,
     };
     expect(locationReducer(initialState, {
     type: 'GET_CURRENT_LOCATION_SUCCESS',
@@ -93,7 +93,7 @@ describe('Location Reducer', () => {
       sunTimesResults: null,
       weatherResults: null,
       inspirationResults: null,
-      loadingStatus: false,
+      coordsLoadingStatus: false,
     };
     expect(locationReducer(initialState, {
     type: 'GET_CURRENT_LOCATION_ERROR',
@@ -111,7 +111,7 @@ describe('Location Reducer', () => {
       sunTimesResults: testSun,
       weatherResults: null,
       inspirationResults: null,
-      loadingStatus: false,
+      coordsLoadingStatus: false,
     };
     expect(locationReducer(initialState, {
     type: 'FETCH_SUN_TIMES_SUCCESS',
@@ -128,7 +128,7 @@ describe('Location Reducer', () => {
       sunTimesResults: null,
       weatherResults: null,
       inspirationResults: null,
-      loadingStatus: false,
+      coordsLoadingStatus: false,
     };
     expect(locationReducer(initialState, {
     type: 'FETCH_SUN_TIMES_ERROR',
@@ -146,7 +146,7 @@ describe('Location Reducer', () => {
       sunTimesResults: null,
       weatherResults: testWeather,
       inspirationResults: null,
-      loadingStatus: false,
+      coordsLoadingStatus: false,
     };
     expect(locationReducer(initialState, {
     type: 'FETCH_WEATHER_SUCCESS',
@@ -163,7 +163,7 @@ describe('Location Reducer', () => {
       sunTimesResults: null,
       weatherResults: null,
       inspirationResults: null,
-      loadingStatus: false,
+      coordsLoadingStatus: false,
     };
     expect(locationReducer(initialState, {
     type: 'FETCH_WEATHER_ERROR',
@@ -181,7 +181,7 @@ describe('Location Reducer', () => {
       sunTimesResults: null,
       weatherResults: null,
       inspirationResults: testInspiration,
-      loadingStatus: false,
+      coordsLoadingStatus: false,
     };
     expect(locationReducer(initialState, {
     type: 'FETCH_INSPIRATION_SUCCESS',
@@ -198,7 +198,7 @@ describe('Location Reducer', () => {
       sunTimesResults: null,
       weatherResults: null,
       inspirationResults: null,
-      loadingStatus: false,
+      coordsLoadingStatus: false,
     };
     expect(locationReducer(initialState, {
     type: 'FETCH_INSPIRATION_ERROR',
