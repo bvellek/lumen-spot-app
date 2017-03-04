@@ -13,7 +13,7 @@ export class ImageResultsContainer extends React.Component {
     if (images != null) {
       imageList = images.photos.map((pic, i) => {
         return (
-          <Image altText={pic.name} aperture={pic.aperture} iso={pic.iso} ss={pic.shutter_speed} imageURL={pic.image_url} imageLink={`https://500px.com${pic.url}`} imageLinkTarget={`_${pic.user.id}`} photog={`${(pic.user.fullname).toUpperCase()}`} key={i} />
+          <Image altText={pic.name} aperture={pic.aperture} iso={pic.iso} ss={pic.shutter_speed} imageURL={pic.images[0].url} imageLink={`https://500px.com${pic.url}`} imageLinkTarget={`_${pic.user.id}`} photog={`${(pic.user.fullname).toUpperCase()}`} key={i} />
         );
       });
     } else {
