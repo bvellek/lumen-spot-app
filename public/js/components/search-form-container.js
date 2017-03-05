@@ -10,11 +10,25 @@ export class SearchFormContainer extends React.Component {
     this.handleChange = this.handleChange.bind(this);
     this.locationSubmit = this.locationSubmit.bind(this);
     this.getCurrentLocation = this.getCurrentLocation.bind(this);
+
+    try {
+      window.onpopstate = function (event) {
+        console.log('HELLLLLLLLLLLLLOOOOOOOOO', event);
+      };
+    } catch (e) {
+      console.log(e);
+    }
   }
 
-
   getCurrentLocation() {
-    this.props.dispatch(actions.getCurrentLocation());
+    this.props.dispatch(actions.getCurrentLocation()).then((coords) => {
+      const latLng = coords.split(',');
+      const browserLocation = {
+        lat: latLng[0].trim(),
+        lng: latLng[1].trim()
+      };
+      history.pushState(browserLocation, 'Current Location', `/location/?lat=${browserLocation.lat}&lng=${browserLocation.lng}`);
+    });
   }
 
   handleChange(event) {
@@ -24,7 +38,14 @@ export class SearchFormContainer extends React.Component {
   locationSubmit(e) {
     e.preventDefault();
     const location = this.state.value;
-    this.props.dispatch(actions.fetchLocationCoords(location));
+    this.props.dispatch(actions.fetchLocationCoords(location)).then((coords) => {
+      const latLng = coords.split(',');
+      const browserLocation = {
+        lat: latLng[0].trim(),
+        lng: latLng[1].trim()
+      };
+      history.pushState(browserLocation, location, `/location/?lat=${browserLocation.lat}&lng=${browserLocation.lng}`);
+    });
   }
 
   render() {

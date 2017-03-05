@@ -8552,6 +8552,7 @@ var fetchLocationCoords = exports.fetchLocationCoords = function fetchLocationCo
       dispatch(fetchSunTimes(coords));
       dispatch(fetchWeather(coords));
       dispatch(fetchInspiration(coords));
+      return coords;
     }).catch(function (error) {
       return dispatch(fetchLocationCoordsError(error));
     });
@@ -8598,6 +8599,7 @@ var getCurrentLocation = exports.getCurrentLocation = function getCurrentLocatio
       dispatch(fetchSunTimes(coords));
       dispatch(fetchWeather(coords));
       dispatch(fetchInspiration(coords));
+      return coords;
     }).catch(function (error) {
       return dispatch(getCurrentLocationError(error));
     });
@@ -14409,6 +14411,7 @@ var routes = _react2.default.createElement(
   { path: '/', component: _app2.default },
   _react2.default.createElement(_reactRouter.IndexRoute, { component: _landingPage2.default }),
   _react2.default.createElement(_reactRouter.Route, { path: 'location', component: _locationContainer2.default }),
+  _react2.default.createElement(_reactRouter.Route, { path: 'location/:coords', component: _locationContainer2.default }),
   _react2.default.createElement(_reactRouter.Route, { path: '*', component: _notFoundPage2.default })
 );
 
@@ -14564,13 +14567,28 @@ var SearchFormContainer = exports.SearchFormContainer = function (_React$Compone
     _this.handleChange = _this.handleChange.bind(_this);
     _this.locationSubmit = _this.locationSubmit.bind(_this);
     _this.getCurrentLocation = _this.getCurrentLocation.bind(_this);
+
+    try {
+      window.onpopstate = function (event) {
+        console.log('HELLLLLLLLLLLLLOOOOOOOOO', event);
+      };
+    } catch (e) {
+      console.log(e);
+    }
     return _this;
   }
 
   _createClass(SearchFormContainer, [{
     key: 'getCurrentLocation',
     value: function getCurrentLocation() {
-      this.props.dispatch(actions.getCurrentLocation());
+      this.props.dispatch(actions.getCurrentLocation()).then(function (coords) {
+        var latLng = coords.split(',');
+        var browserLocation = {
+          lat: latLng[0].trim(),
+          lng: latLng[1].trim()
+        };
+        history.pushState(browserLocation, 'Current Location', '/location/?lat=' + browserLocation.lat + '&lng=' + browserLocation.lng);
+      });
     }
   }, {
     key: 'handleChange',
@@ -14582,7 +14600,14 @@ var SearchFormContainer = exports.SearchFormContainer = function (_React$Compone
     value: function locationSubmit(e) {
       e.preventDefault();
       var location = this.state.value;
-      this.props.dispatch(actions.fetchLocationCoords(location));
+      this.props.dispatch(actions.fetchLocationCoords(location)).then(function (coords) {
+        var latLng = coords.split(',');
+        var browserLocation = {
+          lat: latLng[0].trim(),
+          lng: latLng[1].trim()
+        };
+        history.pushState(browserLocation, location, '/location/?lat=' + browserLocation.lat + '&lng=' + browserLocation.lng);
+      });
     }
   }, {
     key: 'render',

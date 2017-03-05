@@ -49,6 +49,7 @@ export const fetchLocationCoords = searchQuery => dispatch => {
     dispatch(
       fetchInspiration(coords)
     );
+    return coords;
   }).catch((error) => (
     dispatch(
       fetchLocationCoordsError(error)
@@ -100,6 +101,7 @@ export const getCurrentLocation = () => dispatch => {
     dispatch(
       fetchInspiration(coords)
     );
+    return coords;
   }).catch((error) => (
     dispatch(
       getCurrentLocationError(error)

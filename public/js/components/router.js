@@ -10,7 +10,7 @@ const routes = (
   <Route path="/" component={App}>
     <IndexRoute component={LandingPage} />
     <Route path="location" component={LocationContainer} />
-    {/* <Route path="location/:coords" component={LocationContainer} /> */}
+    <Route path="location/:coords" component={LocationContainer} />
     <Route path="*" component={NotFoundPage} />
   </Route>
 
