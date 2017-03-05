@@ -14588,6 +14588,8 @@ var SearchFormContainer = exports.SearchFormContainer = function (_React$Compone
           lng: latLng[1].trim()
         };
         history.pushState(browserLocation, 'Current Location', '/location/?lat=' + browserLocation.lat + '&lng=' + browserLocation.lng);
+      }).catch(function (err) {
+        console.log(err);
       });
     }
   }, {
@@ -14607,6 +14609,8 @@ var SearchFormContainer = exports.SearchFormContainer = function (_React$Compone
           lng: latLng[1].trim()
         };
         history.pushState(browserLocation, location, '/location/?lat=' + browserLocation.lat + '&lng=' + browserLocation.lng);
+      }).catch(function (err) {
+        console.log(err);
       });
     }
   }, {

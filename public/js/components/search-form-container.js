@@ -28,6 +28,8 @@ export class SearchFormContainer extends React.Component {
         lng: latLng[1].trim()
       };
       history.pushState(browserLocation, 'Current Location', `/location/?lat=${browserLocation.lat}&lng=${browserLocation.lng}`);
+    }).catch((err) => {
+      console.log(err);
     });
   }
 
@@ -45,6 +47,8 @@ export class SearchFormContainer extends React.Component {
         lng: latLng[1].trim()
       };
       history.pushState(browserLocation, location, `/location/?lat=${browserLocation.lat}&lng=${browserLocation.lng}`);
+    }).catch((err) => {
+      console.log(err);
     });
   }
 
