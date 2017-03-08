@@ -20,6 +20,11 @@ export class SearchFormContainer extends React.Component {
     }
   }
 
+  // componentDidMount() {
+  //   const queryLocation = window.location;
+  //   console.log(queryLocation);
+  // }
+
   getCurrentLocation() {
     this.props.dispatch(actions.getCurrentLocation()).then((coords) => {
       const latLng = coords.split(',');

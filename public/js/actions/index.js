@@ -124,7 +124,7 @@ export const fetchSunTimesError = (error) => ({
 });
 
 export const fetchSunTimes = coords => dispatch => {
-  const url = '/location';
+  const url = 'https://lumen-spot.herokuapp.com/location';
   const coordinates = coords;
   return fetch(url, {
     method: 'POST',

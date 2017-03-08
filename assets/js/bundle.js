@@ -8625,7 +8625,7 @@ var fetchSunTimesError = exports.fetchSunTimesError = function fetchSunTimesErro
 
 var fetchSunTimes = exports.fetchSunTimes = function fetchSunTimes(coords) {
   return function (dispatch) {
-    var url = '/location';
+    var url = 'https://lumen-spot.herokuapp.com/location';
     var coordinates = coords;
     return fetch(url, {
       method: 'POST',
@@ -14577,6 +14577,11 @@ var SearchFormContainer = exports.SearchFormContainer = function (_React$Compone
     }
     return _this;
   }
+
+  // componentDidMount() {
+  //   const queryLocation = window.location;
+  //   console.log(queryLocation);
+  // }
 
   _createClass(SearchFormContainer, [{
     key: 'getCurrentLocation',
@@ -32160,6 +32165,11 @@ module.exports = function(module) {
 "use strict";
 
 
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.store = undefined;
+
 var _react = __webpack_require__(1);
 
 var _react2 = _interopRequireDefault(_react);
@@ -32180,7 +32190,7 @@ var _cliRouter2 = _interopRequireDefault(_cliRouter);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var store = (0, _store2.default)();
+var store = exports.store = (0, _store2.default)();
 
 _reactDom2.default.render(_react2.default.createElement(
   _reactRedux.Provider,

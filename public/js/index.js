@@ -5,7 +5,7 @@ import { Provider } from 'react-redux';
 import configureStore from './store';
 import CLIRouter from './components/cli-router';
 
-const store = configureStore();
+export const store = configureStore();
 
   ReactDOM.render((
     <Provider store={store}>

@@ -12,6 +12,8 @@ import routes from './public/js/components/router';
 import NotFoundPage from './public/js/components/not-found-page';
 import * as reducers from './public/js/reducers/index';
 
+import * as actions from './public/js/actions/index';
+import configureStore from './public/js/store';
 
 const app = express();
 
@@ -26,6 +28,67 @@ app.get('*', (req, res) => {
   if (req.headers['x-forwarded-proto'] !== 'https' && process.env.NODE_ENV === 'production') {
     res.redirect(`https://lumen-spot.herokuapp.com${req.url}`);
   }
+  const store = configureStore();
+  console.log(store);
+
+  if (req.query.lat && req.query.lng) {
+    const lat = req.query.lat;
+    const lng = req.query.lng;
+    if (!isNaN(lat) && !isNaN(lng)) {
+      console.log('testingggggggg', lat, lng);
+      const coords = `${lat},${lng}`;
+      store.dispatch(actions.fetchLocationCoordsSuccess(coords));
+      return Promise.all([
+        store.dispatch(actions.fetchSunTimes(coords)), store.dispatch(actions.fetchWeather(coords)),
+        store.dispatch(actions.fetchInspiration(coords))
+      ]).then(() => {
+        match(
+          { routes, location: req.url || '/' },
+          (err, redirectLocation, renderProps) => {
+            if (err) {
+              return res.status(500).send(err.message);
+            }
+
+            if (redirectLocation) {
+              return res.redirect(302, redirectLocation.pathname + redirectLocation.search);
+            }
+
+            let markup;
+            if (renderProps) {
+              // const initialState = {
+              //   locationCoords: null,
+              //   displayResults: false,
+              //   warningState: false,
+              //   warningMessage: null,
+              //   sunTimesResults: null,
+              //   weatherResults: null,
+              //   inspirationResults: null,
+              //   coordsLoadingStatus: false,
+              //   routing: { location: renderProps.location }
+              // };
+
+              // const store = createStore(reducers.locationReducer, initialState);
+
+              const component = (
+                <Provider store={store}>
+                  <RouterContext {...renderProps} />
+                </Provider>
+              );
+
+              // if current route matched we have renderProps
+              console.log('*');
+              markup = renderToString(component);
+              console.log('**');
+            } else {
+              // otherwise render 404 page
+              markup = renderToString(<NotFoundPage />);
+              res.status(404);
+            }
+            return res.render('index', { react: markup });
+          }
+        )});
+    }
+  }
   match(
     { routes, location: req.url || '/' },
     (err, redirectLocation, renderProps) => {
@@ -39,19 +102,19 @@ app.get('*', (req, res) => {
 
       let markup;
       if (renderProps) {
-        const initialState = {
-          locationCoords: null,
-          displayResults: false,
-          warningState: false,
-          warningMessage: null,
-          sunTimesResults: null,
-          weatherResults: null,
-          inspirationResults: null,
-          coordsLoadingStatus: false,
-          routing: { location: renderProps.location }
-        };
+        // const initialState = {
+        //   locationCoords: null,
+        //   displayResults: false,
+        //   warningState: false,
+        //   warningMessage: null,
+        //   sunTimesResults: null,
+        //   weatherResults: null,
+        //   inspirationResults: null,
+        //   coordsLoadingStatus: false,
+        //   routing: { location: renderProps.location }
+        // };
 
-        const store = createStore(reducers.locationReducer, initialState);
+        // const store = createStore(reducers.locationReducer, initialState);
 
         const component = (
           <Provider store={store}>
