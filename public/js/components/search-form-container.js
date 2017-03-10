@@ -6,10 +6,13 @@ import * as actions from '../actions/index';
 export class SearchFormContainer extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { value: '' };
+    this.state = {
+      value: ''
+    };
     this.handleChange = this.handleChange.bind(this);
     this.locationSubmit = this.locationSubmit.bind(this);
     this.getCurrentLocation = this.getCurrentLocation.bind(this);
+    this.componentDidMount = this.componentDidMount.bind(this);
     const store = this.props;
 
     try {
@@ -22,7 +25,8 @@ export class SearchFormContainer extends React.Component {
             const coords = `${lat},${lng}`;
             store.dispatch(actions.fetchLocationCoordsSuccess(coords));
             return Promise.all([
-              store.dispatch(actions.fetchSunTimes(coords)), store.dispatch(actions.fetchWeather(coords)),
+              store.dispatch(actions.fetchSunTimes(coords)),
+              store.dispatch(actions.fetchWeather(coords)),
               store.dispatch(actions.fetchInspiration(coords))
             ]);
           }
@@ -33,10 +37,32 @@ export class SearchFormContainer extends React.Component {
     }
   }
 
-  // componentDidMount() {
-  //   const queryLocation = window.location;
-  //   console.log(queryLocation);
-  // }
+  componentDidMount() {
+    try {
+      const queryLocation = window.location.href;
+      const queryString = {};
+      queryLocation.replace(
+          new RegExp('([^?=&]+)(=([^&]*))?', 'g'),
+          ($0, $1, $2, $3) => { queryString[$1] = $3; }
+      );
+      console.log(queryLocation, queryString);
+      if (queryString.lat && queryString.lng) {
+        const lat = queryString.lat;
+        const lng = queryString.lng;
+        if (!isNaN(lat) && !isNaN(lng)) {
+          const coords = `${lat},${lng}`;
+          this.props.dispatch(actions.fetchLocationCoordsSuccess(coords));
+          return Promise.all([
+            this.props.dispatch(actions.fetchSunTimes(coords)),
+            this.props.dispatch(actions.fetchWeather(coords)),
+            this.props.dispatch(actions.fetchInspiration(coords))
+          ]);
+        }
+      }
+    } catch (e) {
+      console.log(e);
+    }
+  }
 
   getCurrentLocation() {
     this.props.dispatch(actions.getCurrentLocation()).then((coords) => {
@@ -52,8 +78,8 @@ export class SearchFormContainer extends React.Component {
   }
 
   handleChange(event) {
-      this.setState({ value: event.target.value.toUpperCase() });
-    }
+    this.setState({ value: event.target.value.toUpperCase() });
+  }
 
   locationSubmit(e) {
     e.preventDefault();
@@ -76,8 +102,9 @@ export class SearchFormContainer extends React.Component {
         <legend>
           <h2>SEARCH...</h2>
         </legend>
-        <label htmlFor="search-input">Location:
-          <span> (ex: Grand Canyon | Seattle, WA | 1600&nbsp;Pennsylvania Ave NW Washington, D.C.&nbsp;20500)</span>
+        <label htmlFor="search-input">Location:{' '}
+          <span>
+            (ex: Grand Canyon | Seattle, WA | 1600&nbsp;Pennsylvania Ave NW Washington, D.C.&nbsp;20500)</span>
         </label>
         <input id="search-input" type="search" name="address" value={this.state.value} onChange={this.handleChange} />
         <div className="search-btn-container">

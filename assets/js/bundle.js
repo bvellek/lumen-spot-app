@@ -14563,10 +14563,13 @@ var SearchFormContainer = exports.SearchFormContainer = function (_React$Compone
 
     var _this = _possibleConstructorReturn(this, (SearchFormContainer.__proto__ || Object.getPrototypeOf(SearchFormContainer)).call(this, props));
 
-    _this.state = { value: '' };
+    _this.state = {
+      value: ''
+    };
     _this.handleChange = _this.handleChange.bind(_this);
     _this.locationSubmit = _this.locationSubmit.bind(_this);
     _this.getCurrentLocation = _this.getCurrentLocation.bind(_this);
+    _this.componentDidMount = _this.componentDidMount.bind(_this);
     var store = _this.props;
 
     try {
@@ -14588,12 +14591,30 @@ var SearchFormContainer = exports.SearchFormContainer = function (_React$Compone
     return _this;
   }
 
-  // componentDidMount() {
-  //   const queryLocation = window.location;
-  //   console.log(queryLocation);
-  // }
-
   _createClass(SearchFormContainer, [{
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      try {
+        var queryLocation = window.location.href;
+        var queryString = {};
+        queryLocation.replace(new RegExp('([^?=&]+)(=([^&]*))?', 'g'), function ($0, $1, $2, $3) {
+          queryString[$1] = $3;
+        });
+        console.log(queryLocation, queryString);
+        if (queryString.lat && queryString.lng) {
+          var lat = queryString.lat;
+          var lng = queryString.lng;
+          if (!isNaN(lat) && !isNaN(lng)) {
+            var coords = lat + ',' + lng;
+            this.props.dispatch(actions.fetchLocationCoordsSuccess(coords));
+            return Promise.all([this.props.dispatch(actions.fetchSunTimes(coords)), this.props.dispatch(actions.fetchWeather(coords)), this.props.dispatch(actions.fetchInspiration(coords))]);
+          }
+        }
+      } catch (e) {
+        console.log(e);
+      }
+    }
+  }, {
     key: 'getCurrentLocation',
     value: function getCurrentLocation() {
       this.props.dispatch(actions.getCurrentLocation()).then(function (coords) {
@@ -14647,10 +14668,11 @@ var SearchFormContainer = exports.SearchFormContainer = function (_React$Compone
           'label',
           { htmlFor: 'search-input' },
           'Location:',
+          ' ',
           _react2.default.createElement(
             'span',
             null,
-            ' (ex: Grand Canyon | Seattle, WA | 1600\xA0Pennsylvania Ave NW Washington, D.C.\xA020500)'
+            '(ex: Grand Canyon | Seattle, WA | 1600\xA0Pennsylvania Ave NW Washington, D.C.\xA020500)'
           )
         ),
         _react2.default.createElement('input', { id: 'search-input', type: 'search', name: 'address', value: this.state.value, onChange: this.handleChange }),
