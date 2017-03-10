@@ -422,16 +422,22 @@ h1 {
   font-family: 'Archivo Black'; }
 
 h2 {
-  font-size: 2.4em;
+  font-size: 2.1em;
   font-weight: 900;
   margin-top: 0.4em;
   margin-bottom: 0.4em; }
+  @media only screen and (min-width: 40em) {
+    h2 {
+      font-size: 2.4em; } }
 
 h3 {
-  font-size: 2em;
+  font-size: 1.8em;
   font-weight: 800;
   margin-top: 0.4em;
   margin-bottom: 0.4em; }
+  @media only screen and (min-width: 40em) {
+    h3 {
+      font-size: 2em; } }
 
 h4 {
   font-size: 1.5em;
@@ -602,8 +608,11 @@ body:hover .visually-hidden input {
     text-align: center;
     margin-bottom: 0; }
   .what-section p {
-    font-size: 1.25em;
+    font-size: 1.1em;
     padding: 0 0.5em; }
+    @media only screen and (min-width: 40em) {
+      .what-section p {
+        font-size: 1.25em; } }
   @media only screen and (min-width: 58em) {
     .what-section {
       flex-direction: row; }
@@ -667,8 +676,11 @@ div#slider figure {
     text-align: center;
     margin-bottom: 0; }
   .light-section p {
-    font-size: 1.25em;
+    font-size: 1.1em;
     padding: 0 0.5em; }
+    @media only screen and (min-width: 40em) {
+      .light-section p {
+        font-size: 1.25em; } }
     .light-section p:nth-child(5) {
       margin-bottom: 0; }
   .light-section span {
@@ -680,7 +692,10 @@ div#slider figure {
     max-width: 30em; }
     .light-section ul li {
       margin-bottom: 1em;
-      font-size: 1.25em; }
+      font-size: 1.05em; }
+      @media only screen and (min-width: 40em) {
+        .light-section ul li {
+          font-size: 1.2em; } }
 
 .link-section {
   text-align: center;
@@ -692,8 +707,10 @@ div#slider figure {
     font-family: "Montserrat", Frutiger, "Frutiger Linotype", Univers, Calibri, "Gill Sans", "Gill Sans MT", "Myriad Pro", Myriad, "DejaVu Sans Condensed", "Liberation Sans", "Nimbus Sans L", Tahoma, Geneva, "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-weight: 900;
     font-size: 2.5em;
-    padding: 0.5em 0.2em;
-    color: #774b98; }
+    padding: 0.5em 0.5em;
+    color: #774b98;
+    outline: 1px #774b98 solid;
+    outline-offset: -0.25em; }
     .link-section a:focus {
       outline: 1px solid #555; }
 

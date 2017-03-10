@@ -5,7 +5,7 @@
   align-items: center;
   max-width: 60em;
 
-  &> * {
+  & > * {
     width: 90%;
   }
 
@@ -15,8 +15,11 @@
   }
 
   p {
-    font-size: 1.25em;
+    font-size: 1.1em;
     padding: 0 0.5em;
+    @media only screen and (min-width: $small-break) {
+      font-size: 1.25em;
+    }
 
     &:nth-child(5) {
       margin-bottom: 0;
@@ -31,9 +34,13 @@
 
   ul {
     max-width: 30em;
+
     li {
       margin-bottom: 1em;
-      font-size: 1.25em;
+      font-size: 1.05em;
+      @media only screen and (min-width: $small-break) {
+        font-size: 1.2em;
+      }
     }
   }
 }

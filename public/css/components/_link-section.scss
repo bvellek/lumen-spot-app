@@ -8,8 +8,10 @@
   a {
     @include font-heading(900);
     font-size: 2.5em;
-    padding: 0.5em 0.2em;
+    padding: 0.5em 0.5em;
     color: $link-purple;
+    outline: 1px $link-purple solid;
+    outline-offset: -0.25em;
 
 
     &:focus {

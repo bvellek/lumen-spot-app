@@ -13796,7 +13796,7 @@ function InfoLight() {
       _react2.default.createElement(
         "p",
         null,
-        "The Sun is the most critical light source we have. Looking to capture breathtaking portraits at that golden hour or take advantage of the blue hour for cold landscapes? Read on to find out more about what the sun times we provide mean to you."
+        "The Sun is the most critical light source we have. Looking to capture breathtaking portraits at that golden hour or take advantage of the blue hour for cold landscapes? Read on to find out more about what the sun times we provide mean to\xA0you."
       ),
       _react2.default.createElement(
         "p",
@@ -13806,7 +13806,7 @@ function InfoLight() {
           null,
           "Golden Hour"
         ),
-        ": the time when the sky is filled with golden red-yellow tones. Diffused light with low contrast has a warming effect on your photos. This magical condition occurs briefly in the morning from the end of civil twilight through the beginning of the sunrise. In the evening you can catch the golden hour toward the end of sunset and into the beginning of civil twilight."
+        ": the time when the sky is filled with golden red-yellow tones. Diffused light with low contrast has a warming effect on your photos. This magical condition occurs briefly in the morning from the end of civil twilight through the beginning of the sunrise. In the evening you can catch the golden hour toward the end of sunset and into the beginning of civil\xA0twilight."
       ),
       _react2.default.createElement(
         "p",
@@ -13816,7 +13816,7 @@ function InfoLight() {
           null,
           "Blue Hour"
         ),
-        ": the time just before golden hour in the morning (beginning of civil twilight) and just after, in the evening (end of civil twilight). The sky\u2019s color will be cool and saturated, filled with deep blue. This can be a great time for urban photography, moon shots, and cool landscapes."
+        ": the time just before golden hour in the morning (beginning of civil twilight) and just after, in the evening (end of civil twilight). The sky\u2019s color will be cool and saturated, filled with deep blue. This can be a great time for urban photography, moon shots, and cool\xA0landscapes."
       ),
       _react2.default.createElement(
         "p",
@@ -13826,7 +13826,7 @@ function InfoLight() {
           null,
           "Twilights"
         ),
-        ": In the morning the sun rises through astronomical twilight, nautical twilight, civil twilight and the full sunrise. In the evening and into the night the sun sets to civil twilight, nautical twilight, astronomical twilight and into nighttime."
+        ": In the morning the sun rises through astronomical twilight, nautical twilight, civil twilight and the full sunrise. In the evening and into the night the sun sets to civil twilight, nautical twilight, astronomical twilight and into\xA0nighttime."
       ),
       _react2.default.createElement(
         "ul",
@@ -13839,7 +13839,7 @@ function InfoLight() {
             null,
             "Civil Twilight"
           ),
-          ": where the golden and blue hours can be found."
+          ": where the golden and blue hours can be\xA0found."
         ),
         _react2.default.createElement(
           "li",
@@ -13849,7 +13849,7 @@ function InfoLight() {
             null,
             "Nautical Twilight"
           ),
-          ": provides diffuse, blue light which can be great for capturing silhouettes or longer exposure shots."
+          ": provides diffuse, blue light which can be great for capturing silhouettes or longer exposure\xA0shots."
         ),
         _react2.default.createElement(
           "li",
@@ -13859,7 +13859,7 @@ function InfoLight() {
             null,
             "Astronomical Twilight"
           ),
-          ": darker sky and more visible stars. This is the time for those beautiful shots of the milky way."
+          ": darker sky and more visible stars. This is the time for those beautiful shots of the milky\xA0way."
         )
       )
     )
