@@ -5,12 +5,12 @@ import 'isomorphic-fetch';
 import React from 'react';
 import { renderToString } from 'react-dom/server';
 import { match, RouterContext } from 'react-router';
-import { createStore } from 'redux';
+// import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 
 import routes from './public/js/components/router';
 import NotFoundPage from './public/js/components/not-found-page';
-import * as reducers from './public/js/reducers/index';
+// import * as reducers from './public/js/reducers/index';
 
 import * as actions from './public/js/actions/index';
 import configureStore from './public/js/store';
@@ -86,9 +86,11 @@ app.get('*', (req, res) => {
             }
             return res.render('index', { react: markup });
           }
-        )});
+        );
+      });
     }
   }
+
   match(
     { routes, location: req.url || '/' },
     (err, redirectLocation, renderProps) => {
