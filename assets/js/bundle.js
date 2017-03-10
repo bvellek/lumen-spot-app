@@ -8625,7 +8625,7 @@ var fetchSunTimesError = exports.fetchSunTimesError = function fetchSunTimesErro
 
 var fetchSunTimes = exports.fetchSunTimes = function fetchSunTimes(coords) {
   return function (dispatch) {
-    var url = 'https://lumen-spot.herokuapp.com/location';
+    var url = 'https://localhost:8081/location'; // 'https://lumen-spot.herokuapp.com/location';
     var coordinates = coords;
     return fetch(url, {
       method: 'POST',
@@ -14567,10 +14567,20 @@ var SearchFormContainer = exports.SearchFormContainer = function (_React$Compone
     _this.handleChange = _this.handleChange.bind(_this);
     _this.locationSubmit = _this.locationSubmit.bind(_this);
     _this.getCurrentLocation = _this.getCurrentLocation.bind(_this);
+    var store = _this.props;
 
     try {
       window.onpopstate = function (event) {
-        console.log('HELLLLLLLLLLLLLOOOOOOOOO', event);
+        console.log('HELLLLLLLLLLLLLOOOOOOOOO', event, store, this, this.props);
+        if (event.state.lat && event.state.lng) {
+          var lat = event.state.lat;
+          var lng = event.state.lng;
+          if (!isNaN(lat) && !isNaN(lng)) {
+            var coords = lat + ',' + lng;
+            store.dispatch(actions.fetchLocationCoordsSuccess(coords));
+            return Promise.all([store.dispatch(actions.fetchSunTimes(coords)), store.dispatch(actions.fetchWeather(coords)), store.dispatch(actions.fetchInspiration(coords))]);
+          }
+        }
       };
     } catch (e) {
       console.log(e);

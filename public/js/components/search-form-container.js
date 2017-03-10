@@ -10,10 +10,23 @@ export class SearchFormContainer extends React.Component {
     this.handleChange = this.handleChange.bind(this);
     this.locationSubmit = this.locationSubmit.bind(this);
     this.getCurrentLocation = this.getCurrentLocation.bind(this);
+    const store = this.props;
 
     try {
       window.onpopstate = function (event) {
-        console.log('HELLLLLLLLLLLLLOOOOOOOOO', event);
+        console.log('HELLLLLLLLLLLLLOOOOOOOOO', event, store, this, this.props);
+        if (event.state.lat && event.state.lng) {
+          const lat = event.state.lat;
+          const lng = event.state.lng;
+          if (!isNaN(lat) && !isNaN(lng)) {
+            const coords = `${lat},${lng}`;
+            store.dispatch(actions.fetchLocationCoordsSuccess(coords));
+            return Promise.all([
+              store.dispatch(actions.fetchSunTimes(coords)), store.dispatch(actions.fetchWeather(coords)),
+              store.dispatch(actions.fetchInspiration(coords))
+            ]);
+          }
+        }
       };
     } catch (e) {
       console.log(e);
