@@ -8625,7 +8625,7 @@ var fetchSunTimesError = exports.fetchSunTimesError = function fetchSunTimesErro
 
 var fetchSunTimes = exports.fetchSunTimes = function fetchSunTimes(coords) {
   return function (dispatch) {
-    var url = 'https://localhost:8081/location'; // 'https://lumen-spot.herokuapp.com/location';
+    var url = 'https://lumen-spot.herokuapp.com/location'; // 'https://lumen-spot.herokuapp.com/location' or 'https://localhost:8081/location';
     var coordinates = coords;
     return fetch(url, {
       method: 'POST',

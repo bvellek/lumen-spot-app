@@ -14,7 +14,7 @@
     "test:coverage": "jest --coverage",
     "build": "webpack & grunt build",
     "production": "webpack -p",
-    "dev": "webpack-dashboard -- webpack-dev-server",
+    "dev": "webpack-dev-server",
     "start": "node index.js"
   },
   "repository": {
