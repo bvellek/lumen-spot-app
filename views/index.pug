@@ -12,5 +12,7 @@ html(lang='en')
     link(rel='stylesheet', href='./css/main.min.css')
   body
     div#root !{react}
+    script.
+      window.__PRELOADED_STATE__ = !{state}
     script(src='./js/bundle.js')
     script(async defer src='https://maps.googleapis.com/maps/api/js?key=AIzaSyC2UWTFpmkltPpI6xIiBMpiGIk5HZwZh_M')

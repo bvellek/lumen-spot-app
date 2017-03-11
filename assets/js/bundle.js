@@ -13415,8 +13415,19 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var middleware = [(0, _reduxLogger2.default)(), _reduxThunk2.default];
 
+var preloadedState = void 0;
+
+try {
+  console.log('#', window.__PRELOADED_STATE__);
+  preloadedState = window.__PRELOADED_STATE__;
+  // Allow the passed state to be garbage-collected
+  // delete window.__PRELOADED_STATE__;
+} catch (e) {
+  console.log(e, 'coming from store');
+}
+
 function configureStore() {
-  return (0, _redux.createStore)(reducers.locationReducer, _redux.applyMiddleware.apply(undefined, middleware));
+  return (0, _redux.createStore)(reducers.locationReducer, preloadedState, _redux.applyMiddleware.apply(undefined, middleware));
 }
 
 /***/ }),
@@ -14569,7 +14580,7 @@ var SearchFormContainer = exports.SearchFormContainer = function (_React$Compone
     _this.handleChange = _this.handleChange.bind(_this);
     _this.locationSubmit = _this.locationSubmit.bind(_this);
     _this.getCurrentLocation = _this.getCurrentLocation.bind(_this);
-    _this.componentDidMount = _this.componentDidMount.bind(_this);
+    // this.componentDidMount = this.componentDidMount.bind(this);
     var store = _this.props;
 
     try {
@@ -14591,30 +14602,34 @@ var SearchFormContainer = exports.SearchFormContainer = function (_React$Compone
     return _this;
   }
 
+  // componentDidMount() {
+  //   try {
+  //     const queryLocation = window.location.href;
+  //     const queryString = {};
+  //     queryLocation.replace(
+  //         new RegExp('([^?=&]+)(=([^&]*))?', 'g'),
+  //         ($0, $1, $2, $3) => { queryString[$1] = $3; }
+  //     );
+  //     console.log(queryLocation, queryString);
+  //     if (queryString.lat && queryString.lng) {
+  //       const lat = queryString.lat;
+  //       const lng = queryString.lng;
+  //       if (!isNaN(lat) && !isNaN(lng)) {
+  //         const coords = `${lat},${lng}`;
+  //         this.props.dispatch(actions.fetchLocationCoordsSuccess(coords));
+  //         return Promise.all([
+  //           this.props.dispatch(actions.fetchSunTimes(coords)),
+  //           this.props.dispatch(actions.fetchWeather(coords)),
+  //           this.props.dispatch(actions.fetchInspiration(coords))
+  //         ]);
+  //       }
+  //     }
+  //   } catch (e) {
+  //     console.log(e);
+  //   }
+  // }
+
   _createClass(SearchFormContainer, [{
-    key: 'componentDidMount',
-    value: function componentDidMount() {
-      try {
-        var queryLocation = window.location.href;
-        var queryString = {};
-        queryLocation.replace(new RegExp('([^?=&]+)(=([^&]*))?', 'g'), function ($0, $1, $2, $3) {
-          queryString[$1] = $3;
-        });
-        console.log(queryLocation, queryString);
-        if (queryString.lat && queryString.lng) {
-          var lat = queryString.lat;
-          var lng = queryString.lng;
-          if (!isNaN(lat) && !isNaN(lng)) {
-            var coords = lat + ',' + lng;
-            this.props.dispatch(actions.fetchLocationCoordsSuccess(coords));
-            return Promise.all([this.props.dispatch(actions.fetchSunTimes(coords)), this.props.dispatch(actions.fetchWeather(coords)), this.props.dispatch(actions.fetchInspiration(coords))]);
-          }
-        }
-      } catch (e) {
-        console.log(e);
-      }
-    }
-  }, {
     key: 'getCurrentLocation',
     value: function getCurrentLocation() {
       this.props.dispatch(actions.getCurrentLocation()).then(function (coords) {

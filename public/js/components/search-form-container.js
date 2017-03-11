@@ -12,7 +12,7 @@ export class SearchFormContainer extends React.Component {
     this.handleChange = this.handleChange.bind(this);
     this.locationSubmit = this.locationSubmit.bind(this);
     this.getCurrentLocation = this.getCurrentLocation.bind(this);
-    this.componentDidMount = this.componentDidMount.bind(this);
+    // this.componentDidMount = this.componentDidMount.bind(this);
     const store = this.props;
 
     try {
@@ -37,32 +37,32 @@ export class SearchFormContainer extends React.Component {
     }
   }
 
-  componentDidMount() {
-    try {
-      const queryLocation = window.location.href;
-      const queryString = {};
-      queryLocation.replace(
-          new RegExp('([^?=&]+)(=([^&]*))?', 'g'),
-          ($0, $1, $2, $3) => { queryString[$1] = $3; }
-      );
-      console.log(queryLocation, queryString);
-      if (queryString.lat && queryString.lng) {
-        const lat = queryString.lat;
-        const lng = queryString.lng;
-        if (!isNaN(lat) && !isNaN(lng)) {
-          const coords = `${lat},${lng}`;
-          this.props.dispatch(actions.fetchLocationCoordsSuccess(coords));
-          return Promise.all([
-            this.props.dispatch(actions.fetchSunTimes(coords)),
-            this.props.dispatch(actions.fetchWeather(coords)),
-            this.props.dispatch(actions.fetchInspiration(coords))
-          ]);
-        }
-      }
-    } catch (e) {
-      console.log(e);
-    }
-  }
+  // componentDidMount() {
+  //   try {
+  //     const queryLocation = window.location.href;
+  //     const queryString = {};
+  //     queryLocation.replace(
+  //         new RegExp('([^?=&]+)(=([^&]*))?', 'g'),
+  //         ($0, $1, $2, $3) => { queryString[$1] = $3; }
+  //     );
+  //     console.log(queryLocation, queryString);
+  //     if (queryString.lat && queryString.lng) {
+  //       const lat = queryString.lat;
+  //       const lng = queryString.lng;
+  //       if (!isNaN(lat) && !isNaN(lng)) {
+  //         const coords = `${lat},${lng}`;
+  //         this.props.dispatch(actions.fetchLocationCoordsSuccess(coords));
+  //         return Promise.all([
+  //           this.props.dispatch(actions.fetchSunTimes(coords)),
+  //           this.props.dispatch(actions.fetchWeather(coords)),
+  //           this.props.dispatch(actions.fetchInspiration(coords))
+  //         ]);
+  //       }
+  //     }
+  //   } catch (e) {
+  //     console.log(e);
+  //   }
+  // }
 
   getCurrentLocation() {
     this.props.dispatch(actions.getCurrentLocation()).then((coords) => {

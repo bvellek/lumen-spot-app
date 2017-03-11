@@ -54,6 +54,7 @@ app.get('*', (req, res) => {
             }
 
             let markup;
+            let preloadedState;
             if (renderProps) {
               // const initialState = {
               //   locationCoords: null,
@@ -68,6 +69,7 @@ app.get('*', (req, res) => {
               // };
 
               // const store = createStore(reducers.locationReducer, initialState);
+              preloadedState = JSON.stringify(store.getState()).replace(/</g, '\\u003c');
 
               const component = (
                 <Provider store={store}>
@@ -84,7 +86,8 @@ app.get('*', (req, res) => {
               markup = renderToString(<NotFoundPage />);
               res.status(404);
             }
-            return res.render('index', { react: markup });
+            console.log(preloadedState, '***************', preloadedState); // JSON.stringify(preloadedState).replace(/</g, '\\u003c')
+            return res.render('index', { react: markup, state: preloadedState });
           }
         );
       });
