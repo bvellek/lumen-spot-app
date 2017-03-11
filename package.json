@@ -14,7 +14,6 @@
     "test:coverage": "jest --coverage",
     "build": "webpack & grunt build",
     "production": "webpack -p",
-    "dev": "webpack-dev-server",
     "start": "node index.js"
   },
   "repository": {
@@ -43,7 +42,6 @@
     "autoprefixer": "^6.7.3",
     "babel-loader": "^6.3.1",
     "chai": "^3.5.0",
-    "cssnano": "^3.10.0",
     "enzyme": "^2.7.1",
     "eslint-config-equimper": "^1.4.0",
     "grunt": "^1.0.1",
@@ -54,7 +52,6 @@
     "jest": "^19.0.2",
     "mocha": "^3.2.0",
     "react-addons-test-utils": "^15.4.2",
-    "webpack": "^2.2.1",
-    "webpack-dev-server": "^2.3.0"
+    "webpack": "^2.2.1"
   }
 }
