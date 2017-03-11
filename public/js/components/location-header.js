@@ -3,6 +3,7 @@ import { Link } from 'react-router';
 
 import SVGLogo from './svg-logo';
 
+
 export default function LocationHeader() {
   return (
     <header className="search-header">

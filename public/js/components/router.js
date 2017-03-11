@@ -6,6 +6,7 @@ import LandingPage from './landing-page';
 import LocationContainer from './location-container';
 import NotFoundPage from './not-found-page';
 
+
 const routes = (
   <Route path="/" component={App}>
     <IndexRoute component={LandingPage} />

@@ -5,8 +5,6 @@ import Image from './image';
 
 
 export class ImageResultsContainer extends React.Component {
-
-
   render() {
     let imageList;
     const images = this.props.inspiration;

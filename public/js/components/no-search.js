@@ -1,5 +1,6 @@
 import React from 'react';
 
+
 export default function NoResults() {
   return (
     <section className="no-search">

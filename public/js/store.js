@@ -11,11 +11,9 @@ const middleware = [
 
 let preloadedState;
 
+// try to use preloadedState on client side but not on server side
 try {
-  console.log('#', window.__PRELOADED_STATE__);
   preloadedState = window.__PRELOADED_STATE__;
-  // Allow the passed state to be garbage-collected
-  // delete window.__PRELOADED_STATE__;
 } catch (e) {
   console.log(e, 'coming from store');
 }

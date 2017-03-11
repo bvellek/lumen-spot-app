@@ -1,6 +1,5 @@
 import React from 'react';
 
-
 import InfoWhat from './info-what';
 import LandingImageSlider from './landing-image-slider';
 import InfoLight from './info-light';

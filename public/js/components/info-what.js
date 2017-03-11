@@ -1,5 +1,6 @@
 import React from 'react';
 
+
 export default function InfoWhat() {
   return (
     <section className="info-section">

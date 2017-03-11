@@ -1,5 +1,6 @@
 import React from 'react';
 
+
 export default function InfoLight() {
   return (
     <section className="info-section">

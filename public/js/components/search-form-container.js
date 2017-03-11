@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 
 import * as actions from '../actions/index';
 
+
 export class SearchFormContainer extends React.Component {
   constructor(props) {
     super(props);
@@ -12,12 +13,11 @@ export class SearchFormContainer extends React.Component {
     this.handleChange = this.handleChange.bind(this);
     this.locationSubmit = this.locationSubmit.bind(this);
     this.getCurrentLocation = this.getCurrentLocation.bind(this);
-    // this.componentDidMount = this.componentDidMount.bind(this);
     const store = this.props;
 
+    // try to get onpopstate (forward or backward) on client-side, but not on server
     try {
       window.onpopstate = function (event) {
-        console.log('HELLLLLLLLLLLLLOOOOOOOOO', event, store, this, this.props);
         if (event.state.lat && event.state.lng) {
           const lat = event.state.lat;
           const lng = event.state.lng;
@@ -37,33 +37,6 @@ export class SearchFormContainer extends React.Component {
     }
   }
 
-  // componentDidMount() {
-  //   try {
-  //     const queryLocation = window.location.href;
-  //     const queryString = {};
-  //     queryLocation.replace(
-  //         new RegExp('([^?=&]+)(=([^&]*))?', 'g'),
-  //         ($0, $1, $2, $3) => { queryString[$1] = $3; }
-  //     );
-  //     console.log(queryLocation, queryString);
-  //     if (queryString.lat && queryString.lng) {
-  //       const lat = queryString.lat;
-  //       const lng = queryString.lng;
-  //       if (!isNaN(lat) && !isNaN(lng)) {
-  //         const coords = `${lat},${lng}`;
-  //         this.props.dispatch(actions.fetchLocationCoordsSuccess(coords));
-  //         return Promise.all([
-  //           this.props.dispatch(actions.fetchSunTimes(coords)),
-  //           this.props.dispatch(actions.fetchWeather(coords)),
-  //           this.props.dispatch(actions.fetchInspiration(coords))
-  //         ]);
-  //       }
-  //     }
-  //   } catch (e) {
-  //     console.log(e);
-  //   }
-  // }
-
   getCurrentLocation() {
     this.props.dispatch(actions.getCurrentLocation()).then((coords) => {
       const latLng = coords.split(',');
@@ -77,6 +50,7 @@ export class SearchFormContainer extends React.Component {
     });
   }
 
+  // for text input
   handleChange(event) {
     this.setState({ value: event.target.value.toUpperCase() });
   }

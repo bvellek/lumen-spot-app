@@ -1,5 +1,6 @@
 import 'isomorphic-fetch';
 
+
 // Loading Element
 export const COORDS_LOADING_STATUS_TRUE = 'COORDS_LOADING_STATUS_TRUE';
 export const coordsLoadingStatusTrue = () => ({
@@ -124,7 +125,7 @@ export const fetchSunTimesError = (error) => ({
 });
 
 export const fetchSunTimes = coords => dispatch => {
-  const url = 'https://lumen-spot.herokuapp.com/location'; // 'https://lumen-spot.herokuapp.com/location' or 'https://localhost:8081/location';
+  const url = 'https://lumen-spot.herokuapp.com/location'; // server requires absolute address
   const coordinates = coords;
   return fetch(url, {
     method: 'POST',

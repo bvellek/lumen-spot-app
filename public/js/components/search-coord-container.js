@@ -1,8 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-export class SearchCoordContainer extends React.Component {
 
+export class SearchCoordContainer extends React.Component {
   render() {
     const url = `https://www.google.com/maps/@${this.props.coords},12z`;
     const targetString = `_${this.props.coords}`;

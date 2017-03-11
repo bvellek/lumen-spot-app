@@ -72,7 +72,6 @@ export class SunResultsContainer extends React.Component {
       );
     }
 
-
     return (
       <section className="sun-info-section">
         <details open>
