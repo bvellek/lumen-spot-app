@@ -9,10 +9,18 @@ html(lang='en')
     base(href='/')
     link(rel='shortcut icon', href='./img/favicon.ico', type='image/x-icon')
     link(href='https://fonts.googleapis.com/css?family=Cutive+Mono|Montserrat:400,700,900', rel='stylesheet')
-    link(rel='stylesheet', href='./css/main.min.css')
+    if process.env.NODE_ENV === 'production'
+      link(rel='stylesheet', href='./css/main.min.css')
+    else
+      link(rel='stylesheet', href='./css/main.css')
   body
     div#root !{react}
     script.
       window.__PRELOADED_STATE__ = !{state}
-    script(src='./js/bundle.min.js')
+
+    if process.env.NODE_ENV === 'production'
+      script(src='./js/bundle.min.js')
+    else
+      script(src='./js/bundle.js')
+
     script(async defer src='https://maps.googleapis.com/maps/api/js?key=AIzaSyC2UWTFpmkltPpI6xIiBMpiGIk5HZwZh_M')
