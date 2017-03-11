@@ -33,7 +33,7 @@ export class SearchFormContainer extends React.Component {
         }
       };
     } catch (e) {
-      console.log(e);
+      console.log('<SearchFormContainer />: this is rendering on server, so window is not defined. this is expected.');
     }
   }
 

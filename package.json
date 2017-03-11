@@ -12,8 +12,9 @@
     "test": "jest",
     "test:watch": "jest --colors --watch",
     "test:coverage": "jest --coverage",
-    "build": "webpack & grunt build",
+    "build": "grunt build",
     "production": "webpack -p",
+    "dev": "NODE_ENV=dev node index.js",
     "start": "node index.js"
   },
   "repository": {
