@@ -577,7 +577,7 @@ body:hover .visually-hidden input {
     padding: 0.5em;
     margin: 1em 0.625em; }
     .landing-nav a:focus {
-      outline: 1px solid #555; }
+      outline: 5px solid #555; }
 
 .logo-container {
   text-align: center; }
@@ -712,7 +712,7 @@ div#slider figure {
     outline: 1px #774b98 solid;
     outline-offset: -0.25em; }
     .link-section a:focus {
-      outline: 1px solid #555; }
+      outline: 5px solid #555; }
 
 .about-section {
   width: 100%;
