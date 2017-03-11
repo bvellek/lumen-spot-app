@@ -4,7 +4,7 @@
   font-weight: 400;
   margin-top: 2em;
 
-  @media only screen and (min-width: 25em) {
+  @media only screen and (min-width: $tiny-break) {
     font-size: 1em;
   }
 }

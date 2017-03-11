@@ -9,7 +9,9 @@ export default function Hero() {
     <header className="landing-header">
       <HeroNav />
       <div className="logo-container">
-        <SVGLogo />
+        <h1>
+          <SVGLogo />
+        </h1>
       </div>
     </header>
   );

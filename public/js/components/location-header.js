@@ -9,7 +9,9 @@ export default function LocationHeader() {
     <header className="search-header">
       <div className="logo-container">
         <Link to="/">
-          <SVGLogo />
+          <h1>
+            <SVGLogo />
+          </h1>
         </Link>
       </div>
     </header>

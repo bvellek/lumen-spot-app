@@ -28,11 +28,17 @@
 }
 
 .logo-container {
-  text-align: center;
+  max-width: 42em;
+  width: 95%;
+  margin: 0 auto;
 
-  .svg-logo {
-    max-width: 40em;
-    width: 95%;
-    padding: 0.5em;
+  h1 {
+    text-align: center;
+    padding: 0 0.5rem;
+    margin: 0;
+
+    .svg-logo {
+      width: 100%;
+    }
   }
 }
