@@ -1,7 +1,6 @@
 {
   "name": "lumen-spot-app",
   "version": "1.0.0",
-  "description": "",
   "author": "Ben Vellek",
   "license": "MIT",
   "main": "public/js/index.js",
@@ -21,6 +20,7 @@
     "url": "git+https://github.com/bvellek/lumen-spot-app.git"
   },
   "dependencies": {
+    "babel-core": "^6.23.1",
     "babel-polyfill": "^6.23.0",
     "babel-preset-es2015": "^6.22.0",
     "babel-preset-react": "^6.23.0",
@@ -40,8 +40,8 @@
   },
   "devDependencies": {
     "autoprefixer": "^6.7.3",
+    "babel-jest": "^19.0.0",
     "babel-loader": "^6.3.1",
-    "chai": "^3.5.0",
     "enzyme": "^2.7.1",
     "eslint-config-equimper": "^1.4.0",
     "grunt": "^1.0.1",
@@ -50,7 +50,6 @@
     "grunt-postcss": "^0.8.0",
     "grunt-sass": "^2.0.0",
     "jest": "^19.0.2",
-    "mocha": "^3.2.0",
     "react-addons-test-utils": "^15.4.2",
     "webpack": "^2.2.1"
   }
