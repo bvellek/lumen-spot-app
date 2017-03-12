@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<LocationHeader /> it renders correctly 1`] = `
+<header
+  className="search-header"
+>
+  <div
+    className="logo-container"
+  >
+    <Link
+      onlyActiveOnIndex={false}
+      style={Object {}}
+      to="/"
+    >
+      <h1>
+        <span
+          className="visually-hidden"
+        >
+          Lumen Spot
+        </span>
+        <SVGLogo />
+      </h1>
+    </Link>
+  </div>
+</header>
+`;
