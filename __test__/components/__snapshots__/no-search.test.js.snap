@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<NoResults /> it renders correctly 1`] = `
+<section
+  className="no-search"
+>
+  <p>
+    Please use '📍 Current Location' or '🔎 Submit' a desired location in the field above to see results.
+  </p>
+</section>
+`;

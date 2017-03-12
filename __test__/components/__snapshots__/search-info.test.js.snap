@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<SearchInfo /> it renders correctly 1`] = `
+<div>
+  <Connect(SearchFormContainer) />
+  <Connect(SearchCoordContainer) />
+  <hr />
+</div>
+`;

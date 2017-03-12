@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<NotFoundPage /> it renders correctly 1`] = `
+<div
+  className="not-found"
+>
+  <h1>
+    404
+  </h1>
+  <h2>
+    Page not found!
+  </h2>
+  <p>
+    <a
+      onClick={[Function]}
+      style={Object {}}
+    >
+      Go back to the main page
+    </a>
+  </p>
+</div>
+`;
