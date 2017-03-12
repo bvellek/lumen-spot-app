@@ -1,0 +1,50 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Image /> it renders correctly 1`] = `
+<figure
+  className="pic-fig"
+>
+  <a
+    href="https://testing.com"
+    target="_testing"
+  >
+    <img
+      alt={undefined}
+      src={undefined}
+    />
+  </a>
+  <figcaption>
+    <p>
+      <span
+        className="fig-num"
+      >
+        A: 
+      </span>
+      2.8
+       
+      <span
+        className="fig-num"
+      >
+        ISO: 
+      </span>
+      200
+       
+      <span
+        className="fig-num"
+      >
+        SS: 
+      </span>
+      1/200
+    </p>
+    <p
+      className="photog"
+    >
+      © 
+      <span>
+         
+      </span>
+      / 500px
+    </p>
+  </figcaption>
+</figure>
+`;
