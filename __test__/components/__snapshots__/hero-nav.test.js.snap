@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<HeroNav /> it renders correctly 1`] = `
+<nav
+  className="landing-nav"
+>
+  <a
+    className="sliding-middle-out"
+    onClick={[Function]}
+    style={Object {}}
+  >
+    Search...
+    <span
+      className="visually-hidden"
+    >
+      for a location to find sun, weather, and image results
+    </span>
+  </a>
+</nav>
+`;
