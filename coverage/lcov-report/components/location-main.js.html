@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <title>Code coverage report for components/hero-nav.js</title>
+    <title>Code coverage report for components/location-main.js</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../prettify.css" />
     <link rel="stylesheet" href="../base.css" />
@@ -16,7 +16,7 @@
 <div class='wrapper'>
   <div class='pad1'>
     <h1>
-      <a href="../index.html">All files</a> / <a href="index.html">components</a> hero-nav.js
+      <a href="../index.html">All files</a> / <a href="index.html">components</a> location-main.js
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
@@ -55,7 +55,10 @@
 10
 11
 12
-13</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+13
+14
+15</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -67,16 +70,19 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React from 'react';
 &nbsp;
-import SearchLink from './search-link';
+import LocationData from './location-data';
+import ImageResultsContainer from './image-results-container';
 &nbsp;
 &nbsp;
-export default function HeroNav() {
+export default function LocationMain() {
   return (
-    &lt;nav className="landing-nav"&gt;
-      &lt;SearchLink linkTitle="Search..." accessibilitySpan="for a location to find sun, weather, and image results" /&gt;
-    &lt;/nav&gt;
+    &lt;main&gt;
+      &lt;LocationData /&gt;
+      &lt;ImageResultsContainer /&gt;
+    &lt;/main&gt;
   );
 }
 &nbsp;</pre></td></tr>

@@ -1,0 +1,299 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for components/weather-results-container.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../prettify.css" />
+    <link rel="stylesheet" href="../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../index.html">All files</a> / <a href="index.html">components</a> weather-results-container.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">6.67% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>1/15</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/2</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>0/2</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">7.14% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>1/14</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React from 'react';
+import { connect } from 'react-redux';
+&nbsp;
+&nbsp;
+export class WeatherResultsContainer extends React.Component {
+<span class="fstat-no" title="function not covered" >  re</span>nder() {
+    let weatherDiv;
+    const weatherInfo = <span class="cstat-no" title="statement not covered" >this.props.weatherResults;</span>
+<span class="cstat-no" title="statement not covered" >    if (weatherInfo != null) {</span>
+      const iconURL = <span class="cstat-no" title="statement not covered" >`https://icons.wxug.com/i/c/i/${weatherInfo.current_observation.icon}.gif`;</span>
+      const iconAlt = <span class="cstat-no" title="statement not covered" >`${weatherInfo.current_observation.icon} icon`;</span>
+      const weatherWord = <span class="cstat-no" title="statement not covered" >weatherInfo.current_observation.weather;</span>
+      const temp = <span class="cstat-no" title="statement not covered" >weatherInfo.current_observation.temp_f;</span>
+      const uv = <span class="cstat-no" title="statement not covered" >weatherInfo.current_observation.UV;</span>
+      const wind = <span class="cstat-no" title="statement not covered" >weatherInfo.current_observation.wind_string;</span>
+      const forecastURL = <span class="cstat-no" title="statement not covered" >weatherInfo.current_observation.forecast_url;</span>
+      const forecastURLTarget = <span class="cstat-no" title="statement not covered" >`_${forecastURL}`;</span>
+<span class="cstat-no" title="statement not covered" >      weatherDiv = (</span>
+        &lt;div className="weather-container"&gt;
+          &lt;figure&gt;
+            &lt;img src={iconURL} alt={iconAlt} /&gt;
+          &lt;/figure&gt;
+          &lt;figcaption&gt;
+            &lt;table&gt;
+              &lt;tbody&gt;
+                &lt;tr&gt;
+                  &lt;td&gt;weather:&lt;/td&gt;
+                  &lt;td&gt;{weatherWord}&lt;/td&gt;
+                &lt;/tr&gt;
+                &lt;tr&gt;
+                  &lt;td&gt;temp:&lt;/td&gt;
+                  &lt;td&gt;{temp}&lt;span&gt; &amp;deg;F&lt;/span&gt;&lt;/td&gt;
+                &lt;/tr&gt;
+                &lt;tr&gt;
+                  &lt;td&gt;UV:&lt;/td&gt;
+                  &lt;td&gt;{uv}&lt;/td&gt;
+                &lt;/tr&gt;
+                &lt;tr&gt;
+                  &lt;td&gt;wind:&lt;/td&gt;
+                  &lt;td&gt;{wind}&lt;/td&gt;
+                &lt;/tr&gt;
+                &lt;tr&gt;
+                  &lt;td colSpan="2"&gt;&lt;a className="sliding-middle-out" href={forecastURL} target={forecastURLTarget}&gt;Detailed Forecast&lt;/a&gt;&lt;/td&gt;
+                &lt;/tr&gt;
+&nbsp;
+              &lt;/tbody&gt;
+              &lt;caption&gt;Powered by Weather Underground:
+                &lt;a href="https://www.wunderground.com" target="_wunderground"&gt;&lt;img className="wu-logo" src="./img/wu-logo-horizontal.png" alt="Weather Underground Logo" /&gt;&lt;/a&gt;
+              &lt;/caption&gt;
+            &lt;/table&gt;
+          &lt;/figcaption&gt;
+        &lt;/div&gt;
+      );
+    } else {
+<span class="cstat-no" title="statement not covered" >        weatherDiv = (</span>
+          &lt;div className="weather-container"&gt;
+            &lt;p className="error-message"&gt;Sorry! Something went wrong and we cannot provide weather conditions at this time. &lt;/p&gt;
+          &lt;/div&gt;
+      );
+    }
+<span class="cstat-no" title="statement not covered" >    return (</span>
+      &lt;section className="weather-info-section"&gt;
+        &lt;details open&gt;
+          &lt;summary&gt;
+            &lt;h3&gt;Weather Info&lt;/h3&gt;
+          &lt;/summary&gt;
+          { weatherDiv }
+        &lt;/details&gt;
+      &lt;/section&gt;
+    );
+  }
+}
+&nbsp;
+const mapStateToProps = <span class="fstat-no" title="function not covered" >(s</span>tate) =&gt; (<span class="cstat-no" title="statement not covered" >{</span>
+  weatherResults: state.weatherResults
+});
+&nbsp;
+export default connect(mapStateToProps)(WeatherResultsContainer);
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Sun Mar 12 2017 13:45:43 GMT-0700 (PDT)
+</div>
+</div>
+<script src="../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../sorter.js"></script>
+</body>
+</html>

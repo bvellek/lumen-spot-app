@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <title>Code coverage report for components/hero-nav.js</title>
+    <title>Code coverage report for components/location-header.js</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../prettify.css" />
     <link rel="stylesheet" href="../base.css" />
@@ -16,7 +16,7 @@
 <div class='wrapper'>
   <div class='pad1'>
     <h1>
-      <a href="../index.html">All files</a> / <a href="index.html">components</a> hero-nav.js
+      <a href="../index.html">All files</a> / <a href="index.html">components</a> location-header.js
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
@@ -55,7 +55,16 @@
 10
 11
 12
-13</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+13
+14
+15
+16
+17
+18
+19
+20
+21</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -67,16 +76,31 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React from 'react';
+import { Link } from 'react-router';
 &nbsp;
-import SearchLink from './search-link';
+import SVGLogo from './svg-logo';
 &nbsp;
 &nbsp;
-export default function HeroNav() {
+export default function LocationHeader() {
   return (
-    &lt;nav className="landing-nav"&gt;
-      &lt;SearchLink linkTitle="Search..." accessibilitySpan="for a location to find sun, weather, and image results" /&gt;
-    &lt;/nav&gt;
+    &lt;header className="search-header"&gt;
+      &lt;div className="logo-container"&gt;
+        &lt;Link to="/"&gt;
+          &lt;h1&gt;
+            &lt;span className="visually-hidden"&gt;Lumen Spot&lt;/span&gt;
+            &lt;SVGLogo /&gt;
+          &lt;/h1&gt;
+        &lt;/Link&gt;
+      &lt;/div&gt;
+    &lt;/header&gt;
   );
 }
 &nbsp;</pre></td></tr>

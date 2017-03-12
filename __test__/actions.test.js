@@ -14,7 +14,7 @@ describe('Loading Status Action', () => {
 
 // Fetch Location Coords Test
 describe('Fetch Location Coords Success Action', () => {
-  it('should create an action to show fetch location coords success', () => {
+  it('should create an action to show fetch location coords success and pass coords', () => {
     const testCoords = '34,-122.687';
     const expectedAction = {
       type: 'FETCH_LOCATION_COORDS_SUCCESS',
@@ -25,7 +25,7 @@ describe('Fetch Location Coords Success Action', () => {
 });
 
 describe('Fetch Location Coords Error Action', () => {
-  it('should create an action to show fetch location coords error', () => {
+  it('should create an action to show fetch location coords error and pass error', () => {
     const error = 'Sorry! We could not geocode your location.';
     const expectedAction = {
       type: 'FETCH_LOCATION_COORDS_ERROR',
@@ -38,7 +38,7 @@ describe('Fetch Location Coords Error Action', () => {
 
 //Get Current Location Test
 describe('Get Current Loaction Succes Action', () => {
-  it('should create an action to show get current location success', () => {
+  it('should create an action to show get current location success and pass coords', () => {
     const testCoords = '34,-122.687';
     const expectedAction = {
       type: 'GET_CURRENT_LOCATION_SUCCESS',
@@ -49,7 +49,7 @@ describe('Get Current Loaction Succes Action', () => {
 });
 
 describe('Get Current Loaction Error Action', () => {
-  it('should create an action to show get current location error', () => {
+  it('should create an action to show get current location error and pass error', () => {
     const error = 'error';
     const expectedAction = {
       type: 'GET_CURRENT_LOCATION_ERROR',
@@ -62,7 +62,7 @@ describe('Get Current Loaction Error Action', () => {
 
 // Fetch Sun Times Test
 describe('Fetch Sun Times Success Action', () => {
-  it('should create an action to show fetch sun times success', () => {
+  it('should create an action to show fetch sun times success and pass results', () => {
     const results = '{sunrise: 10:00pm}';
     const expectedAction = {
       type: 'FETCH_SUN_TIMES_SUCCESS',
@@ -73,7 +73,7 @@ describe('Fetch Sun Times Success Action', () => {
 });
 
 describe('Fetch Sun Times Error Action', () => {
-  it('should create an action to show fetch sun times error', () => {
+  it('should create an action to show fetch sun times error and pass error', () => {
     const error = 'error';
     const expectedAction = {
       type: 'FETCH_SUN_TIMES_ERROR',
@@ -86,7 +86,7 @@ describe('Fetch Sun Times Error Action', () => {
 
 // Fetch Weather Info Test
 describe('Fetch Weather Success Action', () => {
-  it('should create an action to show fetch weather success', () => {
+  it('should create an action to show fetch weather success and pass weather results', () => {
     const weather = '{wind: "6mph from the east"}';
     const expectedAction = {
       type: 'FETCH_WEATHER_SUCCESS',
@@ -97,7 +97,7 @@ describe('Fetch Weather Success Action', () => {
 });
 
 describe('Fetch Weather Error Action', () => {
-  it('should create an action to show fetch weather error', () => {
+  it('should create an action to show fetch weather error and pass error', () => {
     const error = 'error';
     const expectedAction = {
       type: 'FETCH_WEATHER_ERROR',
@@ -110,7 +110,7 @@ describe('Fetch Weather Error Action', () => {
 
 // Fetch Inspiration Pictures Test
 describe('Fetch Inspiration Success Action', () => {
-  it('should create an action to show fetch inspiration success', () => {
+  it('should create an action to show fetch inspiration success and pass inspiration results', () => {
     const inspiration = {
       iso: '800',
       ss: '1/500',
@@ -129,7 +129,7 @@ describe('Fetch Inspiration Success Action', () => {
 });
 
 describe('Fetch Inspiration Error Action', () => {
-  it('should create an action to show fetch inspiration error', () => {
+  it('should create an action to show fetch inspiration error and pass error', () => {
     const error = 'error';
     const expectedAction = {
       type: 'FETCH_INSPIRATION_ERROR',
