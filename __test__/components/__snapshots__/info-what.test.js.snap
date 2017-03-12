@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<InfoWhat /> it renders correctly 1`] = `
+<section
+  className="info-section"
+>
+  <div
+    className="what-section"
+  >
+    <h2>
+      What?
+    </h2>
+    <p>
+      Light is EVERYTHING in photography. At Lumen Spot, we aim to make finding the perfect light as simple as possible. Enter a location of interest and find out the sun position for the day and get inspired by the vision of other photographers at that location!
+    </p>
+  </div>
+</section>
+`;

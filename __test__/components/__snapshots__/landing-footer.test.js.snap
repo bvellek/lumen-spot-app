@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<LandingFooter /> it renders correctly 1`] = `
+<footer>
+  <p>
+    Designed and Developed by 
+    <a
+      className="sliding-middle-out"
+      href="https://github.com/bvellek"
+      target="_github"
+    >
+      Ben Vellek
+    </a>
+  </p>
+</footer>
+`;

@@ -1,13 +1,14 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { shallow } from 'enzyme';
+import { shallowToJson } from 'enzyme-to-json';
 
 import Hero from '../../public/js/components/hero';
 
 describe('<Hero />', () => {
   it('it renders correctly', () => {
-    const component = renderer.create(
+    const component = shallow(
       <Hero />
-    ).toJSON();
-    expect(component).toMatchSnapshot();
+    );
+    expect(shallowToJson(component)).toMatchSnapshot();
   });
 });

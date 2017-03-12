@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<LandingMain /> it renders correctly 1`] = `
+<main>
+  <InfoWhat />
+  <LandingImageSlider />
+  <InfoLight />
+  <LinkSection />
+  <InfoAbout />
+</main>
+`;

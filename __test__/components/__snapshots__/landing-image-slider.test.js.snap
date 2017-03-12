@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<LandingImageSlider /> it renders correctly 1`] = `
+<section
+  className="photo-slide-section"
+>
+  <div
+    id="slider"
+  >
+    <figure>
+      <img
+        alt="circle on far left"
+        src="./img/img-slider/01-circle.jpg"
+      />
+      <img
+        alt="circle moved toward right"
+        src="./img/img-slider/02-circle.jpg"
+      />
+      <img
+        alt="circle centered"
+        src="./img/img-slider/03-circle.jpg"
+      />
+      <img
+        alt="circle to right"
+        src="./img/img-slider/04-circle.jpg"
+      />
+      <img
+        alt="circle on far left"
+        src="./img/img-slider/01-circle.jpg"
+      />
+    </figure>
+  </div>
+</section>
+`;
