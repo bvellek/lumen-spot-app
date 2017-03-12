@@ -16,7 +16,8 @@ html(lang='en')
   body
     div#root !{react}
     script.
-      window.__PRELOADED_STATE__ = !{state}
+      window.STATE_PUSHED = false;
+      window.__PRELOADED_STATE__ = !{state};
 
     if process.env.NODE_ENV === 'production'
       script(src='./js/bundle.min.js')

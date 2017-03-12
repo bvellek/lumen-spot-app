@@ -37,6 +37,23 @@ export class SearchFormContainer extends React.Component {
     }
   }
 
+  componentDidMount() {
+    // set inital history state if load app directly to a location so that when you navigate to the next location you can go back and have a history state set in the onpopstate event
+    try {
+      if (!window.STATE_PUSHED && this.props.coords) {
+        const coordsArr = this.props.coords.split(',');
+        const browserLocation = {
+          lat: coordsArr[0].trim(),
+          lng: coordsArr[1].trim()
+        };
+        history.pushState(browserLocation, 'Current Location', `/location/?lat=${browserLocation.lat}&lng=${browserLocation.lng}`);
+        window.STATE_PUSHED = true;
+      }
+    } catch (e) {
+      console.log('<SearchFormContainer />: this is rendering on server, so window is not defined. this is expected.');
+    }
+  }
+
   getCurrentLocation() {
     this.props.dispatch(actions.getCurrentLocation()).then((coords) => {
       const latLng = coords.split(',');
@@ -92,4 +109,8 @@ export class SearchFormContainer extends React.Component {
   }
 }
 
-export default connect()(SearchFormContainer);
+const mapStateToProps = (state) => ({
+  coords: state.locationCoords,
+});
+
+export default connect(mapStateToProps)(SearchFormContainer);
