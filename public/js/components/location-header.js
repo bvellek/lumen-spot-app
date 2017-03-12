@@ -10,6 +10,7 @@ export default function LocationHeader() {
       <div className="logo-container">
         <Link to="/">
           <h1>
+            <span className="visually-hidden">Lumen Spot</span>
             <SVGLogo />
           </h1>
         </Link>

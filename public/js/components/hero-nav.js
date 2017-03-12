@@ -6,7 +6,7 @@ import SearchLink from './search-link';
 export default function HeroNav() {
   return (
     <nav className="landing-nav">
-      <SearchLink linkTitle="Search..." />
+      <SearchLink linkTitle="Search..." accessibilitySpan="for a location to find sun, weather, and image results" />
     </nav>
   );
 }

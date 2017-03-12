@@ -10,6 +10,7 @@ export default function Hero() {
       <HeroNav />
       <div className="logo-container">
         <h1>
+          <span className="visually-hidden">Lumen Spot</span>
           <SVGLogo />
         </h1>
       </div>
