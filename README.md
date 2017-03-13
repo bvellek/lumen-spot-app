@@ -1,6 +1,6 @@
 # Lumen Spot 📷 [![Build Status](https://travis-ci.org/bvellek/lumen-spot-app.svg?branch=master)](https://travis-ci.org/bvellek/lumen-spot-app)
 
-[Lumen Spot](https://aeropress-me-app.herokuapp.com) is a responsive, mobile-first, server side rendered React Redux web application designed to help photographers find information about sunrise, sunset, and twilight times for desired locations. We also provide location based weather data and inspiration pictures to help our users prepare for the best photoshoots.
+[Lumen Spot](https://lumen-spot.herokuapp.com/) is a responsive, mobile-first, server side rendered React Redux web application designed to help photographers find information about sunrise, sunset, and twilight times for desired locations. We also provide location based weather data and inspiration pictures to help our users prepare for the best photoshoots.
 
 
 ## Usage 👩‍💻
