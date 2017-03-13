@@ -1,0 +1,54 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<SearchFormContainer /> it renders correctly 1`] = `
+<form
+  className="search-form"
+  method="get"
+  onSubmit={[Function]}
+>
+  <legend>
+    <h2>
+      SEARCH...
+    </h2>
+  </legend>
+  <label
+    htmlFor="search-input"
+  >
+    Location:
+     
+    <span>
+      (ex: Grand Canyon | Seattle, WA | 1600 Pennsylvania Ave NW Washington, D.C. 20500)
+    </span>
+  </label>
+  <input
+    id="search-input"
+    name="address"
+    onChange={[Function]}
+    type="search"
+    value=""
+  />
+  <div
+    className="search-btn-container"
+  >
+    <button
+      name="location-submit"
+      type="submit"
+    >
+      🔎 Submit
+      <span
+        className="visually-hidden"
+      >
+        Location
+      </span>
+    </button>
+     
+    <button
+      name="current-location"
+      onClick={[Function]}
+      type="button"
+    >
+      📍 Current Location
+    </button>
+  </div>
+</form>
+`;
