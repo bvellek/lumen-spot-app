@@ -2,19 +2,31 @@
 
 [Lumen Spot](https://aeropress-me-app.herokuapp.com) is a server side rendered React Redux web application designed to help photographers find information about sunrise, sunset, and twilight times for desired locations. We also provide location based weather data and inspiration pictures to help our users prepare for the best photoshoots.
 
-<!--
 ## Usage
 
-Clone the repo `https://github.com/bvellek/aeropress-me-app.git` and run `npm install` or `yarn`.
+In order to get started clone this repo. Enter the commands below in your terminal:
+```bash
+git clone https://github.com/bvellek/lumen-spot-app.git
+cd lumen-spot-app
+yarn install
+```
 
-- To run the app locally: `mongod` and in another terminal tab/window `node server.js`. Open browser to `localhost:8080`.
-- To run the tests: `mongod` and in another terminal tab/window `npm test`.
-- To run build: `grunt build`.
+- Development: to run the app locally use the command `yarn dev` and open your browser to 'localhost:8081'.
+
+- Testing: to start the test suite, run `yarn test` or for continuous testing `yarn run test:watch`.
+
+- Production: to prepare for production run `yarn run production`.
 
 
-## Project Summary
+## Project Summary 🌅
 
-AeroPressME is a web application that I designed and developed to help the AeroPress community share recipes/methods. It is designed to allow users to discover new recipes for brewing coffee with the AeroPress. AeroPressME also allows users to see all of the recipes ranked using an upvote feature.
+Lumen Spot is a web application that I designed and developed to help inspire photographers. Light is the most important aspect of any photo. In order to find the light that best suits a photographer's vision, it is crucial to know the times at which the sun is rising and setting. This application helps users find out detailed sun times for a specific location and also provides current weather conditions. To further aid in the photographer's vision process, we provide example photos taken by other photographers at the same location.
+
+<!--
+
+
+
+
 
 ## Screenshots 📷
 
