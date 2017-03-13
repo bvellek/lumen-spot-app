@@ -23,7 +23,7 @@ yarn install
 Lumen Spot is a web application that I designed and developed to help inspire photographers. Light is the most important aspect of any photo. In order to find the light that best suits a photographer's vision, it is crucial to know the times at which the sun is rising and setting. This application helps users find out detailed sun times for a specific location and also provides current weather conditions. To further aid in the photographer's vision process, we provide example photos taken by other photographers at the same location.
 
 
-## Screenshots 📷
+## Screenshots 📸
 | <img alt="Landing Page" src="https://github.com/bvellek/lumen-spot-app/blob/master/public/img/design/screenshots/screen-landing.jpg?raw=true" width="525"> | <img alt="Location Results Page" src="https://github.com/bvellek/lumen-spot-app/blob/master/public/img/design/screenshots/screen-yosemite-search.jpg?raw=true" width="525"> |
 |:---:|:---:|
 | Landing Page | Location Results Page |
@@ -52,7 +52,7 @@ This app utilizes the following three APIs for data:
 - [500px](https://github.com/500px/api-documentation): provides all of the inspiration photos.
 
 
-## Accessibility
+## Accessibility 🌏
 Using a progressive enhancement strategy with an HTML first approach and within the constraints of web standards offered an implicit level of accessibility. This application was also tested for screen reader accessibility. Other accessibility improvements include:
 
 - VoiceOver Context: in order to maintain context for non-sighted users, I added longer descriptions certain features like the Search link on the landing page and the inspiration images on the Location Search Page. To maintain visual styles, I used a `.visually-hidden` class from the [A11Y Project](http://a11yproject.com/posts/how-to-hide-content/) to hide this extra context from sighted users who have more visual context.
