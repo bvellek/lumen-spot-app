@@ -7,42 +7,6 @@ import * as actions from '../public/js/actions/index';
 const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);
 
-// describe('async Location actions', () => {
-//   afterEach(() => {
-//     nock.cleanAll();
-//   });
-//
-//   it('creates COORDS_LOADING_STATUS_TRUE and FETCH_LOCATION_COORDS_SUCCESS when fetchSunTimes is done', () => {
-//     const coords = '123,456';
-//     window.google.Geocoder = { results: { coords: '123,456' } };
-//     const expectedAction = [
-//       { type: 'COORDS_LOADING_STATUS_TRUE' }, { type: 'FETCH_LOCATION_COORDS_SUCCESS', coords: coords }
-//     ];
-//
-//     const store = mockStore({ sunTimesResults: null });
-//     return store.dispatch(actions.fetchLocationCoords(coords))
-//       .then(() => {
-//         expect(store.getActions()).toEqual(expectedAction);
-//       });
-//   });
-//
-//   // it('creates FETCH_SUN_TIMES_ERROR when fetchSunTimes fails', () => {
-//   //   const coords = '123,456';
-//   //   nock('https://lumen-spot.herokuapp.com')
-//   //     .post('/location', { coords: '123,456' })
-//   //     .replyWithError('error');
-//   //   const expectedAction = [
-//   //     { type: 'FETCH_SUN_TIMES_ERROR', error: 'error' }
-//   //   ];
-//   //
-//   //   const store = mockStore({ sunTimesResults: null });
-//   //   return store.dispatch(actions.fetchSunTimes(coords))
-//   //     .then(() => {
-//   //       expect(store.getActions()).toEqual(expectedAction);
-//   //     });
-//   // });
-// });
-
 describe('async Sun actions', () => {
   afterEach(() => {
     nock.cleanAll();
@@ -61,22 +25,6 @@ describe('async Sun actions', () => {
       });
     const expectedAction = [
       { type: 'FETCH_SUN_TIMES_SUCCESS', results: { results: { test: 'testing' } } }
-    ];
-
-    const store = mockStore({ sunTimesResults: null });
-    return store.dispatch(actions.fetchSunTimes(coords))
-      .then(() => {
-        expect(store.getActions()).toEqual(expectedAction);
-      });
-  });
-
-  it('creates FETCH_SUN_TIMES_ERROR when fetchSunTimes fails', () => {
-    const coords = '123,456';
-    nock('https://lumen-spot.herokuapp.com')
-      .post('/location', { coords: '123,456' })
-      .replyWithError('error');
-    const expectedAction = [
-      { type: 'FETCH_SUN_TIMES_ERROR', error: '[FetchError: request to https://lumen-spot.herokuapp.com/location failed, reason: error]' }
     ];
 
     const store = mockStore({ sunTimesResults: null });
