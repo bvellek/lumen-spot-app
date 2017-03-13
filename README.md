@@ -2,95 +2,66 @@
 
 [Lumen Spot](https://aeropress-me-app.herokuapp.com) is a server side rendered React Redux web application designed to help photographers find information about sunrise, sunset, and twilight times for desired locations. We also provide location based weather data and inspiration pictures to help our users prepare for the best photoshoots.
 
-## Usage
 
+## Usage 👩‍💻
 In order to get started clone this repo. Enter the commands below in your terminal:
 ```bash
 git clone https://github.com/bvellek/lumen-spot-app.git
 cd lumen-spot-app
 yarn install
 ```
+- __Development__: to run the app locally use the command `yarn dev` and open your browser to 'localhost:8081'.
 
-- Development: to run the app locally use the command `yarn dev` and open your browser to 'localhost:8081'.
+- __Testing__: to start the test suite, run `yarn test` or for continuous testing `yarn run test:watch`.
 
-- Testing: to start the test suite, run `yarn test` or for continuous testing `yarn run test:watch`.
-
-- Production: to prepare for production run `yarn run production`.
+- __Production__: to prepare for production run `yarn run production`.
 
 
 ## Project Summary 🌅
-
 Lumen Spot is a web application that I designed and developed to help inspire photographers. Light is the most important aspect of any photo. In order to find the light that best suits a photographer's vision, it is crucial to know the times at which the sun is rising and setting. This application helps users find out detailed sun times for a specific location and also provides current weather conditions. To further aid in the photographer's vision process, we provide example photos taken by other photographers at the same location.
-
-<!--
-
-
-
 
 
 ## Screenshots 📷
-
-| <img alt="Landing Page" src="https://github.com/bvellek/aeropress-me-app/blob/master/public/img/design/screen-desk-landing.jpg?raw=true" width="350"> | <img alt="Login Page" src="https://github.com/bvellek/aeropress-me-app/blob/master/public/img/design/screen-desk-login.jpg?raw=true" width="350"> | <img alt="Registration Page" src="https://github.com/bvellek/aeropress-me-app/blob/master/public/img/design/screen-desk-registration.jpg?raw=true" width="350"> |
-|:---:|:---:|:---:|
-| Landing Page | Login Page | Registration Page |
-
-
-| <img alt="My Recipes Page" src="https://github.com/bvellek/aeropress-me-app/blob/master/public/img/design/screen-desk-myrecipes.jpg?raw=true" width="350"> | <img alt="All Recipes Page" src="https://github.com/bvellek/aeropress-me-app/blob/master/public/img/design/screen-desk-allrecipes.jpg?raw=true" width="350"> | <img alt="New Recipe Page" src="https://github.com/bvellek/aeropress-me-app/blob/master/public/img/design/screen-desk-newrecipe.jpg?raw=true" width="350"> | <img alt="Edit Recipe Page" src="https://github.com/bvellek/aeropress-me-app/blob/master/public/img/design/screen-desk-edit.jpg?raw=true" width="350"> |
-|:---:|:---:|:---:|:---:|
-| My Recipes | Top Recipes | New Recipe | Edit Recipe |
+| <img alt="Landing Page" src="https://github.com/bvellek/lumen-spot-app/blob/master/public/img/design/screenshots/screen-landing.jpg?raw=true" width="525"> | <img alt="Location Results Page" src="https://github.com/bvellek/lumen-spot-app/blob/master/public/img/design/screenshots/screen-yosemite-search.jpg?raw=true" width="525"> |
+|:---:|:---:|
+| Landing Page | Location Results Page |
 
 
-## Design Process
-| ![User Flow Diagram](https://github.com/bvellek/aeropress-me-app/blob/master/public/img/design/UserFlow.jpg?raw=true) |
+## Design Process 📐
+| ![Wire Frame](https://github.com/bvellek/lumen-spot-app/blob/master/public/img/design/lumen-spot.jpg?raw=true) |
 |:---:|
-| User Flow Diagram |
+| Small and Large Wireframes |
+In the design phase of this application, I started by writing user stories to determine the key features. The primary user features are to search for a location (either by entering an address, place of interest, or using current location), see sunrise, sunset, twilight times for the location, see weather for the location, and see photos from other photographers at the same location. After coming up with the user critical features, I added some other features to improve the user experience. These include a link to a map of the location, a link to extended forecast weather, and photo settings with links to photographer's profiles. With these features in mind, I created wireframes of the app in [Sketch](https://www.sketchapp.com/) to visualize the final product.
 
-In the design phase of this application, I started by writing user stories to determine what the user should and shouldn't be able to do. The primary user features are to view ranked recipes, add recipes, edit recipes, delete recipes, and upvote recipes. With these features in mind, I decided it would be important to add user authentication to prevent users from editing/deleting each other's recipes, but still offer a public landing page with all the ranked recipes for those who do not wish to signup. I then created a user flow diagram to map the possible routes through the application. I also created prototypes in [Sketch](https://www.sketchapp.com/) to visualize the final product.
+
+## Development Process 🛠
+
+In the development phase of this application, I began with an HTML first approach to make a quick mockup of the app. One of the great parts of React with JSX is that a lot of the HTML was reusable when I began building my React components. Another great feature of React is that you can have one set of code that can run both on the client-side and on the node server. I decided to take advantage of this by server side rendering my react application so that the client receives HTML markup from the start. This shortens the time of the initial load and also makes the majority of the application work without JavaScript enabled on the client-side.
+
+One difficulty of an isomorphic React app is maintaining the state of the app on reload. In order to remedy this issue, I stored all vital aspects of the state (namely the search coordinates for locations) in the url query string. This allowed me to fetch data from APIs on the server side and pass the 'preloaded state' to the client-side application. This prevents a fetch on the server and a redundant fetch on the client. Another issue I encountered was maintaining history support. With no simple React/Redux solution for history support that met all my needs, I decided to implement my own history using the History API's pushState() and onpopstate().
+
+This app utilizes the following three APIs for data:
+
+- [Sunrise Sunset](http://sunrise-sunset.org/api): provides all of the sun times data. I had to proxy this request through my server because Sunrise Sunset only offers an insecure source.
+- [Weather Underground](http://api.wunderground.com/api/): provides the weather data and weather icons.
+- [500px](https://github.com/500px/api-documentation): provides all of the inspiration photos.
 
 
-## Development Process
+## Accessibility
+Using a progressive enhancement strategy with an HTML first approach and within the constraints of web standards offered an implicit level of accessibility. This application was also tested for screen reader accessibility. Other accessibility improvements include:
 
-### Summary
-
-In the development phase of this application, I followed a strategy of progressive enhancement with a RESTful architecture. I started with an HTML first approach, which enabled me to discover what aspects could be enhanced by adding client-side JavaScript. All functionality of the application is usable with client-side JavaScript disabled, however I discovered the primary enhancement of enabling client-side JavaScript would be asynchronous upvoting of recipes. This enhances the user experience because it no longer relies on form posts that require a refresh of the page after each vote. I also developed this application with automated testing for all of the user endpoints to allow for simple modifications.
-
-### Accessibility
-
-| ![Screen Reader Accessibility](https://github.com/bvellek/aeropress-me-app/blob/master/public/img/design/screen-desk-voice.jpg?raw=true) |
-|:---:|
-| Screen Reader Title Context |
-
-Using a progressive enhancement strategy with an HTML first approach and within the contraints of web standards offered an implicit level of accessibility. This application was also tested for screen reader accessibility. Other accessibility improvements:
-
-- Keyboard Accessibility: `tabindex='0'` attributes were added to recipe titles so that tabbing through the pages was more intuitive.
-- VoiceOver Context: as shown in the figure above (highlighted in red) the recipe title was added as context for people using VoiceOver. There are visual cues that imply context so I used a `.visually-hidden` class from the [A11Y Project](http://a11yproject.com/posts/how-to-hide-content/) to maintain visual styles while enhancing the experience for those navigating without sight.
-- VoiceOver Rotor: the Rotor is a commonly used feature that allows for more efficient web browsing by listing common elements like headings, links, and images. To maximize this feature I ensured that all pages had proper heading structure.
+- VoiceOver Context: in order to maintain context for non-sighted users, I added longer descriptions certain features like the Search link on the landing page and the inspiration images on the Location Search Page. To maintain visual styles, I used a `.visually-hidden` class from the [A11Y Project](http://a11yproject.com/posts/how-to-hide-content/) to hide this extra context from sighted users who have more visual context.
+- VoiceOver Rotor: the Rotor is a commonly used feature that allows for more efficient web browsing by listing common elements like headings, links, and sections. To maximize this feature I ensured that all pages had proper heading structure.
 - Details and Summary Elements: use of the details and summary elements provide interactivity without the use of JavaScript to hide content.
-- Emoji: they are accessible to screen readers and also give AeroPress users who don't speak English some context for actions like upvoting recipes 👍. They also do not require any alt text or labels.
 
 
-### Performance
-With the majority of tasks running on the server, I was able to keep this application fairly light weight. Emojis offer a nice touch while costing 0kB. In order to keep the application fast and light, I removed all jQuery in favor of vanilla JavaScript. The minified, GZIPed `app.min.js` file is only 530B. The minified, GZIPed `main.min.css` file is only 2.21kB.  I also deferred font loading to keep initial page loads as fast as possible.
-```
-document.addEventListener('DOMContentLoaded', function() {
-  document.querySelector('html > head').appendChild((function(){
-    const link = document.createElement('link');
-    link.setAttribute('href', 'https://fonts.googleapis.com/css?family=Lato:400,700,900%7CMontserrat:700');
-    link.setAttribute('rel', 'stylesheet');
-    return link
-  })());
-})
-``` -->
-
-
-
-## Tech Used
+## Tech Used 💻
 
 ### Front-End
 
  - HTML5
  - CSS3
- - Saas
+ - [Saas](http://sass-lang.com/)
  - [React](https://facebook.github.io/react/)
  - [Redux](http://redux.js.org/)
 
@@ -99,6 +70,8 @@ document.addEventListener('DOMContentLoaded', function() {
  - [Node](https://nodejs.org)
  - [Express](https://expressjs.com/)
  - [Pug](https://pugjs.org) - template engine
+ - [React](https://facebook.github.io/react/)
+ - [Redux](http://redux.js.org/)
 
 ### Testing and Deployment
  - [Jest](https://facebook.github.io/jest/) - testing framework
@@ -108,6 +81,4 @@ document.addEventListener('DOMContentLoaded', function() {
  - [Travis CI](https://travis-ci.org/) - continuous integration service
  - [Heroku](https://www.heroku.com/) - cloud PaaS
  - [Grunt](http://gruntjs.com/) - task runner
-
-
-## Future Improvements
+ - [ESLint](http://eslint.org/) - linting utility

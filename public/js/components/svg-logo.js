@@ -3,7 +3,7 @@ import React from 'react';
 
 export default function SVGLogo() {
   return (
-    <svg className="svg-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 547 80" aria-labelledby="title" aria-describedby="desc">
+    <svg className="svg-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 547 80">
       <title>Lumen Spot Logo</title>
       <desc>Lumen Spot letters with a camera lens for the O</desc>
       <g fill="none" fillRule="evenodd">
