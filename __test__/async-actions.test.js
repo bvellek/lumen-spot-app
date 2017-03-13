@@ -70,21 +70,21 @@ describe('async Sun actions', () => {
       });
   });
 
-  // it('creates FETCH_SUN_TIMES_ERROR when fetchSunTimes fails', () => {
-  //   const coords = '123,456';
-  //   nock('https://lumen-spot.herokuapp.com')
-  //     .post('/location', { coords: '123,456' })
-  //     .replyWithError('error');
-  //   const expectedAction = [
-  //     { type: 'FETCH_SUN_TIMES_ERROR', error: 'error' }
-  //   ];
-  //
-  //   const store = mockStore({ sunTimesResults: null });
-  //   return store.dispatch(actions.fetchSunTimes(coords))
-  //     .then(() => {
-  //       expect(store.getActions()).toEqual(expectedAction);
-  //     });
-  // });
+  it('creates FETCH_SUN_TIMES_ERROR when fetchSunTimes fails', () => {
+    const coords = '123,456';
+    nock('https://lumen-spot.herokuapp.com')
+      .post('/location', { coords: '123,456' })
+      .replyWithError('error');
+    const expectedAction = [
+      { type: 'FETCH_SUN_TIMES_ERROR', error: '[FetchError: request to https://lumen-spot.herokuapp.com/location failed, reason: error]' }
+    ];
+
+    const store = mockStore({ sunTimesResults: null });
+    return store.dispatch(actions.fetchSunTimes(coords))
+      .then(() => {
+        expect(store.getActions()).toEqual(expectedAction);
+      });
+  });
 });
 
 describe('async Weather actions', () => {
