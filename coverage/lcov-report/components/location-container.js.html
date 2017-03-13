@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <title>Code coverage report for components/search-coord-container.js</title>
+    <title>Code coverage report for components/location-container.js</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../prettify.css" />
     <link rel="stylesheet" href="../base.css" />
@@ -16,18 +16,18 @@
 <div class='wrapper'>
   <div class='pad1'>
     <h1>
-      <a href="../index.html">All files</a> / <a href="index.html">components</a> search-coord-container.js
+      <a href="../index.html">All files</a> / <a href="index.html">components</a> location-container.js
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">69.23% </span>
+        <span class="strong">66.67% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>9/13</span>
+        <span class='fraction'>6/9</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">50% </span>
         <span class="quiet">Branches</span>
-        <span class='fraction'>3/6</span>
+        <span class='fraction'>2/4</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">50% </span>
@@ -37,7 +37,7 @@
       <div class='fl pad1y space-right2'>
         <span class="strong">75% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>9/12</span>
+        <span class='fraction'>6/8</span>
       </div>
     </div>
   </div>
@@ -79,19 +79,16 @@
 34
 35
 36
-37
-38
-39
-40
-41
-42</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+37</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -99,14 +96,8 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -116,10 +107,9 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -128,44 +118,39 @@
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React from 'react';
 import { connect } from 'react-redux';
 &nbsp;
+import LocationHeader from './location-header';
+import SearchInfo from './search-info';
+import LocationMain from './location-main';
+import NoSearch from './no-search';
 &nbsp;
-export class SearchCoordContainer extends React.Component {
+&nbsp;
+export class LocationContainer extends React.Component {
   render() {
-    const url = `https://www.google.com/maps/@${this.props.coords},12z`;
-    const targetString = `_${this.props.coords}`;
-&nbsp;
-    let message = null;
+    let toRender = null;
     <span class="missing-if-branch" title="if path not taken" >I</span>if (this.props.displayResults) {
-<span class="cstat-no" title="statement not covered" >      message = &lt;h4 className="coord-results"&gt;Your search &lt;a className="sliding-middle-out" href={url} target={targetString}&gt;coordinates&lt;/a&gt; are {this.props.coords}&lt;/h4&gt;;</span>
+<span class="cstat-no" title="statement not covered" >      toRender = &lt;LocationMain /&gt;;</span>
     } else <span class="missing-if-branch" title="if path not taken" >I</span>if (this.props.coordsLoadingStatus) {
-<span class="cstat-no" title="statement not covered" >      message = (</span>
-        &lt;div className="loading-element"&gt;
-          &lt;h4&gt;Finding your location...&lt;/h4&gt;
-          &lt;div className="loader"&gt;Loading...&lt;/div&gt;
-        &lt;/div&gt;
-    );
-  } else <span class="missing-if-branch" title="if path not taken" >I</span>if (this.props.warningState) {
-<span class="cstat-no" title="statement not covered" >    message = &lt;h4 className="warning"&gt;{this.props.warningMessage}&lt;/h4&gt;;</span>
-  } else {
-    message = &lt;div /&gt;;
-  }
+<span class="cstat-no" title="statement not covered" >      toRender = &lt;div /&gt;;</span>
+    } else {
+      toRender = &lt;NoSearch /&gt;;
+    }
+&nbsp;
     return (
       &lt;div&gt;
-        { message }
+        &lt;LocationHeader /&gt;
+        &lt;SearchInfo /&gt;
+        { toRender }
       &lt;/div&gt;
     );
   }
 }
 &nbsp;
 const mapStateToProps = <span class="fstat-no" title="function not covered" >(s</span>tate) =&gt; (<span class="cstat-no" title="statement not covered" >{</span>
-  coords: state.locationCoords,
   displayResults: state.displayResults,
-  coordsLoadingStatus: state.coordsLoadingStatus,
-  warningState: state.warningState,
-  warningMessage: state.warningMessage
+  coordsLoadingStatus: state.coordsLoadingStatus
 });
 &nbsp;
-export default connect(mapStateToProps)(SearchCoordContainer);
+export default connect(mapStateToProps)(LocationContainer);
 &nbsp;</pre></td></tr>
 </table></pre>
 <div class='push'></div><!-- for sticky footer -->

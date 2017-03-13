@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ImageResultsContainer /> it renders correctly when const images is false 1`] = `
+<section
+  className="pic-section"
+>
+  <h3
+    className="visually-hidden"
+  >
+    Images for Inspiration
+  </h3>
+  <p
+    className="error-message"
+  >
+    Sorry! Something went wrong and we cannot provide inspiration pictures at the moment. 
+  </p>
+</section>
+`;

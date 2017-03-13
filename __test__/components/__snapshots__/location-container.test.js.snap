@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<LocationContainer /> it renders the <NoSearch /> when displayResults and coordsLoadingStatus are false 1`] = `
+<div>
+  <LocationHeader />
+  <SearchInfo />
+  <NoResults />
+</div>
+`;

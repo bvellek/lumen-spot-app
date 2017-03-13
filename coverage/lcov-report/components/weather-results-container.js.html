@@ -20,24 +20,24 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">6.67% </span>
+        <span class="strong">33.33% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>1/15</span>
+        <span class='fraction'>5/15</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">0% </span>
+        <span class="strong">50% </span>
         <span class="quiet">Branches</span>
-        <span class='fraction'>0/2</span>
+        <span class='fraction'>1/2</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">0% </span>
+        <span class="strong">50% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>0/2</span>
+        <span class='fraction'>1/2</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">7.14% </span>
+        <span class="strong">35.71% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>1/14</span>
+        <span class='fraction'>5/14</span>
       </div>
     </div>
   </div>
@@ -128,6 +128,8 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -137,8 +139,6 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -175,26 +175,26 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -204,10 +204,10 @@ import { connect } from 'react-redux';
 &nbsp;
 &nbsp;
 export class WeatherResultsContainer extends React.Component {
-<span class="fstat-no" title="function not covered" >  re</span>nder() {
+  render() {
     let weatherDiv;
-    const weatherInfo = <span class="cstat-no" title="statement not covered" >this.props.weatherResults;</span>
-<span class="cstat-no" title="statement not covered" >    if (weatherInfo != null) {</span>
+    const weatherInfo = this.props.weatherResults;
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (weatherInfo != null) {
       const iconURL = <span class="cstat-no" title="statement not covered" >`https://icons.wxug.com/i/c/i/${weatherInfo.current_observation.icon}.gif`;</span>
       const iconAlt = <span class="cstat-no" title="statement not covered" >`${weatherInfo.current_observation.icon} icon`;</span>
       const weatherWord = <span class="cstat-no" title="statement not covered" >weatherInfo.current_observation.weather;</span>
@@ -253,13 +253,13 @@ export class WeatherResultsContainer extends React.Component {
         &lt;/div&gt;
       );
     } else {
-<span class="cstat-no" title="statement not covered" >        weatherDiv = (</span>
+        weatherDiv = (
           &lt;div className="weather-container"&gt;
             &lt;p className="error-message"&gt;Sorry! Something went wrong and we cannot provide weather conditions at this time. &lt;/p&gt;
           &lt;/div&gt;
       );
     }
-<span class="cstat-no" title="statement not covered" >    return (</span>
+    return (
       &lt;section className="weather-info-section"&gt;
         &lt;details open&gt;
           &lt;summary&gt;
@@ -283,7 +283,7 @@ export default connect(mapStateToProps)(WeatherResultsContainer);
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Sun Mar 12 2017 17:23:46 GMT-0700 (PDT)
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Sun Mar 12 2017 18:51:32 GMT-0700 (PDT)
 </div>
 </div>
 <script src="../prettify.js"></script>

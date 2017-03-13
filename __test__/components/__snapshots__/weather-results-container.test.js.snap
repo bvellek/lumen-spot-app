@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<WeatherResultsContainer /> it renders a paragraph saying cannot provide results when weatherResults is null 1`] = `
+<section
+  className="weather-info-section"
+>
+  <details
+    open={true}
+  >
+    <summary>
+      <h3>
+        Weather Info
+      </h3>
+    </summary>
+    <div
+      className="weather-container"
+    >
+      <p
+        className="error-message"
+      >
+        Sorry! Something went wrong and we cannot provide weather conditions at this time. 
+      </p>
+    </div>
+  </details>
+</section>
+`;

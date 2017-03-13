@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<SearchCoordContainer /> it renders the empty div when displayResults, coordsLoadingStatus, and warningState are false 1`] = `
+<div>
+  <div />
+</div>
+`;

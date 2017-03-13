@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<SunResultsContainer /> it renders a paragraph saying cannot provide results when sunResults is null 1`] = `
+<section
+  className="sun-info-section"
+>
+  <details
+    open={true}
+  >
+    <summary>
+      <h3>
+        Sun Times
+      </h3>
+    </summary>
+    <p
+      className="error-message"
+    >
+      Sorry! Something went wrong and we cannot provide sun times right now. 
+    </p>
+  </details>
+</section>
+`;
