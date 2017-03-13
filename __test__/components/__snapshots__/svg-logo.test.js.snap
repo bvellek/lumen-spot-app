@@ -2,8 +2,6 @@
 
 exports[`<SVGLogo /> it renders correctly 1`] = `
 <svg
-  aria-describedby="desc"
-  aria-labelledby="title"
   className="svg-logo"
   viewBox="0 0 547 80"
   xmlns="http://www.w3.org/2000/svg"
