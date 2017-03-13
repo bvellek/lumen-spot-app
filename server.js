@@ -2,6 +2,7 @@
 import express from 'express';
 import path from 'path';
 import bodyParser from 'body-parser';
+import compression from 'compression';
 import 'isomorphic-fetch';
 import React from 'react';
 import { renderToString } from 'react-dom/server';
@@ -17,6 +18,9 @@ import * as actions from './public/js/actions/index';
 import configureStore from './public/js/store';
 
 const app = express();
+
+// Compression for pagespeed
+app.use(compression({ level: 9, threshold: 0 }));
 
 app.set('view engine', 'pug'); // tells the render to use Pug template
 app.use(express.static(path.join(__dirname, 'public'))); // serving static assets
