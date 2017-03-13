@@ -1,6 +1,6 @@
 # Lumen Spot 📷 [![Build Status](https://travis-ci.org/bvellek/lumen-spot-app.svg?branch=master)](https://travis-ci.org/bvellek/lumen-spot-app)
 
-[Lumen Spot](https://aeropress-me-app.herokuapp.com) is a server side rendered React Redux web application designed to help photographers find information about sunrise, sunset, and twilight times for desired locations. We also provide location based weather data and inspiration pictures to help our users prepare for the best photoshoots.
+[Lumen Spot](https://aeropress-me-app.herokuapp.com) is a responsive, server side rendered React Redux web application designed to help photographers find information about sunrise, sunset, and twilight times for desired locations. We also provide location based weather data and inspiration pictures to help our users prepare for the best photoshoots.
 
 
 ## Usage 👩‍💻
@@ -31,7 +31,7 @@ Lumen Spot is a web application that I designed and developed to help inspire ph
 | ![Wire Frame](https://github.com/bvellek/lumen-spot-app/blob/master/public/img/design/lumen-spot.jpg?raw=true) |
 |:---:|
 | Small and Large Wireframes |
-In the design phase of this application, I started by writing user stories to determine the key features. The primary user features are to search for a location (either by entering an address, place of interest, or using current location), see sunrise, sunset, twilight times for the location, see weather for the location, and see photos from other photographers at the same location. After coming up with the user critical features, I added some other features to improve the user experience. These include a link to a map of the location, a link to extended forecast weather, and photo settings with links to photographer's profiles. With these features in mind, I created wireframes of the app in [Sketch](https://www.sketchapp.com/) to visualize the final product.
+In the design phase of this application, I started by writing user stories to determine the key features. The primary user features are to search for a location (either by entering an address, place of interest, or using current location), see sunrise, sunset, twilight times for the location, see weather for the location, and see photos from other photographers at the same location. After coming up with the user critical features, I added some other features to improve the user experience. These include a link to a map of the location, a link to extended forecast weather, and photo settings with links to photographer's profiles. With these features in mind, I created wireframes of the app using [Sketch](https://www.sketchapp.com/). This helped me visualize the responsive layout.
 
 
 ## Development Process 🛠
