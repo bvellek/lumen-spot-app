@@ -81,6 +81,7 @@ Using a progressive enhancement strategy with an HTML first approach and within 
 ### Testing and Deployment
  - [Jest](https://facebook.github.io/jest/) - testing framework
  - [Enzyme](http://airbnb.io/enzyme/) - testing framework
+ - [Nock](https://github.com/node-nock/nock) - HTTP test mocking
  - [Webpack](https://webpack.js.org/) - JS bundler
  - [Babel](http://babeljs.io/) - JS compiler
  - [Travis CI](https://travis-ci.org/) - continuous integration service
