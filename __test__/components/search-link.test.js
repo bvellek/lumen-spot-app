@@ -2,7 +2,7 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import { shallowToJson } from 'enzyme-to-json';
 
-import SearchLink from '../../public/js/components/link-section';
+import SearchLink from '../../public/js/components/search-link';
 
 describe('<SearchLink />', () => {
   it('it renders correctly', () => {

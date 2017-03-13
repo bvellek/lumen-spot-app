@@ -352,8 +352,8 @@ SF:/Users/bvellek/Desktop/projects/lumen-spot-app/public/js/components/link-sect
 FN:6,LinkSection
 FNF:1
 FNH:1
-FNDA:2,LinkSection
-DA:7,2
+FNDA:1,LinkSection
+DA:7,1
 LF:1
 LH:1
 BRF:0
@@ -549,12 +549,12 @@ TN:
 SF:/Users/bvellek/Desktop/projects/lumen-spot-app/public/js/components/search-link.js
 FN:5,SearchLink
 FNF:1
-FNH:0
-FNDA:0,SearchLink
-DA:6,0
+FNH:1
+FNDA:1,SearchLink
+DA:6,1
 DA:11,6
 LF:2
-LH:1
+LH:2
 BRF:0
 BRH:0
 end_of_record

@@ -1,13 +1,17 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<SearchLink /> it renders correctly 1`] = `
-<section
-  className="link-section"
+<Link
+  className="sliding-middle-out"
+  onlyActiveOnIndex={false}
+  style={Object {}}
+  to="/location"
 >
-  <h2>
-    <SearchLink
-      linkTitle="Find Your Light"
-    />
-  </h2>
-</section>
+  test title
+  <span
+    className="visually-hidden"
+  >
+    test context accessibility info
+  </span>
+</Link>
 `;

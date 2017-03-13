@@ -7,7 +7,7 @@ import * as actions from '../public/js/actions/index';
 const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);
 
-describe('async actions', () => {
+describe('async Sun actions', () => {
   afterEach(() => {
     nock.cleanAll();
   });
@@ -34,6 +34,34 @@ describe('async actions', () => {
       });
   });
 
+  // it('creates FETCH_SUN_TIMES_ERROR when fetchSunTimes fails', () => {
+  //   const coords = '123,456';
+  //   nock('https://lumen-spot.herokuapp.com')
+  //     .post('/location', {
+  //       coords: '123,456'
+  //     })
+  //     .reply('404', {
+  //       error: {
+  //         test: 'fail'
+  //       }
+  //     });
+  //   const expectedAction = [
+  //     { type: 'FETCH_SUN_TIMES_ERROR'
+  //     }
+  //   ];
+  //
+  //   const store = mockStore({ sunTimesResults: null });
+  //   return store.dispatch(actions.fetchSunTimes(coords))
+  //     .then(() => {
+  //       expect(store.getActions()).toEqual(expectedAction);
+  //     });
+  // });
+});
+
+describe('async Weather actions', () => {
+  afterEach(() => {
+    nock.cleanAll();
+  });
   it('creates FETCH_WEATHER_SUCCESS when fetchWeather is done', () => {
     const coords = '123,456';
     nock('https://api.wunderground.com/api/55dac1657530ad42/conditions/q/')
@@ -52,6 +80,12 @@ describe('async actions', () => {
       .then(() => {
         expect(store.getActions()).toEqual(expectedAction);
       });
+  });
+});
+
+describe('async Inspiration actions', () => {
+  afterEach(() => {
+    nock.cleanAll();
   });
 
   it('creates FETCH_INSPIRATION_SUCCESS when fetchInspiration is done', () => {
@@ -74,17 +108,3 @@ describe('async actions', () => {
       });
   });
 });
-
-//
-// .reply('OK', {
-//   body: {
-//     results: [{
-//         geometry: {
-//           location: {
-//             lat: 123,
-//             lng: 456
-//           }
-//         }
-//       }]
-//   }
-// });
