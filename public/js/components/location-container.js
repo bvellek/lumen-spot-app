@@ -8,6 +8,14 @@ import NoSearch from './no-search';
 
 
 export class LocationContainer extends React.Component {
+  componentDidMount() {
+    try {
+      document.querySelector('head > title').innerHTML = `Location Search ${this.props.coords ? this.props.coords : ''}| Lumen Spot`;
+    } catch (err) {
+      console.log('<LocaitonContainer />: this is rendering on server, so document is not defined. this is expected.')
+    }
+  }
+
   render() {
     let toRender = null;
     if (this.props.displayResults) {
@@ -30,7 +38,8 @@ export class LocationContainer extends React.Component {
 
 const mapStateToProps = (state) => ({
   displayResults: state.displayResults,
-  coordsLoadingStatus: state.coordsLoadingStatus
+  coordsLoadingStatus: state.coordsLoadingStatus,
+  coords: state.locationCoords
 });
 
 export default connect(mapStateToProps)(LocationContainer);
