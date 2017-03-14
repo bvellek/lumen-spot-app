@@ -1,6 +1,6 @@
 # Lumen Spot 📷 [![Build Status](https://travis-ci.org/bvellek/lumen-spot-app.svg?branch=master)](https://travis-ci.org/bvellek/lumen-spot-app)
 
-[Lumen Spot](https://lumen-spot.herokuapp.com/) is a responsive, mobile-first, server side rendered React Redux web application designed to help photographers find information about sunrise, sunset, and twilight times for desired locations. We also provide location based weather data and inspiration pictures to help our users prepare for the best photoshoots.
+[Lumen Spot](https://lumen-spot.herokuapp.com/) is a responsive, mobile-first, server side rendered React Redux web application designed to help photographers find information about sunrise, sunset, and twilight times for desired locations. Lumen Spot provides location-based weather data and inspiration pictures to help users prepare for the best photoshoots.
 
 
 ## Usage 👩‍💻
@@ -20,7 +20,7 @@ yarn install
 
 
 ## Project Summary 🌅
-Lumen Spot is a web application that I designed and developed to help inspire photographers. Light is the most important aspect of any photo. In order to find the light that best suits a photographer's vision, it is crucial to know the times at which the sun is rising and setting. This application helps users find out detailed sun times for a specific location and also provides current weather conditions. To further aid in the photographer's vision process, we provide example photos taken by other photographers at the same location.
+Lumen Spot is a web application that I designed and developed to help inspire photographers. Light is the most important aspect of any photo. In order to find the light that best suits a photographer's vision, it is crucial to know the times at which the sun is rising and setting. This application helps users find out detailed sun times for a specific location and also provides current weather conditions. To further aid in the photographer's vision process, I include example photos taken by other photographers at the same location.
 
 
 ## Screenshots 📸
@@ -33,13 +33,13 @@ Lumen Spot is a web application that I designed and developed to help inspire ph
 | ![Wire Frame](https://github.com/bvellek/lumen-spot-app/blob/master/public/img/design/lumen-spot.jpg?raw=true) |
 |:---:|
 | Small and Large Wireframes |
-In the design phase of this application, I started by writing user stories to determine the key features. The primary user features are to search for a location (either by entering an address, place of interest, or using current location), see sunrise, sunset, twilight times for the location, see weather for the location, and see photos from other photographers at the same location. After coming up with the user critical features, I added some other features to improve the user experience. These include a link to a map of the location, a link to extended forecast weather, and photo settings with links to photographer's profiles. With these features in mind, I created wireframes of the app using [Sketch](https://www.sketchapp.com/). I tackled the design process with a mobile-first approach, because I know the majority of users will be using this app on location, on their phones. Using this approach also greatly improves the responsive design process.
+In the design phase of this application, I started by writing user stories to determine the key features. The primary user features are to search for a location (either by entering an address, place of interest, or using current location), see sunrise, sunset, twilight times for the location, see weather for the location, and see photos from other photographers at the same location. After determining the user-critical features, I added some other features to improve the user experience. These include a link to a map of the location, a link to extended forecast weather, and photo settings with links to photographer's profiles. With these features in mind, I created wireframes of the app using [Sketch](https://www.sketchapp.com/). I tackled the design process with a mobile-first approach, because I know the majority of users will be using this app on location, on their phones. Using this approach also greatly improves the responsive design process.
 
 
 ## Development Process 🛠
 In the development phase of this application, I began with an HTML first approach to make a quick mockup of the app. I prefer to develop this way as it promotes progressive enhancement.
 
-One of the great parts of React with JSX is that a lot of the HTML was reusable when I began building my React components. Babel is used to compile all JSX and ES6. Another great feature of React is that you can have one set of code that can run both on the client-side and on the node server. I decided to take advantage of this by server side rendering my react application so that the client receives HTML markup from the start. This shortens the time of the initial load and also makes the majority of the application work without JavaScript enabled on the client-side.
+One of the great features of React with JSX is that a lot of the HTML was reusable when I began building my React components. Babel is used to compile all JSX and ES6. Another notable feature of React is that one can have a single set of code that runs both on the client-side and on the node server. I decided to take advantage of this by server side rendering my React application so that the client receives HTML markup from the start. This shortens the time of the initial load and also makes the majority of the application work without JavaScript enabled on the client-side.
 
 One difficulty of an isomorphic React app is maintaining the state of the app on reload. In order to remedy this issue, I stored all vital aspects of the state (namely the search coordinates for locations) in the url query string. This allowed me to fetch data from APIs on the server side and pass the 'preloaded state' to the client-side application. This prevents a fetch on the server and a redundant fetch on the client. Another issue I encountered was maintaining history support. With no simple React/Redux solution for history support that met all my needs, I decided to implement my own history using the History API's pushState() and onpopstate().
 
