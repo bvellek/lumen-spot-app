@@ -66,11 +66,21 @@ function matcher(req, res, store) {
   );
 }
 
+app.use((req, res, next) => {
+  let sslUrl;
+
+  if (process.env.NODE_ENV === 'production' && req.headers['x-forwarded-proto'] !== 'https') {
+    sslUrl = ['https://lumen-spot.herokuapp.com', req.url].join('');
+    return res.redirect(sslUrl);
+  }
+  return next();
+});
+
 app.get('*', (req, res) => {
   // force use of https://
-  if (req.headers['x-forwarded-proto'] !== 'https' && process.env.NODE_ENV === 'production') {
-    res.redirect(`https://lumen-spot.herokuapp.com${req.url}`);
-  }
+  // if (req.headers['x-forwarded-proto'] !== 'https' && process.env.NODE_ENV === 'production') {
+  //   res.redirect(`https://lumen-spot.herokuapp.com${req.url}`);
+  // }
 
   // initialize store
   const store = configureStore();
