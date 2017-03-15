@@ -68,9 +68,12 @@ function matcher(req, res, store) {
 
 app.get('*', (req, res) => {
   // force use of https://
+  console.log('before http vs https scenario');
   if (req.headers['x-forwarded-proto'] !== 'https' && process.env.NODE_ENV === 'production') {
+    console.log('inside http vs https scenario');
     res.redirect(`https://lumen-spot.herokuapp.com${req.url}`);
   }
+  console.log('after http vs https scenario');
 
   // initialize store
   const store = configureStore();
