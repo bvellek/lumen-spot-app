@@ -66,6 +66,7 @@ function matcher(req, res, store) {
   );
 }
 
+  // force use of https://
 app.use((req, res, next) => {
   let sslUrl;
 
@@ -77,11 +78,6 @@ app.use((req, res, next) => {
 });
 
 app.get('*', (req, res) => {
-  // force use of https://
-  // if (req.headers['x-forwarded-proto'] !== 'https' && process.env.NODE_ENV === 'production') {
-  //   res.redirect(`https://lumen-spot.herokuapp.com${req.url}`);
-  // }
-
   // initialize store
   const store = configureStore();
 
