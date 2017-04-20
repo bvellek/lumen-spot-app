@@ -55,6 +55,7 @@ This app utilizes the following three APIs for data:
 ## Accessibility 🌏
 Using a progressive enhancement strategy with an HTML first approach and within the constraints of web standards offered an implicit level of accessibility. This application was also tested for screen reader accessibility. Other accessibility improvements include:
 
+- WCAG 2.0 Level AA Compliance
 - VoiceOver Context: in order to maintain context for non-sighted users, I added longer descriptions certain features like the Search link on the landing page and the inspiration images on the Location Search Page. To maintain visual styles, I used a `.visually-hidden` class from the [A11Y Project](http://a11yproject.com/posts/how-to-hide-content/) to hide this extra context from sighted users who have more visual context.
 - VoiceOver Rotor: the Rotor is a commonly used feature that allows for more efficient web browsing by listing common elements like headings, links, and sections. To maximize this feature I ensured that all pages had proper heading structure.
 - Details and Summary Elements: use of the details and summary elements provide interactivity without the use of JavaScript to hide content.
