@@ -763,6 +763,11 @@ footer {
     font-size: 1em; }
     .search-form label span {
       font-size: 0.625em; }
+  .search-form button:disabled {
+    cursor: not-allowed;
+    box-shadow: none;
+    background: #dddddd;
+    opacity: 0.65; }
   .search-form input {
     width: 95%;
     height: 2em;

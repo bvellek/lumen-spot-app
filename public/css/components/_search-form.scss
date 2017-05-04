@@ -16,6 +16,13 @@
     }
   }
 
+  button:disabled {
+    cursor: not-allowed;
+    box-shadow: none;
+    background: #dddddd;
+    opacity: 0.65;
+  }
+
   input {
     width: 95%;
     height: 2em;

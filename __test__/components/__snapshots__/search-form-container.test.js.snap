@@ -31,6 +31,7 @@ exports[`<SearchFormContainer /> it renders correctly 1`] = `
     className="search-btn-container"
   >
     <button
+      disabled={false}
       name="location-submit"
       type="submit"
     >
@@ -43,6 +44,7 @@ exports[`<SearchFormContainer /> it renders correctly 1`] = `
     </button>
      
     <button
+      disabled={false}
       name="current-location"
       onClick={[Function]}
       type="button"

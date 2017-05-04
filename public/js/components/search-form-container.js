@@ -8,7 +8,8 @@ export class SearchFormContainer extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      value: ''
+      value: '',
+      disabled: true,
     };
     this.handleChange = this.handleChange.bind(this);
     this.locationSubmit = this.locationSubmit.bind(this);
@@ -39,6 +40,7 @@ export class SearchFormContainer extends React.Component {
 
   componentDidMount() {
     // set inital history state if load app directly to a location so that when you navigate to the next location you can go back and have a history state set in the onpopstate event
+    this.setState({ disabled: false });
     try {
       if (!window.STATE_PUSHED && this.props.coords) {
         const coordsArr = this.props.coords.split(',');
@@ -99,10 +101,10 @@ export class SearchFormContainer extends React.Component {
         </label>
         <input id="search-input" type="search" name="address" value={this.state.value} onChange={this.handleChange} />
         <div className="search-btn-container">
-          <button type="submit" name="location-submit">🔎 Submit
+          <button disabled={this.state.disabled} type="submit" name="location-submit">🔎 Submit
             <span className="visually-hidden">Location</span>
           </button>{' '}
-          <button type="button" name="current-location" onClick={this.getCurrentLocation}>📍 Current Location</button>
+          <button disabled={this.state.disabled} type="button" name="current-location" onClick={this.getCurrentLocation}>📍 Current Location</button>
         </div>
       </form>
     );
