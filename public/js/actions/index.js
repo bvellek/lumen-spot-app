@@ -125,14 +125,14 @@ export const fetchSunTimesError = (error) => ({
 });
 
 export const fetchSunTimes = coords => dispatch => {
-  const url = 'https://lumen-spot.herokuapp.com/location'; // server requires absolute address
+  const url = '/location'; // 'https://lumen-spot.herokuapp.com/location'; // server requires absolute address
   const coordinates = coords;
   return fetch(url, {
     method: 'POST',
     headers: {
-     Accept: 'application/json',
-     'Content-type': 'application/json'
-   },
+      Accept: 'application/json',
+      'Content-type': 'application/json'
+    },
     body: JSON.stringify({ coords: coordinates })
   }).then((response) => {
     if (response.status < 200 || response.status >= 300) {

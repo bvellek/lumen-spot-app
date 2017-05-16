@@ -13,7 +13,9 @@
     "test:coverage": "jest --coverage",
     "production": "webpack -p && grunt build",
     "dev": "NODE_ENV=dev webpack && grunt build && node index.js",
-    "start": "node index.js"
+    "start": "node index.js",
+    "now-start": "NODE_ENV=production node index.js",
+    "now-build": "webpack -p && grunt build"
   },
   "repository": {
     "type": "git",
