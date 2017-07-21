@@ -7,6 +7,9 @@
   "directories": {
     "test": "test"
   },
+  "engines": {
+    "node": "^6.11.1"
+  },
   "scripts": {
     "test": "jest",
     "test:watch": "jest --colors --watch",
